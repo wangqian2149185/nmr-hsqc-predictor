@@ -1,0 +1,86 @@
+{
+  "protocol_name": "v13_step33_external_blind_benchmark",
+  "protocol_version": "1.0.0",
+  "status": "frozen_before_candidate_discovery",
+  "frozen_utc": "2026-08-30T20:04:56.015079+00:00",
+  "repository": {
+    "development_branch": "codex_v14",
+    "protocol_parent_commit": "5d474097b1ce67bc35aa8dfd0b00f7ab25cd3b2a",
+    "frozen_v13_commit": "329acd145090bb3fffbb5cde805848efc704e0f2"
+  },
+  "frozen_model": {
+    "release": "v13_deployable_step33",
+    "primary_model": "step33_deployment_safe_full_chain_angles",
+    "release_manifest_sha256": "44e8596dfe16b43a64e1264c0e18644a4ecb1ec32a577917416942467f881dd0",
+    "checkpoint_count": 5,
+    "retraining_permitted": false,
+    "preprocessing_refit_permitted": false,
+    "model_selection_permitted": false
+  },
+  "candidate_target": {
+    "minimum_entries": 15,
+    "preferred_entries": 25,
+    "maximum_entries": 40
+  },
+  "eligibility": {
+    "linked_bmrb_and_pdb_required": true,
+    "protein_polymer_required": true,
+    "paired_backbone_amide_h_n_required": true,
+    "minimum_valid_nonproline_pairs": 40,
+    "target_chain_selected_before_prediction": true,
+    "existing_bmrb_ids_excluded": true,
+    "existing_pdb_ids_excluded": true
+  },
+  "homology_exclusion": {
+    "identity_threshold": 0.4,
+    "exclude_at_or_above_threshold": true,
+    "candidate_compared_to_all_frozen_v13_chains": true,
+    "candidate_candidate_clustering": true,
+    "one_representative_per_candidate_component": true,
+    "representative_selection_must_not_use_model_results": true
+  },
+  "shift_list_selection": {
+    "performed_before_prediction": true,
+    "requires_paired_hn_assignments": true,
+    "exact_residue_atom_provenance": true,
+    "union_of_conflicting_lists": false,
+    "prediction_error_used_for_selection": false
+  },
+  "structure_processing": {
+    "first_model_only": true,
+    "all_protein_chains_as_environment": true,
+    "full_target_chain_torsions": true,
+    "proline_excluded_by_default": true
+  },
+  "reference_qc": {
+    "screen_rule_source": "frozen v13 training entries",
+    "target_correction": "none",
+    "entry_specific_offset_correction": false,
+    "hierarchical_b_j": false,
+    "flagged_entries_in_primary_metrics": true,
+    "separate_qc_sensitivity_required": true
+  },
+  "primary_reporting": {
+    "residue_metrics": [
+      "1H MAE ppm",
+      "1H RMSE ppm",
+      "15N MAE ppm",
+      "15N RMSE ppm"
+    ],
+    "entry_macro_metrics": [
+      "1H entry-macro MAE ppm",
+      "15N entry-macro MAE ppm"
+    ],
+    "per_entry_metrics": true,
+    "entry_bootstrap_intervals": true
+  },
+  "prohibited_actions": [
+    "selecting candidates using prediction error",
+    "retraining on external candidates",
+    "refitting preprocessing on external candidates",
+    "removing difficult entries after evaluation",
+    "correcting deposited target shifts",
+    "adding entry-specific or hierarchical b_j",
+    "using external results to revise v13"
+  ]
+}
