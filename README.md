@@ -254,7 +254,7 @@ Accurate prediction enables structure validation and cross-referencing with othe
 @misc{nmr-hsqc-gnn,
   title   = {NMR-HSQC-GNN: Graph Neural Network for Protein Amide Chemical Shift Prediction},
   year    = {2025},
-  url     = {https://github.com/[your-username]/nmr-hsqc-gnn},
+  url     = {https://github.com/wangqian2149185/nmr-hsqc-predictor},
   note    = {GATv2-based model trained on 4,286 BMRB/PDB entries.
              v11: MAE ¹H=0.302 ppm, MAE ¹⁵N=1.749 ppm}
 }
