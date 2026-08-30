@@ -263,17 +263,26 @@ The benchmark should:
 5. report suspected reference outliers as sensitivity analyses without
    correcting deposited targets.
 
+## v14 development status
+
+`codex_v14` is the active research branch. It inherits the frozen v13 Step 33
+release without modifying its checkpoints, preprocessing, or reported metrics.
+
+The first v14 objective is an external blind benchmark of the frozen v13 model.
+Candidate eligibility and homology rules must be locked before model
+evaluation. External benchmark results may guide later v14 development, but
+must not be used to revise the frozen v13 model.
+
+See [`docs/V14_PLAN.md`](docs/V14_PLAN.md).
+
 ## Historical development
 
-Older notebooks and GNN experiments remain in the repository for provenance
-and learning history. Their reported metrics are historical and are not the
-current v13 benchmark.
+Older notebooks, plots, and GNN experiments remain available from the frozen
+[`codex_v13`](https://github.com/wangqian2149185/nmr-hsqc-predictor/tree/codex_v13)
+branch and the repository's Git history.
 
-See:
-
-- [`README_old.md`](README_old.md)
-- [`VERSION_SUMMARY.md`](VERSION_SUMMARY.md)
-- [`ipynb/`](ipynb/)
+Their reported metrics are historical and are not the current verified v13
+benchmark.
 
 ## Data sources
 
