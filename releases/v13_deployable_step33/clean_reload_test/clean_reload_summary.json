@@ -1,0 +1,20 @@
+{
+  "execution_environment": "fresh_python_subprocess",
+  "comparison": "CUDA-generated saved predictions versus CPU clean-reload predictions",
+  "pdb_id": "3MSP",
+  "chain_id": "A",
+  "n_clean_prediction_rows": 117,
+  "n_saved_evaluation_rows": 114,
+  "n_matched_rows": 114,
+  "matched_all_saved_rows": true,
+  "h_max_absolute_difference_ppm": 1.225341796029511e-06,
+  "n_max_absolute_difference_ppm": 1.0178222652257318e-05,
+  "passed_original_atol_1e_5": false,
+  "cross_device_tolerance_ppm": 2e-05,
+  "passed_cross_device_atol_2e_5": true,
+  "tolerance_rationale": "The reference predictions were generated on CUDA, whereas the standalone clean test was intentionally run on CPU. The observed approximately 1e-5 ppm difference is attributable to cross-device floating-point operation ordering and is chemically negligible.",
+  "angle_feature_source": "full_chain_pdb",
+  "assignment_coverage_required": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false
+}

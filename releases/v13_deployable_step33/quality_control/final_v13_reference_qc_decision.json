@@ -1,0 +1,37 @@
+{
+  "recommended_primary_model": "step14_original_ensemble",
+  "decision_basis": "validation entry-level paired bootstrap",
+  "corrected_preprocessing_parity": true,
+  "point_estimate_deltas_step24b_minus_step14": {
+    "h_residue_mae_delta_ppm": 0.0013539357803621366,
+    "n_residue_mae_delta_ppm": -0.007896829842010789,
+    "h_entry_macro_mae_delta_ppm": 0.0015502152418435111,
+    "n_entry_macro_mae_delta_ppm": -0.0075063381925062345
+  },
+  "qc_exclusion_supported": false,
+  "bmrb_4129": {
+    "split": "train",
+    "qc_label": "suspected_15N_reference_outlier",
+    "shift_list_provenance": "single_list_exact",
+    "reference_method": "external direct liquid ammonia",
+    "primary_training_policy": "retain in primary training; mark suspected_15N_reference_outlier; report exclusion experiment as sensitivity only",
+    "chemical_shift_correction": null
+  },
+  "bmrb_4242": {
+    "split": "test",
+    "qc_label": "suspected_15N_reference_outlier",
+    "shift_list_provenance": "single_list_exact",
+    "primary_test_policy": "retain in primary test metrics",
+    "secondary_reporting": "also report QC sensitivity excluding 4242",
+    "eligible_for_model_selection": false,
+    "chemical_shift_correction": null
+  },
+  "invalidated_experiment": {
+    "step22_qc_sensitive_training": "invalid for exclusion decision because base-feature preprocessing differed from Step 14"
+  },
+  "valid_sensitivity_experiment": "step24b_corrected_qc_sensitive_training",
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "targets_modified": false,
+  "primary_split_modified": false
+}

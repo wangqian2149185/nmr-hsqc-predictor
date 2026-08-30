@@ -1,0 +1,3 @@
+nucleus,delta_definition,negative_delta_means,observed_entry_macro_delta_ppm,bootstrap_mean_ppm,bootstrap_ci_2p5_ppm,bootstrap_ci_97p5_ppm,probability_step33_improves,probability_step33_worsens,n_entries_improved,n_entries_worsened,n_entries_tied,n_validation_entries,n_bootstrap,bootstrap_seed,evidence_class
+1H,step33_minus_step14,step33 improvement,-0.004907794123559309,-0.004901814530849567,-0.008938454716596607,-0.00013151263848762418,0.97736,0.02264,6,2,0,8,50000,20250835,stable_improvement
+15N,step33_minus_step14,step33 improvement,0.0076402854044280155,0.007541471720301265,-0.018357003782774606,0.037156421414299035,0.311,0.689,5,3,0,8,50000,20250836,inconclusive

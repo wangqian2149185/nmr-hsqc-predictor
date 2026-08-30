@@ -1,0 +1,4 @@
+component,shape,finite_fraction,all_finite
+base_features,"(117, 68)",1.0,True
+h_structure_features,"(117, 6)",1.0,True
+n_structure_features,"(117, 3)",1.0,True

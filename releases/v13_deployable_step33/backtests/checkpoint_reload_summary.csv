@@ -1,0 +1,6 @@
+checkpoint,seed,best_epoch,prediction_shape,finite_predictions,missing_keys,unexpected_keys
+deployment_safe_seed_20250830.pt,20250830,13,"(117, 2)",True,0,0
+deployment_safe_seed_20250831.pt,20250831,10,"(117, 2)",True,0,0
+deployment_safe_seed_20250832.pt,20250832,14,"(117, 2)",True,0,0
+deployment_safe_seed_20250833.pt,20250833,8,"(117, 2)",True,0,0
+deployment_safe_seed_20250834.pt,20250834,16,"(117, 2)",True,0,0

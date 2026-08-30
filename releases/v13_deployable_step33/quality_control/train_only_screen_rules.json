@@ -1,0 +1,24 @@
+{
+  "h_entry_offset_rule": {
+    "center": -0.00025000000000030553,
+    "raw_mad": 0.12224999999999842,
+    "robust_scale": 0.18124784999999763,
+    "z_threshold": 3.5,
+    "lower_threshold": -0.634617474999992,
+    "upper_threshold": 0.6341174749999914
+  },
+  "n_entry_offset_rule": {
+    "center": 0.04000000000000625,
+    "raw_mad": 0.626499999999993,
+    "robust_scale": 0.9288488999999895,
+    "z_threshold": 3.5,
+    "lower_threshold": -3.210971149999957,
+    "upper_threshold": 3.2909711499999696
+  },
+  "threshold_source": "train_entries_only",
+  "model_predictions_used_for_flagging": false,
+  "test_data_used_to_define_threshold": false,
+  "entries_removed": false,
+  "targets_modified": false,
+  "reference_correction_applied": false
+}

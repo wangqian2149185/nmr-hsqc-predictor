@@ -1,0 +1,14 @@
+{
+  "recommended_next_status": "step33_deployment_candidate; proceed_to_end_to_end_pdb_backtest",
+  "research_benchmark": "step14_assignment_dependent_angle_benchmark",
+  "deployment_candidate": "step33_deployment_safe_full_chain_angles",
+  "selection_data": "validation_only",
+  "test_used_for_selection": false,
+  "n_validation_entries": 8,
+  "h_observed_entry_macro_delta_ppm": -0.004907794123559309,
+  "n_observed_entry_macro_delta_ppm": 0.0076402854044280155,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "targets_modified": false,
+  "splits_modified": false
+}

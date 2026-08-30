@@ -1,0 +1,6 @@
+seed,best_epoch,best_val_standardized_mse,release_checkpoint
+20250830,13,0.8020953462051285,models/nucleus_specific_step33_seed_20250830.pt
+20250831,10,0.8096686682600607,models/nucleus_specific_step33_seed_20250831.pt
+20250832,14,0.8326054691430835,models/nucleus_specific_step33_seed_20250832.pt
+20250833,8,0.8050925681406776,models/nucleus_specific_step33_seed_20250833.pt
+20250834,16,0.7957488200703605,models/nucleus_specific_step33_seed_20250834.pt

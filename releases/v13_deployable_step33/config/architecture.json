@@ -1,0 +1,113 @@
+{
+  "model_name": "NucleusSpecificHNModel",
+  "release_model": "step33_deployment_safe_full_chain_angles",
+  "framework": "PyTorch",
+  "inputs": {
+    "base_features": 68,
+    "h_structure_features": 6,
+    "n_structure_features": 3
+  },
+  "base_trunk": [
+    {
+      "type": "Linear",
+      "in_features": 68,
+      "out_features": 96
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "type": "LayerNorm",
+      "normalized_shape": 96
+    },
+    {
+      "type": "Dropout",
+      "p": 0.15
+    },
+    {
+      "type": "Linear",
+      "in_features": 96,
+      "out_features": 64
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "h_structure_branch": [
+    {
+      "type": "Linear",
+      "in_features": 6,
+      "out_features": 16
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "n_structure_branch": [
+    {
+      "type": "Linear",
+      "in_features": 3,
+      "out_features": 8
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "h_head": [
+    {
+      "type": "Linear",
+      "in_features": 80,
+      "out_features": 32
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "type": "Dropout",
+      "p": 0.1
+    },
+    {
+      "type": "Linear",
+      "in_features": 32,
+      "out_features": 1
+    }
+  ],
+  "n_head": [
+    {
+      "type": "Linear",
+      "in_features": 72,
+      "out_features": 32
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "type": "Dropout",
+      "p": 0.1
+    },
+    {
+      "type": "Linear",
+      "in_features": 32,
+      "out_features": 1
+    }
+  ],
+  "output": {
+    "shape": 2,
+    "order": [
+      "1H",
+      "15N"
+    ],
+    "training_scale": "train-only standardized targets",
+    "reported_unit": "ppm"
+  },
+  "ensemble": {
+    "method": "arithmetic mean of five independently seeded models",
+    "seeds": [
+      20250830,
+      20250831,
+      20250832,
+      20250833,
+      20250834
+    ]
+  }
+}

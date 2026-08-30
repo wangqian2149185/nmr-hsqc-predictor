@@ -1,0 +1,16 @@
+{
+  "pdb_id": "3MSP",
+  "chain_id": "A",
+  "n_generated_eligible_rows": 117,
+  "n_saved_step33_rows": 114,
+  "n_matched_prediction_rows": 114,
+  "all_inference_matrices_finite": true,
+  "h_max_prediction_difference_ppm": 0.0,
+  "h_mean_prediction_difference_ppm": 0.0,
+  "n_max_prediction_difference_ppm": 7.629394545460855e-06,
+  "n_mean_prediction_difference_ppm": 1.338490312270168e-07,
+  "predictions_match_atol_1e_5": true,
+  "angle_feature_source": "full_chain_pdb",
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false
+}

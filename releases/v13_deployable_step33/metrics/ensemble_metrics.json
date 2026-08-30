@@ -1,0 +1,40 @@
+{
+  "model": "step33_deployment_safe_full_chain_angles",
+  "primary_selection_split": "val",
+  "test_used_for_model_selection": false,
+  "angle_feature_source": "full_chain_pdb",
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "metrics": {
+    "train": {
+      "n_rows": 3916,
+      "n_entries": 39,
+      "h_mae_ppm": 0.43540210403874896,
+      "h_rmse_ppm": 0.578522920413313,
+      "n_mae_ppm": 2.6315375272538497,
+      "n_rmse_ppm": 3.467861379440546,
+      "h_entry_macro_mae_ppm": 0.4192157846721015,
+      "n_entry_macro_mae_ppm": 2.517408643179744
+    },
+    "val": {
+      "n_rows": 854,
+      "n_entries": 8,
+      "h_mae_ppm": 0.5041356399857746,
+      "h_rmse_ppm": 0.6711567440241966,
+      "n_mae_ppm": 3.2660149756974315,
+      "n_rmse_ppm": 4.2609656651851955,
+      "h_entry_macro_mae_ppm": 0.49980354787213777,
+      "n_entry_macro_mae_ppm": 3.1978754443030866
+    },
+    "test": {
+      "n_rows": 854,
+      "n_entries": 9,
+      "h_mae_ppm": 0.4437651643820055,
+      "h_rmse_ppm": 0.5731077797753549,
+      "n_mae_ppm": 3.0904046373568317,
+      "n_rmse_ppm": 4.175930233765549,
+      "h_entry_macro_mae_ppm": 0.4415577638624084,
+      "n_entry_macro_mae_ppm": 2.9642924480384107
+    }
+  }
+}

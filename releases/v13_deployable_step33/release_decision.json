@@ -1,0 +1,54 @@
+{
+  "release_name": "v13_deployable_step33",
+  "primary_model": "step33_deployment_safe_full_chain_angles",
+  "primary_use": "PDB-based backbone amide 1H-15N prediction",
+  "research_benchmark": {
+    "model": "step14_nucleus_specific_five_seed_ensemble",
+    "status": "research benchmark only",
+    "reason": "Step 14 torsion-angle masks depended on BMRB assignment coverage and are not reproducible for an arbitrary new PDB."
+  },
+  "model_selection": {
+    "used_validation_only": true,
+    "test_used_for_selection": false,
+    "validation_entry_count": 8,
+    "h_entry_macro_delta_step33_minus_step14_ppm": -0.004907794123559309,
+    "h_bootstrap_ci_95_ppm": [
+      -0.008938,
+      -0.000132
+    ],
+    "h_evidence": "stable_improvement",
+    "n_entry_macro_delta_step33_minus_step14_ppm": 0.0076402854044280155,
+    "n_bootstrap_ci_95_ppm": [
+      -0.018357,
+      0.037156
+    ],
+    "n_evidence": "inconclusive_no_reliable_regression"
+  },
+  "deployment_backtest": {
+    "pdb_id": "3MSP",
+    "matched_rows": 114,
+    "h_max_prediction_difference_ppm": 0.0,
+    "n_max_prediction_difference_ppm": 7.629394545460855e-06,
+    "passed_atol_1e_5": true
+  },
+  "split_method": "40_percent_identity_connected_components",
+  "angle_feature_source": "full_chain_pdb",
+  "target_scaling": {
+    "shift_h_raw": {
+      "mean": 8.282245658835548,
+      "std": 0.6877079352511554
+    },
+    "shift_n_raw": {
+      "mean": 119.78572369765065,
+      "std": 5.403898752997307
+    }
+  },
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "targets_modified": false,
+  "primary_splits_modified": false,
+  "known_reference_qc": {
+    "BMRB_4129": "Retained in primary training and marked as a suspected 15N reference outlier; exclusion sensitivity was inconclusive.",
+    "BMRB_4242": "Retained in primary test metrics and marked as a suspected 15N reference outlier; also report test sensitivity excluding it."
+  }
+}
