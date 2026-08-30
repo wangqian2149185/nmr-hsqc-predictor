@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "official_duplicate_pairs": 0,
+    "official_expanded_rows_before_pair_deduplication": 9152,
+    "official_source_records": 8770,
+    "official_unique_bmrb_ids": 8770,
+    "official_unique_mapping_pairs": 9152,
+    "official_unique_pdb_ids": 9003,
+    "pairs_excluded_by_existing_v13_entry": 63,
+    "pairs_with_existing_bmrb_id": 62,
+    "pairs_with_existing_pdb_id": 57,
+    "remaining_unseen_bmrb_ids": 8713,
+    "remaining_unseen_pairs": 9089,
+    "remaining_unseen_pdb_ids": 8941
+  },
+  "hierarchical_b_j_used": false,
+  "mapping_pairs_sha256": "e9d95a15fdcc34aad3d01b65ca44d28c48e228bc99a56f1fe0cd7917a8b90e45",
+  "model_evaluation_started": false,
+  "model_loaded": false,
+  "parser": {
+    "duplicate_pair_count": 0,
+    "expanded_source_row_count_before_pair_deduplication": 9152,
+    "generic_recursive_parser_output_accepted": false,
+    "method": "direct_exact_schema_expansion",
+    "minimum_bmrb_id": 3322,
+    "schema": "list[{bmrb_id: str, pdb_ids: list[str]}]",
+    "source_pair_set_equals_output_pair_set": true,
+    "source_record_count": 8770,
+    "status": "repaired_after_schema_diagnostic"
+  },
+  "predictions_generated": false,
+  "protocol_commit": "babdefb4f668b504032f716349ff187781712c52",
+  "protocol_sha256": "629317d38aa4e100636daa0a04cdf8b2342ee346a9ff8e45679b24278cf17931",
+  "raw_response_sha256": "956e526560d99097943e636d5725639996b9495c337969541770fa46cf07c6fc",
+  "reference_correction_applied": false,
+  "retrieved_at_utc": "2026-08-30T20:10:47.823078+00:00",
+  "screening_completed": {
+    "candidate_clustering": false,
+    "chemical_shift_screen": false,
+    "existing_identifier_exclusion": true,
+    "sequence_identity_screen": false,
+    "structure_screen": false
+  },
+  "source": {
+    "content_type": "application/json",
+    "http_status": 200,
+    "organization": "BMRB",
+    "url": "https://api.bmrb.io/v2/mappings/bmrb/pdb"
+  },
+  "step": "48A",
+  "unseen_pairs_sha256": "f2b22a5cac1a32255465fa18521bc9abd2edf8283e5521f6b14059763f981c7a"
+}
