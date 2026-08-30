@@ -1,282 +1,294 @@
-<div align="center">
+# NMR HSQC Chemical-Shift Predictor
 
-# NMR-HSQC-GNN
-### AI-Driven Prediction of Protein Backbone Chemical Shifts from 3D Structure
+Prediction of protein backbone-amide ¹H and ¹⁵N chemical shifts from protein
+structure.
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch)](https://pytorch.org)
-[![PyG](https://img.shields.io/badge/PyTorch--Geometric-2.x-orange)](https://pyg.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Colab](https://img.shields.io/badge/Runs%20on-Google%20Colab%20T4-F9AB00?logo=googlecolab)](https://colab.research.google.com)
+The current verified release is **v13 Step 33**, a five-seed,
+nucleus-specific neural-network ensemble with a standalone PDB inference
+pipeline.
 
-**Structural Biology × Deep Learning × Drug Discovery**
+> Earlier v5–v11 GNN results are retained as historical development records.
+> They should not be compared directly with v13 because the datasets, targets,
+> features, and evaluation protocols differ. Review of the earlier workflow
+> identified risks from data splitting and repeated test-set use.
 
-> **v13 development status:** The published v9–v11 scores are retained as historical
-> development results. Review identified entry-level split leakage risk, repeated
-> test-set use, chain-collapsing alignment, and unmodelled BMRB referencing offsets.
-> The `codex_v13` branch adds the corrected data/training foundation. It does not
-> claim new accuracy until a sequence-clustered rebuild and retraining are complete.
-> See [`docs/V13_DESIGN.md`](docs/V13_DESIGN.md).
+## Current release
 
-[Results](#results) · [Architecture](#model-architecture) · [Pipeline](#data-pipeline) · [Quick Start](#quick-start) · [Roadmap](#roadmap)
+- **Branch:** `codex_v13`
+- **Primary deployment model:** Step 33
+- **Release directory:** [`releases/v13_deployable_step33/`](releases/v13_deployable_step33/)
+- **Release notes:** [`docs/V13_STEP33_RELEASE.md`](docs/V13_STEP33_RELEASE.md)
+- **Model card:** [`MODEL_CARD.md`](releases/v13_deployable_step33/MODEL_CARD.md)
+- **Design foundation:** [`docs/V13_DESIGN.md`](docs/V13_DESIGN.md)
 
-</div>
+Step 33 replaced the original Step 14 deployment candidate because Step 14
+constructed some torsion-angle masks using BMRB assignment coverage. That
+information is unavailable for an arbitrary new PDB and made the Step 14
+feature pipeline unsuitable for deployment.
 
----
-
-## The Problem This Solves
-
-In structure-based drug discovery, predicting **how a protein will appear in an NMR spectrum** directly from its 3D coordinates is a bottleneck in:
-
-- ✅ **Validating computationally designed proteins** (AlphaFold outputs, RFdiffusion designs)
-- ✅ **Guiding NMR resonance assignment** without time-consuming experiments
-- ✅ **Cross-validating MD simulation trajectories** against experimental observables
-- ✅ **Screening protein–ligand binding** by predicting chemical shift perturbations
-
-This project implements an end-to-end AI pipeline that predicts **backbone ¹H and ¹⁵N secondary chemical shifts** from protein structure using a GATv2-based graph neural network — achieving performance comparable to SPARTA+, the current industry standard, while being fully trainable and extensible.
-
----
-
-## Results (v11 · Test Set · 620 proteins)
-
-| Model | ¹H MAE | ¹⁵N MAE | r ¹H | r ¹⁵N |
-|-------|--------|---------|------|-------|
-| **GNN (this work)** | **0.302 ppm** | **1.749 ppm** | **0.736** | **0.773** |
-| MLP baseline | 0.416 ppm | 2.333 ppm | 0.476 | 0.602 |
-| SPARTA+ (literature) | ~0.25 ppm | ~1.80 ppm | ~0.90 | ~0.88 |
-
-> Graph structure accounts for **~25% improvement** over sequence-only baseline, confirming that 3D structural context — H-bond geometry, ring currents, inter-residue distances — is effectively captured by message passing.
-
-<p align="center">
-  <img src="output_v2/scatter_gnn_v2.png" width="700" alt="GNN test set scatter: predicted vs experimental secondary chemical shifts"/>
-</p>
-
-<p align="center">
-  <img src="output_v2/hsqc_overlay_v11.png" width="500" alt="HSQC overlay: experimental (circles) vs predicted (squares) peaks for BMRB 7382"/>
-</p>
-
----
-
-## Why This Project Demonstrates Applied AI in Drug Discovery
-
-This project was built end-to-end — from raw BMRB/PDB data through model deployment — addressing real scientific and engineering challenges:
-
-| Challenge | Solution | Impact |
-|-----------|----------|--------|
-| BMRB referencing noise in labels | Pairwise Patterson-style loss (v2.0) | Training signal made referencing-invariant |
-| Paramagnetic metal contamination | Physics-based HETATM filter | Removed ~2% corrupted training entries |
-| BMRB–PDB residue number mismatch | ±10 offset alignment search | Skip rate reduced from 44% → 28% |
-| ¹⁵N loss dominated by outliers | Per-head log-cosh loss + SCS filter | ¹⁵N MAE improved from 3.07→1.75 ppm |
-| Graph edge sparsity | Sequence + spatial + H-bond edge types | r improved from 0.43→0.74 across versions |
-
----
-
-## Model Architecture
-
-```
-Input: protein 3D structure (PDB)
-  └─ Node features [N, 85]:
-       Geometry (43): backbone dihedrals φ/ψ/ω + χ angles + Cβ direction
-                      + neighbour aa-type embeddings (i±1)
-       Physics  (26): ring current · SASA · H-bond geometry · n→π* interaction
-                      · electrostatics · AM1 charges · ensemble RMSD
-       Metal    ( 6): Zn/Ca/Mg/Na/K coordination flags + distance [v11 new]
-       Ligand   ( 4): ring current + electrostatics + proximity + contact [v11 new]
-       Dynamics ( 9): S² · Rex · τe · B-factors · disorder propensity
-  └─ Edge features [E, 37]:
-       Sinusoidal sequence encoding (8) + RBF distance (16)
-       + local frame direction (3) + relative orientation (6) + bond type (4)
+Step 33 was retrained with torsion angles and masks derived only from the full
+PDB chain. It reproduces its saved predictions directly from PDB coordinates.
 
-GATv2Conv × 4 layers  (hidden=256, 4 heads, dropout=0.2)
-  + learnable aa-type embedding (Embedding(21,8) → Linear(24,256))
-  + per-residue-type output bias (Embedding(20,2))
+## Dataset and evaluation protocol
 
-Output: [N, 2] — secondary chemical shifts Δδ¹H and Δδ¹⁵N (ppm)
-        normalised during training; denormalised to ppm at evaluation
+The current v13 benchmark contains:
 
-Parameters: ~862,000
-```
+| Split | BMRB/PDB entries | Residue rows |
+|---|---:|---:|
+| Train | 39 | 3,916 |
+| Validation | 8 | 854 |
+| Test | 9 | 854 |
+| **Total** | **56** | **5,624** |
 
-**Key design decisions grounded in structural biology:**
-- **Ring current model:** Haigh-Mallion `Δδ = Σ B(1−3cos²θ)/r³` — the dominant contributor to ¹H shifts in folded proteins
-- **GATv2 attention heads:** Learn differential weighting of H-bond partners vs. distant spatial contacts
-- **Sinusoidal sequence encoding:** Explicitly encodes i→i+4 helical periodicity without learned positional embeddings
-- **i±1 neighbour type embedding:** Encodes the known ±5 ppm ¹⁵N dependence on preceding residue type (Wang & Jardetzky 2004)
-
----
-
-## Data Pipeline
-
-```
-BMRB REST API ──► 8,712 entries with linked PDB IDs
-                        │
-                        ▼
-         ┌──────────────────────────────┐
-         │  Data Quality Filters        │
-         │  • Paramagnetic metal filter │  ← Fe/Co/Ni/Cu/Mn removed
-         │  • ±10 residue offset align  │  ← BMRB↔PDB numbering fix
-         │  • SCS outlier filter        │  ← |ΔδH|>3 or |ΔδN|>15 ppm
-         └──────────────────────────────┘
-                        │
-                        ▼
-         Physics feature extraction (CPU)
-         ├─ FreeSASA   → solvent accessibility
-         ├─ pdbfixer   → hydrogen completion
-         ├─ BioPython  → backbone dihedrals, local frames
-         └─ Custom     → ring current, H-bond geometry,
-                         n→π* interactions, metal coordination
-
-                        │
-                        ▼
-         graphs.pkl  (Drive cache, auto-invalidated on config change)
-                        │
-                        ▼
-         70 / 20 / 10 protein-level split
-         (4,286 train · 1,224 val · 612 test)
-                        │
-                        ▼
-         GATv2 training on T4 GPU (~3 hours)
-```
-
-**Reproducibility:** The `CACHE_VERSION` string encodes all feature flags. Changing any feature dimension or data filter automatically invalidates and rebuilds the graph cache.
-
----
-
-## Version History & Learning Trajectory
-
-| Version | ¹H MAE | ¹⁵N MAE | r ¹H | r ¹⁵N | Key contribution |
-|---------|--------|---------|------|-------|-----------------|
-| v5 | 0.470 | 3.065 | 0.43 | 0.31 | Proof of concept · 56 proteins |
-| v6 | 0.318 | 1.801 | 0.72 | 0.77 | Physics features + 4,337 proteins ★ |
-| v7 | 0.361 | 1.988 | 0.63 | 0.73 | DropEdge identified as harmful |
-| v8 | 0.207 | 6.587 | 0.71 | 0.77 | Learned aa embeddings (¹⁵N broken by A2) |
-| v9 | 0.311 | 1.775 | 0.73 | 0.78 | Stable best · aa embeddings + sinusoidal edges |
-| v10 | 0.303 | 1.740 | 0.735 | 0.776 | Metal coordination features · para filter |
-| **v11** | **0.302** | **1.749** | **0.736** | **0.773** | **Ligand features · full v10 validated** |
-| v2.0 | — | — | — | — | Referencing-invariant loss (Patterson · Fourier · LoG) |
+Splits were built from connected components at **40% sequence identity**.
+No connected homology component crosses train, validation, or test.
 
-> Each version addressed a specific scientific or engineering hypothesis. Failures (v7 DropEdge, v8 A2 centering) were as informative as successes.
+Train-only preprocessing is used for:
 
----
+- target means and standard deviations;
+- structural-feature medians;
+- structural-feature means and standard deviations.
 
-## Referencing-Invariant Loss Functions (v2.0 — In Progress)
+The validation set was used for model selection. The test set was used only
+for final reporting.
 
-A key insight: **BMRB referencing errors are global spectral translations**. The pairwise distance between any two peaks is preserved regardless of which reference standard was used. Version 2.0 exploits this with three complementary loss terms:
+## v13 Step 33 results
 
-```
-Total loss = λ₀ · L_log-cosh          # primary per-residue loss
-           + λ_A · L_Fourier           # Plan A: |FFT(HSQC)|² comparison
-           + λ_B · L_Patterson         # Plan B: pairwise Δδ differences
-           + λ_C · L_LoG              # Plan C: multi-scale 2D conv image loss
-```
+### Final ensemble metrics
 
-This is the NMR analogue of the **crystallographic Patterson function** (Patterson 1934) — which solved the phase problem in X-ray diffraction by working entirely with observable intensities rather than unmeasurable phases.
+| Split | ¹H MAE | ¹H RMSE | ¹⁵N MAE | ¹⁵N RMSE | ¹H entry-macro MAE | ¹⁵N entry-macro MAE |
+|---|---:|---:|---:|---:|---:|---:|
+| Validation | 0.5041 | 0.6712 | 3.2660 | 4.2610 | 0.4998 | 3.1979 |
+| Test, reporting only | 0.4438 | 0.5731 | 3.0904 | 4.1759 | 0.4416 | 2.9643 |
 
----
+All values are in ppm.
 
-## Quick Start
+### Step 33 versus Step 14 on validation entries
 
-### Predict chemical shifts for a new protein
+The paired bootstrap resampled complete BMRB entries rather than individual
+residues.
 
-```python
-# Load trained model and predict on any PDB file
-df = predict_pdb("my_protein.pdb", gnn_model, is_gnn=True)
+| Nucleus | Entry-macro MAE delta, Step 33 − Step 14 | 95% bootstrap CI | Interpretation |
+|---|---:|---:|---|
+| ¹H | −0.00491 ppm | [−0.00894, −0.00013] | Stable improvement |
+| ¹⁵N | +0.00764 ppm | [−0.01836, +0.03716] | Inconclusive |
 
-# Output DataFrame:
-#   chain · seq_id · res_name
-#   pred_1H_scs · pred_15N_scs    ← secondary shifts (ppm)
-#   pred_1H_abs · pred_15N_abs    ← absolute shifts (ppm)
-```
+Negative delta means Step 33 has lower error.
 
-### Run on Google Colab (recommended)
+The validation set contains only eight independent entries, so these intervals
+should not be interpreted as a definitive population-level benchmark.
 
-1. Open `nmr_hsqc_colab_v11.ipynb` in Google Colab
-2. **Runtime → Change runtime type → T4 GPU**
-3. Edit the `USER CONFIG` cell: set `DRIVE_ROOT` to your Google Drive path
-4. Run all cells — data downloads, graph building, and training are fully automated
+## Model architecture
 
-> **CPU pre-processing:** Graph building (~3 hours) runs on CPU. The notebook pauses with a clear prompt to switch to T4 GPU before training begins.
+The Step 33 ensemble contains five independently seeded models.
 
-### Key configuration flags
+Each model uses:
 
-```python
-# Feature toggles (auto-invalidate cache when changed)
-FEATURE_LEVEL        = "HIGH_MED"   # HIGH | HIGH_MED | ALL
-FILTER_PARAMAGNETIC  = True         # remove Fe/Co/Ni/Cu/Mn entries
-USE_METAL_FEATURES   = True         # +6 node dims: Zn/Ca/Mg/Na/K
-USE_LIGAND_FEATURES  = True         # +4 node dims: ring/elec/dist/contact
+- a shared 68-feature sequence and backbone-torsion trunk;
+- a six-feature ¹H structural branch;
+- a three-feature ¹⁵N local-contact branch;
+- separate ¹H and ¹⁵N output heads.
 
-# v2.0 referencing-invariant losses
-USE_PLAN_A_FOURIER   = True   # Fourier power spectrum
-USE_PLAN_B_PATTERSON = True   # Patterson pairwise differences
-USE_PLAN_C_CONV      = True   # LoG convolutional image
-```
+Shared trunk:
 
----
+    Linear(68, 96)
+    ReLU
+    LayerNorm(96)
+    Dropout(0.15)
+    Linear(96, 64)
+    ReLU
 
-## Installation
+¹H structural branch:
 
-```bash
-# Python 3.10+
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
-pip install torch-geometric torch-scatter torch-sparse \
-    -f https://data.pyg.org/whl/torch-2.0.0+cu118.html
-pip install biopython pynmrstar freesasa pdbfixer openmm \
-    scipy scikit-learn pandas matplotlib seaborn tqdm requests
-```
+    Linear(6, 16)
+    ReLU
 
----
+¹⁵N structural branch:
 
-## Data Sources
+    Linear(3, 8)
+    ReLU
 
-| Resource | URL | Content |
-|----------|-----|---------|
-| BMRB | https://bmrb.io | Chemical shift assignments (8,712 entries) |
-| RCSB PDB | https://rcsb.org | 3D protein structures |
-| BMRB→PDB mapping | `https://api.bmrb.io/v2/mappings/bmrb/pdb` | Entry cross-references |
+Each nucleus-specific head maps its concatenated representation through a
+32-unit hidden layer to one standardized chemical-shift prediction.
 
----
+The final prediction is the arithmetic mean of five seeds:
 
-## Roadmap
+    20250830
+    20250831
+    20250832
+    20250833
+    20250834
 
-- [ ] **LACS re-referencing** — correct systematic BMRB referencing offsets during preprocessing
-- [ ] **POTENCI random-coil corrections** — sequence-context-dependent RC values (pH/T-aware)
-- [ ] **v2.0 training run** — validate referencing-invariant loss on full dataset
-- [ ] **ESM2 embeddings** — add protein language model features as additional node context
-- [ ] **MD-averaged structures** — replace static PDB with ensemble-averaged coordinates
+## Input features
 
----
+### Shared sequence and backbone features
 
-## Scientific Background
+- one-hot identity of residue \(i\);
+- one-hot identity of residues \(i-1\) and \(i+1\);
+- fractional position within the PDB chain;
+- transformed chain length;
+- sine, cosine, and availability mask for φ;
+- sine, cosine, and availability mask for ψ.
 
-NMR chemical shifts are sensitive reporters of local protein structure and dynamics. The backbone amide **¹H shift** is dominated by hydrogen-bond geometry and aromatic ring currents; the **¹⁵N shift** encodes φ/ψ dihedral angles and is strongly modulated by the identity of the preceding residue (±5 ppm effect).
+Torsion features are derived from the complete PDB chain and do not depend on
+chemical-shift assignment coverage.
 
-Accurate prediction enables structure validation and cross-referencing with other structural data sources — critical in the drug discovery workflow where computational models (AlphaFold, RFdiffusion, Rosetta) must be benchmarked against experimental NMR data.
+### ¹H structure features
 
----
+- Cα contact counts within 6 Å, 8 Å, and 10 Å;
+- nearest eligible backbone-oxygen distance;
+- eligible backbone-oxygen count within 3.5 Å;
+- hydrogen-bond proxy availability mask.
+
+### ¹⁵N structure features
+
+- Cα contact counts within 6 Å, 8 Å, and 10 Å.
+
+The geometric environment includes all protein chains in the first structural
+model. The target residue is excluded from Cα contact counts. For the
+backbone-oxygen proxy, same-chain residues \(i-1\), \(i\), and \(i+1\) are
+excluded.
+
+## Standalone prediction
+
+Install the release dependencies:
+
+    pip install -r releases/v13_deployable_step33/requirements.txt
+
+Predict from a PDB or mmCIF structure:
+
+    python releases/v13_deployable_step33/example_predict.py       my_structure.pdb       --chain A       --output hsqc_predictions.csv
+
+The output includes:
+
+- PDB chain and residue identifiers;
+- predicted ¹H shift in ppm;
+- predicted ¹⁵N shift in ppm;
+- across-seed ensemble standard deviations;
+- explicit flags confirming that no reference correction or \(b_j\) was used.
+
+The ensemble standard deviation measures disagreement across five training
+seeds. It is not a calibrated predictive interval.
+
+## Deployment verification
+
+For PDB `3MSP`, chain `A`:
+
+- 117 structurally eligible residues were predicted;
+- all 114 residues with stored Step 33 evaluation predictions matched;
+- the standalone module ran in a fresh Python subprocess;
+- the CPU-versus-CUDA maximum difference was approximately
+  \(1.23×10^{-6}\) ppm for ¹H and \(1.02×10^{-5}\) ppm for ¹⁵N;
+- the documented cross-device acceptance tolerance is \(2×10^{-5}\) ppm.
+
+The additional three predictions correspond to structurally eligible residues
+without deposited evaluation assignments. Their presence demonstrates that
+the inference pipeline does not require BMRB assignment coverage.
+
+## Chemical-shift referencing policy
+
+v13 does **not** apply chemical-shift re-referencing.
+
+Specifically:
+
+- deposited target shifts were not corrected;
+- no learned entry-specific offset was used;
+- no hierarchical \(b_j\) term was used;
+- reference-QC flags are retained as metadata and sensitivity analyses.
+
+Two entries were flagged by the train-derived ¹⁵N reference screen:
+
+- **BMRB 4129 / PDB 1Q80**, training split;
+- **BMRB 4242 / PDB 3MSP**, test split.
+
+BMRB 4129 was retained in primary training because a corrected exclusion
+experiment did not provide convincing validation evidence for removing it.
+
+BMRB 4242 was retained in the primary test report. A secondary sensitivity
+analysis excluding it reduced test ¹⁵N residue MAE from approximately 3.09 ppm
+to 2.54 ppm. This sensitivity result was not used for model selection.
+
+See
+[`quality_control/`](releases/v13_deployable_step33/quality_control/)
+for the frozen policy and entry-level screen outputs.
+
+## Reproducibility
+
+The release contains:
+
+- five PyTorch checkpoints;
+- exact ordered feature manifests;
+- train-only preprocessing parameters;
+- target scaling;
+- training histories;
+- ensemble predictions;
+- validation paired-bootstrap results;
+- shift-list provenance;
+- reference-QC decisions;
+- PDB backtests;
+- a SHA-256 manifest.
+
+The curated release manifest must match the release directory exactly:
+
+[`release_manifest.json`](releases/v13_deployable_step33/release_manifest.json)
+
+Existing v13 core tests can be run with:
+
+    PYTHONPATH=src python -m pytest -q
+
+## Important limitations
+
+- The dataset contains only 56 independent entries.
+- Validation contains eight entries and test contains nine.
+- The current metrics are not yet an external blind benchmark.
+- The model does not explicitly use pH, temperature, ligand state, dynamics,
+  or multiple structural conformers.
+- Unusual chemistry, modified residues, missing backbone atoms, paramagnetic
+  systems, and structures outside the training distribution may be unreliable.
+- The current ensemble spread is not calibrated uncertainty.
+- Comparison with SPARTA+, SHIFTX2, UCBShift, or other predictors requires the
+  same proteins, targets, referencing policy, and evaluation protocol.
+
+## Recommended next experiment
+
+The next priority is an external blind benchmark rather than further tuning on
+the current validation or test entries.
+
+The benchmark should:
+
+1. select new BMRB/PDB entries before evaluating the model;
+2. exclude entries homologous to the existing 56-entry dataset;
+3. use the frozen release without retraining;
+4. report residue-level and entry-macro metrics;
+5. report suspected reference outliers as sensitivity analyses without
+   correcting deposited targets.
+
+## Historical development
+
+Older notebooks and GNN experiments remain in the repository for provenance
+and learning history. Their reported metrics are historical and are not the
+current v13 benchmark.
+
+See:
+
+- [`README_old.md`](README_old.md)
+- [`VERSION_SUMMARY.md`](VERSION_SUMMARY.md)
+- [`ipynb/`](ipynb/)
+
+## Data sources
+
+- [Biological Magnetic Resonance Data Bank](https://bmrb.io/)
+- [RCSB Protein Data Bank](https://www.rcsb.org/)
+
+Users are responsible for complying with the source databases' terms,
+attribution requirements, and data-quality limitations.
 
 ## Citation
 
-```bibtex
-@misc{nmr-hsqc-gnn,
-  title   = {NMR-HSQC-GNN: Graph Neural Network for Protein Amide Chemical Shift Prediction},
-  year    = {2025},
-  url     = {https://github.com/[your-username]/nmr-hsqc-gnn},
-  note    = {GATv2-based model trained on 4,286 BMRB/PDB entries.
-             v11: MAE ¹H=0.302 ppm, MAE ¹⁵N=1.749 ppm}
-}
-```
+This project is under active research development. Until a versioned archival
+release is published, cite the repository and the exact Git commit used.
 
-**Key references:**
-- GATv2: Brody et al. (2022) *ICLR*
-- Ring current model: Haigh & Mallion (1979) *Progress in NMR Spectroscopy*
-- Random coil SCS: Kjaergaard & Poulsen (2011) *J. Biomol. NMR*
-- SPARTA+: Shen & Bax (2010) *J. Biomol. NMR*
-- ¹⁵N preceding residue effect: Wang & Jardetzky (2004) *J. Biomol. NMR*
-- Patterson function: Patterson (1934) *Physical Review*
+For the current v13 Step 33 release:
 
----
-
-<div align="center">
-<sub>Built with structural biology domain expertise · PyTorch · PyTorch Geometric · Google Colab</sub>
-</div>
+    Branch: codex_v13
+    Release commit: 6e9984d2b39c06fdbf6ce36837e4eabc2484f5f9
