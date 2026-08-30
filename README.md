@@ -11,6 +11,13 @@
 
 **Structural Biology × Deep Learning × Drug Discovery**
 
+> **v13 development status:** The published v9–v11 scores are retained as historical
+> development results. Review identified entry-level split leakage risk, repeated
+> test-set use, chain-collapsing alignment, and unmodelled BMRB referencing offsets.
+> The `codex_v13` branch adds the corrected data/training foundation. It does not
+> claim new accuracy until a sequence-clustered rebuild and retraining are complete.
+> See [`docs/V13_DESIGN.md`](docs/V13_DESIGN.md).
+
 [Results](#results) · [Architecture](#model-architecture) · [Pipeline](#data-pipeline) · [Quick Start](#quick-start) · [Roadmap](#roadmap)
 
 </div>
