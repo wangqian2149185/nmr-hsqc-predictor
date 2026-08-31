@@ -1,0 +1,69 @@
+{
+  "batch_policy": {
+    "batch_unique_bmrb_limit": 250,
+    "first_bmrb_id": "4020",
+    "last_bmrb_id": "4841",
+    "minimum_valid_hn_pairs": 40,
+    "ordering": "unique BMRB IDs sorted by integer value"
+  },
+  "counts": {
+    "batch_unique_bmrb_entries": 250,
+    "failed_requests": 3,
+    "parsed_entries": 250,
+    "saved_shift_eligible_pairs": 11202,
+    "shift_eligible_entries": 111,
+    "successful_or_cached_requests": 247
+  },
+  "created_or_updated_at_utc": "2026-08-31T00:45:07.309140+00:00",
+  "files": {
+    "api_request_audit": {
+      "path": "benchmarks/v13_external_blind/shift_screen/api_request_audit.csv",
+      "sha256": "60303e9785ab125d658c6bab8b333da7d9d62c7b510cba62b40f8f588848f5bb"
+    },
+    "entry_shift_screen_results": {
+      "path": "benchmarks/v13_external_blind/shift_screen/entry_shift_screen_results.csv",
+      "sha256": "e93cbfffa36c54f66a32e6ed7069f954159a7b35d3da25defcc5def18b745681"
+    },
+    "shift_eligible_paired_targets": {
+      "path": "benchmarks/v13_external_blind/shift_screen/shift_eligible_paired_targets.csv",
+      "sha256": "35a2e2aed4cd3373e02a1613a46585f3843abb1278de60f95285b05e147b5669"
+    },
+    "shift_list_pair_counts": {
+      "path": "benchmarks/v13_external_blind/shift_screen/shift_list_pair_counts.csv",
+      "sha256": "a1db68f5ef2061f151ea4ebdb047f1889f079c5dd0db8ae4fc5b55230bfafbce"
+    }
+  },
+  "hierarchical_b_j_used": false,
+  "input_mapping_commit": "1506928bdaca1327586fb111cd49d02a4e497b90",
+  "input_unseen_mapping_sha256": "f2b22a5cac1a32255465fa18521bc9abd2edf8283e5521f6b14059763f981c7a",
+  "model_evaluation_started": false,
+  "model_loaded": false,
+  "pair_definition": {
+    "conflicting_duplicate_values": "exclude residue/nucleus key",
+    "exclude_comp_id": [
+      "PRO"
+    ],
+    "h_atom_id": "H",
+    "h_atom_type": "H",
+    "n_atom_id": "N",
+    "n_atom_type": "N",
+    "pair_key_columns": [
+      "Assigned_chem_shift_list_ID",
+      "Entity_assembly_ID",
+      "Entity_ID",
+      "Comp_index_ID",
+      "Seq_ID",
+      "Comp_ID"
+    ],
+    "shift_list_selection": "maximum valid HN pair count; deterministic lowest-ID tie break"
+  },
+  "predictions_generated": false,
+  "reference_correction_applied": false,
+  "screening_completed": {
+    "candidate_clustering": false,
+    "first_250_shift_screen": true,
+    "sequence_identity_screen": false,
+    "structure_screen": false
+  },
+  "step": "48B-1"
+}

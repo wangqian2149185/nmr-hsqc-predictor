@@ -1,3 +1,4 @@
 .DS_Store
 __pycache__/
 *.py[cod]
+benchmarks/v13_external_blind/shift_screen/raw_atom_chem_shift_json/

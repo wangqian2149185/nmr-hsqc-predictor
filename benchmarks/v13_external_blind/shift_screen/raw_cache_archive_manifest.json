@@ -1,0 +1,21 @@
+{
+  "api_request_audit_sha256": "60303e9785ab125d658c6bab8b333da7d9d62c7b510cba62b40f8f588848f5bb",
+  "archive_format": "tar.gz",
+  "archive_path": "/content/drive/MyDrive/nmr_hsqc_predictor_v14/external_blind_cache/step48b1_raw_atom_chem_shift_json.tar.gz",
+  "archive_sha256": "b83daa2c8b779bf332e77c2fb85ad3a2a7ca59ca5fe90d494a33c1baf0e76156",
+  "archive_size_bytes": 1797998,
+  "created_at_utc": "2026-08-31T00:47:40.566560+00:00",
+  "derived_result_checksums": {
+    "entry_shift_screen_results.csv": "e93cbfffa36c54f66a32e6ed7069f954159a7b35d3da25defcc5def18b745681",
+    "shift_eligible_paired_targets.csv": "35a2e2aed4cd3373e02a1613a46585f3843abb1278de60f95285b05e147b5669",
+    "shift_list_pair_counts.csv": "a1db68f5ef2061f151ea4ebdb047f1889f079c5dd0db8ae4fc5b55230bfafbce"
+  },
+  "model_loaded": false,
+  "predictions_generated": false,
+  "raw_cache_file_count": 247,
+  "raw_cache_in_git": false,
+  "raw_cache_inventory_path": "benchmarks/v13_external_blind/shift_screen/raw_cache_inventory.csv",
+  "raw_cache_inventory_sha256": "3f6238879428114ae68fb95a52ee942eb426d92c29980e4b0de08388b97deb3b",
+  "raw_cache_total_uncompressed_bytes": 70377230,
+  "step": "48B-1F"
+}
