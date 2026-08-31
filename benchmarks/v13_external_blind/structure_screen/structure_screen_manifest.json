@@ -1,0 +1,47 @@
+{
+  "cache_root": "/content/drive/MyDrive/nmr_hsqc_predictor_v14/external_blind_cache/step48c1",
+  "counts": {
+    "accepted_bmrb_pdb_pairs": 118,
+    "bmrb_entries_with_accepted_mapping": 107,
+    "candidate_bmrb_pdb_pairs": 123,
+    "rejected_bmrb_pdb_pairs": 5,
+    "request_failures": 0,
+    "shift_eligible_bmrb_entries": 111,
+    "unique_pdb_ids": 121
+  },
+  "created_at_utc": "2026-08-31T01:11:32.800940+00:00",
+  "files": {
+    "all_entity_chain_alignments": {
+      "path": "benchmarks/v13_external_blind/structure_screen/all_entity_chain_alignments.csv",
+      "sha256": "373ebbb647ead3e60aba3bbeb88dce808411ad02840db6796fc2a75677cf6c59"
+    },
+    "bmrb_pdb_pair_screen_results": {
+      "path": "benchmarks/v13_external_blind/structure_screen/bmrb_pdb_pair_screen_results.csv",
+      "sha256": "70f21b3ceceb709e8ab3e6ec55da031be154ab7f541c8ac2f93cbb311dc90fae"
+    },
+    "raw_cache_inventory": {
+      "path": "benchmarks/v13_external_blind/structure_screen/raw_cache_inventory.csv",
+      "sha256": "bb88ecde058eebdc7570ec337dd02c5f77318f9544e27c612a22f50c99ac2cce"
+    },
+    "selected_structure_mapping_per_bmrb": {
+      "path": "benchmarks/v13_external_blind/structure_screen/selected_structure_mapping_per_bmrb.csv",
+      "sha256": "7218dec1dd31ccaa284a120155dfd08028c3072f55ddff788bb8182458315180"
+    }
+  },
+  "hierarchical_b_j_used": false,
+  "input_commit": "2947e1281de4fd8e0b591b59c6a88bc24d1158d1",
+  "model_evaluation_started": false,
+  "model_loaded": false,
+  "policy": {
+    "alignment_mode": "global",
+    "mapping_selection": "best accepted chain per pair, then best accepted PDB-chain per BMRB; deterministic sequence-only ranking",
+    "minimum_bmrb_entity_coverage": 0.7,
+    "minimum_identity_over_aligned": 0.9,
+    "minimum_pdb_chain_coverage": 0.7,
+    "residue_scope": "standard_protein_coordinate_residues",
+    "structure_model": "first_model"
+  },
+  "predictions_generated": false,
+  "reference_correction_applied": false,
+  "step": "48C-1"
+}
