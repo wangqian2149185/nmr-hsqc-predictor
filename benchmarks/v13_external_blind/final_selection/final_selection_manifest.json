@@ -1,0 +1,53 @@
+{
+  "step": "48E-2",
+  "created_at_utc": "2026-08-31T02:26:15.074065+00:00",
+  "parent_git_commit": "a60220a68ece300765c94791ffeec2190806c213",
+  "selection_policy_path": "benchmarks/v13_external_blind/homology_screen/benchmark_selection_and_backfill_policy.json",
+  "selection_policy_sha256": "123619d2ab220b239b265343db55f07e56e4c2d508b6aa7180c2beaaf09b5d1f",
+  "ranking_rule": [
+    "largest number of valid paired HN targets",
+    "highest entity-chain alignment identity",
+    "highest minimum of BMRB and PDB coverage",
+    "lowest numeric BMRB ID",
+    "lexicographically smallest PDB ID",
+    "lexicographically smallest chain ID"
+  ],
+  "initial_component_representative_count": 90,
+  "mapping_eligible_representative_count": 90,
+  "final_entry_count": 40,
+  "reserve_entry_count": 50,
+  "backfill_count": 0,
+  "final_mapped_target_count": 5389,
+  "minimum_targets_per_selected_entry": 82,
+  "maximum_targets_per_selected_entry": 238,
+  "maximum_selected_to_v13_identity": 0.3461538461538461,
+  "maximum_selected_candidate_pair_identity": 0.3184357541899441,
+  "identity_threshold": 0.4,
+  "one_entry_per_homology_component": true,
+  "raw_target_h_max_difference": 0.0,
+  "raw_target_n_max_difference": 0.0,
+  "model_loaded": false,
+  "predictions_generated": false,
+  "model_results_used": false,
+  "chemical_shifts_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "artifacts": {
+    "benchmarks/v13_external_blind/final_selection/representative_selection_ranking.csv": {
+      "sha256": "d7432d07ea22f54595f5e7f4a57a4d6b4cd08ea86c3c7013250b2de668925fcb",
+      "size_bytes": 26317
+    },
+    "benchmarks/v13_external_blind/final_selection/final_blind_benchmark_entries.csv": {
+      "sha256": "bcd769aece093a20b2b12382ed857fb0f681f80036b7c7f3e1edfcc2b197994e",
+      "size_bytes": 13535
+    },
+    "benchmarks/v13_external_blind/final_selection/final_blind_benchmark_targets.csv": {
+      "sha256": "1bf18c619c702bb6acebb59b8409fb4c35d325579f90cefa62d18b2f8a5bd67b",
+      "size_bytes": 456238
+    },
+    "benchmarks/v13_external_blind/final_selection/reserve_component_representatives.csv": {
+      "sha256": "d8eb49b175ae129917ba4eda29e88dee6fe4d1adef316ad29f17890a9b636008",
+      "size_bytes": 13312
+    }
+  }
+}
