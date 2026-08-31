@@ -1,0 +1,45 @@
+{
+  "all_entries_meet_minimum_coverage": true,
+  "angle_feature_source": "full_chain_pdb",
+  "artifacts": {
+    "all_structure_predictions.csv": {
+      "relative_path": "benchmarks/v13_external_blind/predictions/all_structure_predictions.csv",
+      "sha256": "2b53d46101265ab9fcb85075fa5948ee39df5bd986fd02dbfcca899862323e70",
+      "size_bytes": 1405739
+    },
+    "blind_target_predictions.csv": {
+      "relative_path": "benchmarks/v13_external_blind/predictions/blind_target_predictions.csv",
+      "sha256": "7f38cdf74195d52ca561b8c15a5f27bb70500edf9a52731e91ec5de9c620bcfe",
+      "size_bytes": 862880
+    },
+    "prediction_coverage_by_entry.csv": {
+      "relative_path": "benchmarks/v13_external_blind/predictions/prediction_coverage_by_entry.csv",
+      "sha256": "c3453b3304e9da803d668ce4075e9aef4a8de542216f0289707d2474e3452eb2",
+      "size_bytes": 1717
+    }
+  },
+  "blind_entry_count": 40,
+  "blind_target_count": 5389,
+  "chemical_shifts_modified": false,
+  "ensemble_checkpoint_count": 5,
+  "execution_device": "cuda",
+  "hierarchical_b_j_used": false,
+  "metrics_calculated": false,
+  "minimum_entry_target_count": 82,
+  "model_release": "v13_deployable_step33",
+  "parent_commit": "c8ec8c452ef6d123829e6c9afd5da1f6f86dc933",
+  "predicted_target_count": 5389,
+  "primary_model": "step33_deployment_safe_full_chain_angles",
+  "purpose": "Freeze v13 Step 33 ensemble predictions for the locked external blind cohort before evaluation.",
+  "reference_correction_applied": false,
+  "repository_branch": "codex_v14",
+  "residuals_calculated": false,
+  "selection_rank_repair": {
+    "predictions_recomputed": false,
+    "reason": "selection_rank was entry-level metadata and was not included in the original target prediction merge",
+    "required": true
+  },
+  "step": "STEP 49-1R",
+  "structure_prediction_count": 5620,
+  "target_prediction_coverage_fraction": 1.0
+}
