@@ -1,0 +1,44 @@
+{
+  "step": "48D-2",
+  "created_at_utc": "2026-08-31T01:49:12.746488+00:00",
+  "parent_git_commit": "8c5a657e03bf83b4b6ec94f44e7652aad9b078d6",
+  "method_file": "benchmarks/v13_external_blind/homology_screen/homology_method_clarification.json",
+  "method_sha256": "597423c323dd9ee4cc2d98847e793898eba530f4364ff1cf3c60d136b715fd0a",
+  "identity_threshold": 0.4,
+  "comparison_operator": ">=",
+  "identity_algorithm": "deterministic global Needleman-Wunsch",
+  "match_score": 1,
+  "mismatch_score": -1,
+  "gap_score": -1,
+  "identity_formula": "exact matches / global alignment columns including gaps",
+  "candidate_count": 107,
+  "v13_reference_chain_count": 56,
+  "v13_unique_sequence_count": 52,
+  "pairwise_comparison_count": 5992,
+  "excluded_candidate_count": 7,
+  "surviving_candidate_count": 100,
+  "candidate_candidate_clustering_performed": false,
+  "artifacts": {
+    "benchmarks/v13_external_blind/homology_screen/external_candidate_chain_sequences.csv": {
+      "sha256": "7a9b901562e6b75ae2405a041efac3603ac2b754222ab87a41db3550a4610f80",
+      "size_bytes": 33856
+    },
+    "benchmarks/v13_external_blind/homology_screen/candidate_to_v13_pairwise_identity.csv": {
+      "sha256": "b54243d776586c9a8e992d04b8d5b85f56087e80e800f39c792c3de1e9651092",
+      "size_bytes": 505545
+    },
+    "benchmarks/v13_external_blind/homology_screen/candidate_to_v13_homology_screen.csv": {
+      "sha256": "98391ef3e0612875f7ff9f271e59d04dfc985d0fdf19c030c5edea54c78b1c44",
+      "size_bytes": 12214
+    },
+    "benchmarks/v13_external_blind/homology_screen/post_v13_homology_candidates.csv": {
+      "sha256": "596c8158a247946064c30ddd6702a9b05272a3bd5b55ec84335a95a50960ab3c",
+      "size_bytes": 35951
+    }
+  },
+  "model_loaded": false,
+  "predictions_generated": false,
+  "chemical_shifts_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false
+}
