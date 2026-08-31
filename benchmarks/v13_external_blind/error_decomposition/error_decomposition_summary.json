@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "absolute_error_quantiles.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/absolute_error_quantiles.csv",
+      "sha256": "7ca951244eefc8b54963c6a239e51f71dc3f6033ed45d4eaac8cc57463b83a8b",
+      "size_bytes": 822
+    },
+    "entry_size_error_correlations.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/entry_size_error_correlations.csv",
+      "sha256": "00c2b8b4f2dd87fdd1af360cdd5c5461da43a0e735e70edef4af88004105c9f5",
+      "size_bytes": 103
+    },
+    "external_entry_error_ranking.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/external_entry_error_ranking.csv",
+      "sha256": "3797262af7d4ae16b6e67ca580bffab2d9a04d0e33a848a122b855867ac8fac5",
+      "size_bytes": 8530
+    },
+    "rankable_residue_type_deltas.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/rankable_residue_type_deltas.csv",
+      "sha256": "3416c4eca3a049ca77f06b425ba69e67e2217bc6131735d229d7c27a2e338711",
+      "size_bytes": 2575
+    },
+    "residue_type_error_comparison.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/residue_type_error_comparison.csv",
+      "sha256": "511d8919568ce060976df1aba8235a96cac48a14c5e4c43be61e63cf14fb36e9",
+      "size_bytes": 2846
+    },
+    "squared_error_tail_concentration.csv": {
+      "relative_path": "benchmarks/v13_external_blind/error_decomposition/squared_error_tail_concentration.csv",
+      "sha256": "45878387124cf97c3a5598c9c1e0e8138e50bcda8049939037af809cb3cc145d",
+      "size_bytes": 380
+    }
+  },
+  "branch": "codex_v14",
+  "development_decision": {
+    "external_entries_allowed_for_feature_selection": false,
+    "external_entries_allowed_for_hyperparameter_selection": false,
+    "external_entries_allowed_in_training": false,
+    "external_entries_allowed_in_validation": false,
+    "hierarchical_b_j_planned": false,
+    "increase_model_capacity_first": false,
+    "next_primary_action": "expand homology-separated development data",
+    "reference_correction_planned": false
+  },
+  "external_policy": "all 40 frozen blind entries",
+  "findings": {
+    "entry_size_explains_error": false,
+    "entry_wide_reference_offset_evidence": false,
+    "h_error_pattern": "median nearly unchanged; degradation concentrated in upper error tail",
+    "h_priority_residues": [
+      "SER",
+      "GLY",
+      "HIS",
+      "LEU",
+      "GLN"
+    ],
+    "n_error_pattern": "broader distribution shift across median and upper quantiles",
+    "n_priority_residues": [
+      "ASP",
+      "ILE",
+      "HIS",
+      "GLU",
+      "LYS",
+      "SER",
+      "GLY"
+    ]
+  },
+  "internal_policy": "internal test excluding pre-existing QC entry BMRB 4242",
+  "model_run": false,
+  "model_trained": false,
+  "parent_commit": "8e31c103414b129c113bcc9bc00e17ba74b3e049",
+  "source_analysis": "STEP 50A",
+  "step": "STEP 50B",
+  "targets_modified": false
+}

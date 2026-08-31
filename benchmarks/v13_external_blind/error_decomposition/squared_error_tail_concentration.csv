@@ -1,0 +1,5 @@
+cohort,nucleus,top_1_percent_fraction_of_total_squared_error,top_5_percent_fraction_of_total_squared_error
+internal_test_excluding_4242,1H,0.12807633821735503,0.3352059650152477
+internal_test_excluding_4242,15N,0.12420562668005543,0.3822384773484797
+external_blind_all_40,1H,0.15190852479184996,0.3735814879780487
+external_blind_all_40,15N,0.12189122470528634,0.35117745346239165
