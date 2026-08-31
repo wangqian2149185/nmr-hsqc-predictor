@@ -1,0 +1,44 @@
+{
+  "step": "48E-1",
+  "created_at_utc": "2026-08-31T02:21:44.162073+00:00",
+  "parent_git_commit": "912702585a1b9906b04f2b9edd05e35060efbe58",
+  "selection_policy_path": "benchmarks/v13_external_blind/homology_screen/benchmark_selection_and_backfill_policy.json",
+  "selection_policy_sha256": "123619d2ab220b239b265343db55f07e56e4c2d508b6aa7180c2beaaf09b5d1f",
+  "alignment": {
+    "mode": "global",
+    "match_score": 1.0,
+    "mismatch_score": 0.0,
+    "internal_gap_open_score": -1.0,
+    "internal_gap_extend_score": -0.1,
+    "terminal_gap_score": 0.0,
+    "optimal_alignment_consensus_required": true,
+    "maximum_alignments_enumerated": 10000
+  },
+  "join_key": [
+    "bmrb_id",
+    "entity_id",
+    "Entity_comp_index.ID == target comp_index_id"
+  ],
+  "representative_count": 90,
+  "target_count_before_mapping": 9134,
+  "mapped_target_count": 8887,
+  "mapping_eligible_entry_count": 90,
+  "mapping_ineligible_entry_count": 0,
+  "minimum_mapped_targets_per_entry": 40,
+  "final_selection_performed": false,
+  "model_loaded": false,
+  "predictions_generated": false,
+  "chemical_shifts_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "artifacts": {
+    "benchmarks/v13_external_blind/residue_mapping/representative_target_to_coordinate_mapping.csv": {
+      "sha256": "b7c38e0e0d51a5f7083248b36fec89d6bf36b1f2d01c0337ee5c6710bcf1af57",
+      "size_bytes": 771001
+    },
+    "benchmarks/v13_external_blind/residue_mapping/representative_residue_mapping_audit.csv": {
+      "sha256": "a39cf9438d788312a42b94305ca317d12267e4ef807149314aeb3fce47f630c4",
+      "size_bytes": 23704
+    }
+  }
+}
