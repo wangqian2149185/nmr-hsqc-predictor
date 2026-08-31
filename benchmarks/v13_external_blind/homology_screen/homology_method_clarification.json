@@ -1,0 +1,85 @@
+{
+  "document_type": "pre_comparison_protocol_method_clarification",
+  "benchmark": "v13_external_blind",
+  "created_at_utc": "2026-08-31T01:27:07.621864+00:00",
+  "parent_git_commit": "60c081781ac8ae3c42d4fecdf65c94a98b3fae2b",
+  "frozen_protocol_path": "benchmarks/v13_external_blind/protocol.json",
+  "frozen_protocol_sha256": "629317d38aa4e100636daa0a04cdf8b2342ee346a9ff8e45679b24278cf17931",
+  "protocol_lock_path": "benchmarks/v13_external_blind/protocol_lock.json",
+  "protocol_lock_sha256": "289478bb9370507a9b6907e7f37d742f8ea48cf1b3731ea65fdab4d3b39c1b18",
+  "reason_for_clarification": "The frozen protocol specified the 0.40 identity threshold and connected-component policy but did not specify the alignment algorithm, scoring rule, identity denominator, or deterministic tie-breaking rule.",
+  "changes_to_original_policy": {
+    "identity_threshold_changed": false,
+    "exclusion_direction_changed": false,
+    "candidate_to_v13_requirement_changed": false,
+    "candidate_clustering_requirement_changed": false,
+    "new_algorithmic_definition_only": true
+  },
+  "sequence_source": {
+    "frozen_v13_reference": "existing_v13_chain_sequences.csv:sequence",
+    "external_candidate": "standard amino-acid coordinate sequence of the accepted PDB chain selected in STEP 48C",
+    "alphabet": "uppercase standard one-letter amino-acid codes",
+    "nonstandard_or_unresolved_residues": "not included in the coordinate sequence"
+  },
+  "alignment": {
+    "algorithm": "Needleman-Wunsch global alignment",
+    "implementation": "repository-local deterministic dynamic programming implementation",
+    "match_score": 1,
+    "mismatch_score": -1,
+    "gap_score": -1,
+    "affine_gaps": false,
+    "end_gap_treatment": "same penalty as internal gaps",
+    "tie_breaking_priority": [
+      "diagonal",
+      "gap_in_reference",
+      "gap_in_candidate"
+    ]
+  },
+  "identity_definition": {
+    "numerator": "number of alignment columns containing the same non-gap residue in both sequences",
+    "denominator": "total number of columns in the global alignment, including gap-containing columns",
+    "formula": "exact_matches / global_alignment_columns",
+    "range": [
+      0.0,
+      1.0
+    ]
+  },
+  "candidate_to_v13_exclusion": {
+    "compare_to_all_56_frozen_v13_chains": true,
+    "identity_threshold": 0.4,
+    "comparison_operator": ">=",
+    "action": "exclude_external_candidate",
+    "aggregation": "maximum identity across all frozen v13 chains"
+  },
+  "candidate_candidate_clustering": {
+    "enabled": true,
+    "identity_threshold": 0.4,
+    "edge_operator": ">=",
+    "graph_rule": "undirected edge between candidate entries at or above threshold",
+    "component_rule": "connected components, including transitive connections",
+    "representatives_per_component": 1,
+    "representative_selection_uses_model_results": false,
+    "representative_selection_rule": [
+      "largest number of valid paired HN targets",
+      "highest entity-chain alignment identity",
+      "highest minimum of BMRB and PDB coverage",
+      "lowest numeric BMRB ID",
+      "lexicographically smallest PDB ID",
+      "lexicographically smallest chain ID"
+    ]
+  },
+  "timing_and_blinding": {
+    "candidate_identifiers_already_discovered": true,
+    "entity_chain_structure_screen_completed": true,
+    "candidate_to_v13_identity_calculated_before_this_file": false,
+    "candidate_candidate_identity_calculated_before_this_file": false,
+    "candidate_membership_selected_from_homology_results": false,
+    "v13_model_loaded": false,
+    "predictions_generated": false,
+    "model_results_used": false
+  },
+  "reference_policy": {
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false
+  }
+}
