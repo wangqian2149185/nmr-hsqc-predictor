@@ -1,0 +1,66 @@
+{
+  "artifacts": {
+    "blind_predictions_with_errors.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/blind_predictions_with_errors.csv",
+      "sha256": "c00ae4e4ad796f3036d020df9ef18c0c3177168c727d37767e63461aa8a906c9",
+      "size_bytes": 1478413
+    },
+    "ensemble_uncertainty_diagnostics.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/ensemble_uncertainty_diagnostics.csv",
+      "sha256": "3c847fe625672f41985fbfcf8f40019717a8b5b62f20dfdc7f297fca15766479",
+      "size_bytes": 430
+    },
+    "entry_bootstrap_confidence_intervals.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/entry_bootstrap_confidence_intervals.csv",
+      "sha256": "ec1396f36fd139ae5010ac2488bbb954c4da20c815b0014edd5f3a247bf4c237",
+      "size_bytes": 751
+    },
+    "entry_level_metrics.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/entry_level_metrics.csv",
+      "sha256": "f1da42a07af4a84f4b0233025f0177b7b1f99d3bf12269eab8895b34d66492df",
+      "size_bytes": 7963
+    },
+    "overall_metrics.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/overall_metrics.csv",
+      "sha256": "28f1adf4ddb1cac90c1b2e90cc14950e02ea04f57032f4195b22cddadf415c57",
+      "size_bytes": 626
+    },
+    "reference_sensitivity_metrics.csv": {
+      "relative_path": "benchmarks/v13_external_blind/evaluation/reference_sensitivity_metrics.csv",
+      "sha256": "ca4aa1d92c7ab221643796f4bcb5f74e9484c82bde9d0ba482fafda8450fb43d",
+      "size_bytes": 614
+    }
+  },
+  "bootstrap": {
+    "confidence_interval": "percentile_95_percent",
+    "n_replicates": 50000,
+    "resampling_unit": "BMRB_entry",
+    "seed": 20250837
+  },
+  "branch": "codex_v14",
+  "entry_wide_residual_screen": {
+    "flagged_bmrb_ids": [],
+    "flagged_entry_count": 0,
+    "h_lower_ppm": -0.634617474999992,
+    "h_upper_ppm": 0.6341174749999914,
+    "n_lower_ppm": -3.210971149999957,
+    "n_upper_ppm": 3.2909711499999696,
+    "not_proof_of_misreferencing": true,
+    "primary_metrics_exclude_flags": false,
+    "purpose": "referencing-sensitive diagnostic only"
+  },
+  "hierarchical_b_j_used": false,
+  "model_run": false,
+  "model_trained": false,
+  "n_entries": 40,
+  "n_rows": 5389,
+  "parent_prediction_commit": "0908fdaec12552e7d8b3900f5cf90971d6693b30",
+  "prediction_manifest_sha256": "d962feda44d99a556ee6da6c393c28762a4c915aab9499762d980c0cff12d38f",
+  "prediction_table_sha256": "7f38cdf74195d52ca561b8c15a5f27bb70500edf9a52731e91ec5de9c620bcfe",
+  "primary_analysis": "all 40 entries and all 5389 paired targets",
+  "purpose": "formal_external_blind_evaluation",
+  "reference_correction_applied": false,
+  "signed_residual_definition": "observed_shift_minus_predicted_shift",
+  "step": "STEP 49-2B",
+  "targets_modified": false
+}

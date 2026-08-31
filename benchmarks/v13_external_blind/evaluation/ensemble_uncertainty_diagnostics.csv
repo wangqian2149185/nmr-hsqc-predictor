@@ -1,0 +1,3 @@
+analysis,nucleus,n_rows,mean_ensemble_sd_ppm,median_ensemble_sd_ppm,p95_ensemble_sd_ppm,spearman_ensemble_sd_vs_absolute_error,interpretation
+primary_all_40_entries,1H,5389,0.09355727355594731,0.088207506,0.16691045399999999,0.0522628457820599,diagnostic_only_not_calibrated_uncertainty
+primary_all_40_entries,15N,5389,0.686680888328818,0.64162177,1.2375734399999987,0.08212299411370311,diagnostic_only_not_calibrated_uncertainty

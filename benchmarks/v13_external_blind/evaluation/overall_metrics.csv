@@ -1,0 +1,9 @@
+analysis,scope,nucleus,metric,value_ppm,n_rows,n_entries
+primary_all_40_entries,residue_micro,1H,MAE,0.47176069693820744,5389,40
+primary_all_40_entries,residue_micro,1H,RMSE,0.6299992841074196,5389,40
+primary_all_40_entries,entry_macro,1H,MAE,0.46980606006761894,5389,40
+primary_all_40_entries,entry_macro,1H,RMSE,0.6197240009625198,5389,40
+primary_all_40_entries,residue_micro,15N,MAE,2.8473003403228803,5389,40
+primary_all_40_entries,residue_micro,15N,RMSE,3.7658535790352934,5389,40
+primary_all_40_entries,entry_macro,15N,MAE,2.842169122260106,5389,40
+primary_all_40_entries,entry_macro,15N,RMSE,3.6909532978480604,5389,40
