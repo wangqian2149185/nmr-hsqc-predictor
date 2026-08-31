@@ -1,0 +1,5 @@
+nucleus,metric,internal_all_9_value_ppm,internal_excluding_4242_value_ppm,change_after_excluding_4242_ppm,interpretation
+1H,MAE,0.4415577638624084,0.44377354333127095,0.002215779468862533,sensitivity_only_primary_unchanged
+1H,RMSE,0.568069794521558,0.5677899296973445,-0.0002798648242134938,sensitivity_only_primary_unchanged
+15N,MAE,2.964292448038411,2.529546294151876,-0.43474615388653515,sensitivity_only_primary_unchanged
+15N,RMSE,3.820642889570754,3.3900693863760125,-0.4305735031947413,sensitivity_only_primary_unchanged
