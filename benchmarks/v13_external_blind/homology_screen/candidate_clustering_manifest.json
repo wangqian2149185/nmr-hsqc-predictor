@@ -1,0 +1,52 @@
+{
+  "step": "48D-3",
+  "created_at_utc": "2026-08-31T01:57:21.146420+00:00",
+  "parent_git_commit": "d2cf89c701b30d4d58618a56b85b46a53ed2a23d",
+  "frozen_method_path": "benchmarks/v13_external_blind/homology_screen/homology_method_clarification.json",
+  "frozen_method_sha256": "597423c323dd9ee4cc2d98847e793898eba530f4364ff1cf3c60d136b715fd0a",
+  "input_survivor_path": "benchmarks/v13_external_blind/homology_screen/post_v13_homology_candidates.csv",
+  "input_survivor_sha256": "596c8158a247946064c30ddd6702a9b05272a3bd5b55ec84335a95a50960ab3c",
+  "input_shift_target_path": "benchmarks/v13_external_blind/shift_screen/shift_eligible_paired_targets.csv",
+  "input_shift_target_sha256": "35a2e2aed4cd3373e02a1613a46585f3843abb1278de60f95285b05e147b5669",
+  "identity_threshold": 0.4,
+  "comparison_operator": ">=",
+  "identity_algorithm": "deterministic global Needleman-Wunsch",
+  "pair_orientation": "ascending numeric BMRB ID; each unordered pair compared exactly once",
+  "candidate_count": 100,
+  "expected_pairwise_comparisons": 4950,
+  "observed_pairwise_comparisons": 4950,
+  "edge_count": 10,
+  "connected_component_count": 90,
+  "non_singleton_component_count": 9,
+  "largest_component_size": 3,
+  "representative_count": 90,
+  "representative_selection_rule": [
+    "largest number of valid paired HN targets",
+    "highest entity-chain alignment identity",
+    "highest minimum of BMRB and PDB coverage",
+    "lowest numeric BMRB ID",
+    "lexicographically smallest PDB ID",
+    "lexicographically smallest chain ID"
+  ],
+  "protocol_maximum_applied": false,
+  "model_loaded": false,
+  "predictions_generated": false,
+  "model_results_used": false,
+  "chemical_shifts_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "artifacts": {
+    "benchmarks/v13_external_blind/homology_screen/candidate_to_candidate_pairwise_identity.csv": {
+      "sha256": "48b6f5acf2ad8e391c760c1b8511a4969372a9023afc8415be04379ff62b33a9",
+      "size_bytes": 390196
+    },
+    "benchmarks/v13_external_blind/homology_screen/candidate_homology_components.csv": {
+      "sha256": "c2b60b9f1c73977dbc0a128cdfe2761677cd0bb667ca247d8c88da1956d708f7",
+      "size_bytes": 7385
+    },
+    "benchmarks/v13_external_blind/homology_screen/candidate_component_representatives.csv": {
+      "sha256": "4a8e2090e7f78cdaaab50f2dc028aa87641e17fa9444cf0fdb4d9753c24b1568",
+      "size_bytes": 16286
+    }
+  }
+}
