@@ -1,0 +1,88 @@
+{
+  "document_type": "pre_mapping_benchmark_selection_policy",
+  "benchmark": "v13_external_blind",
+  "created_at_utc": "2026-08-31T02:02:57.214383+00:00",
+  "parent_git_commit": "bd59a3175612ecae128e5da0a0cea112e3eb09b2",
+  "reason_for_clarification": "The frozen protocol imposed a maximum of 40 entries, while STEP 48D-3 produced 90 independent homology components. The protocol did not specify component ranking or deterministic replacement after residue-mapping failure.",
+  "known_before_policy_freeze": {
+    "candidate_count_before_candidate_clustering": 100,
+    "connected_component_count": 90,
+    "non_singleton_component_count": 9,
+    "largest_component_size": 3,
+    "model_predictions_available": false,
+    "model_results_inspected": false,
+    "residue_mapping_results_available": false,
+    "entry_level_prediction_errors_available": false
+  },
+  "input_provenance": {
+    "protocol_path": "benchmarks/v13_external_blind/protocol.json",
+    "protocol_sha256": "629317d38aa4e100636daa0a04cdf8b2342ee346a9ff8e45679b24278cf17931",
+    "homology_method_path": "benchmarks/v13_external_blind/homology_screen/homology_method_clarification.json",
+    "homology_method_sha256": "597423c323dd9ee4cc2d98847e793898eba530f4364ff1cf3c60d136b715fd0a",
+    "component_representatives_path": "benchmarks/v13_external_blind/homology_screen/candidate_component_representatives.csv",
+    "component_representatives_sha256": "4a8e2090e7f78cdaaab50f2dc028aa87641e17fa9444cf0fdb4d9753c24b1568",
+    "candidate_clustering_manifest_path": "benchmarks/v13_external_blind/homology_screen/candidate_clustering_manifest.json",
+    "candidate_clustering_manifest_sha256": "d71059c3169e014d8097bb94db183878bab8ad67c2d0babe9b1a5274dd4b55f0"
+  },
+  "benchmark_size_policy": {
+    "target_entry_count": 40,
+    "maximum_entry_count": 40,
+    "preferred_minimum_entry_count": 25,
+    "absolute_minimum_entry_count": 15,
+    "one_entry_per_homology_component": true
+  },
+  "global_component_ranking": {
+    "uses_same_rule_as_frozen_component_representative_selection": true,
+    "ranking_rule": [
+      "largest number of valid paired HN targets",
+      "highest entity-chain alignment identity",
+      "highest minimum of BMRB and PDB coverage",
+      "lowest numeric BMRB ID",
+      "lexicographically smallest PDB ID",
+      "lexicographically smallest chain ID"
+    ],
+    "sort_directions": [
+      "descending",
+      "descending",
+      "descending",
+      "ascending",
+      "ascending",
+      "ascending"
+    ],
+    "model_results_used": false,
+    "chemical_shift_error_used": false
+  },
+  "residue_mapping_eligibility": {
+    "selected_bmrb_entity_must_map_to_selected_pdb_chain": true,
+    "mapping_method": "global sequence alignment using the already accepted STEP 48C entity-chain pair",
+    "target_residue_must_map_to_coordinate_residue": true,
+    "target_and_coordinate_residue_types_must_match": true,
+    "target_must_have_finite_paired_backbone_H_and_N": true,
+    "proline_targets_excluded": true,
+    "minimum_mapped_paired_hn_targets": 40,
+    "duplicate_or_ambiguous_target_mapping": "exclude target row",
+    "entry_below_minimum_after_mapping": "ineligible"
+  },
+  "selection_and_backfill": {
+    "provisional_selection": "first 40 component representatives in the frozen global ranking",
+    "evaluation_order": "all 90 representatives are mapping-audited without model inference",
+    "final_selection": "first 40 mapping-eligible representatives in frozen global ranking order",
+    "failed_entry_replacement": "continue sequentially from the next ranked representative; do not rerank",
+    "stop_after_selected_entries": 40,
+    "use_model_results_for_backfill": false,
+    "use_prediction_error_for_backfill": false
+  },
+  "reporting": {
+    "retain_all_90_mapping_audit_results": true,
+    "report_all_ineligibility_reasons": true,
+    "report_provisional_top_40": true,
+    "report_final_selected_entries": true,
+    "report_reserve_entries": true,
+    "report_final_entry_and_target_counts": true
+  },
+  "reference_policy": {
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false,
+    "chemical_shifts_modified": false
+  }
+}
