@@ -1,0 +1,113 @@
+{
+  "artifacts": {
+    "independent_entry_bootstrap_comparison.csv": {
+      "relative_path": "benchmarks/v13_external_blind/generalization_comparison/independent_entry_bootstrap_comparison.csv",
+      "sha256": "841614c222cf332b57942ddeb94057e358c792abefad6f2e19dd51baf55a565b",
+      "size_bytes": 1162
+    },
+    "internal_external_point_comparison.csv": {
+      "relative_path": "benchmarks/v13_external_blind/generalization_comparison/internal_external_point_comparison.csv",
+      "sha256": "63264a11cb5d0c47a80e40d8894d788407ce32f3f75b423225a763fd0705b6a4",
+      "size_bytes": 601
+    },
+    "internal_test_entry_metrics.csv": {
+      "relative_path": "benchmarks/v13_external_blind/generalization_comparison/internal_test_entry_metrics.csv",
+      "sha256": "ff22dae0dc6ce5ded8b0649dfefe599cd651967c779d0e8aa6729fa217d411eb",
+      "size_bytes": 887
+    }
+  },
+  "bootstrap_replicates": 50000,
+  "bootstrap_seed": 20250838,
+  "branch": "codex_v14",
+  "comparison_scope": "entry_macro",
+  "delta_definition": "external_blind_minus_internal_test",
+  "external_blind_entries": 40,
+  "external_entry_metrics_sha256": "f1da42a07af4a84f4b0233025f0177b7b1f99d3bf12269eab8895b34d66492df",
+  "hierarchical_b_j_used": false,
+  "internal_external_bmrb_overlap": 0,
+  "internal_prediction_sha256": "91861c943b8169916ef5fa28175ad7d58e9d3fa965f84d014ecd30d7e60644df",
+  "internal_test_entries": 9,
+  "model_run": false,
+  "model_selection_performed": false,
+  "paired_bootstrap_used": false,
+  "parent_evaluation_commit": "d83e6e37d029c4ade49195b04eac2de0efce9239",
+  "purpose": "compare frozen internal test performance with the external blind benchmark",
+  "reference_correction_applied": false,
+  "resampling_design": "independent_BMRB_entry_resampling",
+  "results": [
+    {
+      "bootstrap_ci_2p5_ppm": -0.01852166335181951,
+      "bootstrap_ci_97p5_ppm": 0.07508748943264187,
+      "bootstrap_mean_delta_ppm": 0.028428175047852146,
+      "bootstrap_seed": 20250838,
+      "delta_definition": "external_blind_minus_internal_test",
+      "evidence_class": "inconclusive",
+      "external_entries": 40,
+      "internal_entries": 9,
+      "metric": "MAE",
+      "n_bootstrap": 50000,
+      "nucleus": "1H",
+      "observed_delta_ppm": 0.028248296205210466,
+      "probability_external_better": 0.11688,
+      "probability_external_worse": 0.88312,
+      "resampling_design": "independent_BMRB_entry_resampling",
+      "scope": "entry_macro"
+    },
+    {
+      "bootstrap_ci_2p5_ppm": 0.0014382095259144363,
+      "bootstrap_ci_97p5_ppm": 0.09940994478086086,
+      "bootstrap_mean_delta_ppm": 0.05178763682042222,
+      "bootstrap_seed": 20250838,
+      "delta_definition": "external_blind_minus_internal_test",
+      "evidence_class": "stable_external_worsening",
+      "external_entries": 40,
+      "internal_entries": 9,
+      "metric": "RMSE",
+      "n_bootstrap": 50000,
+      "nucleus": "1H",
+      "observed_delta_ppm": 0.05165420644096175,
+      "probability_external_better": 0.02218,
+      "probability_external_worse": 0.97782,
+      "resampling_design": "independent_BMRB_entry_resampling",
+      "scope": "entry_macro"
+    },
+    {
+      "bootstrap_ci_2p5_ppm": -1.0932808137937706,
+      "bootstrap_ci_97p5_ppm": 0.5468206323304009,
+      "bootstrap_mean_delta_ppm": -0.12137579786392702,
+      "bootstrap_seed": 20250838,
+      "delta_definition": "external_blind_minus_internal_test",
+      "evidence_class": "inconclusive",
+      "external_entries": 40,
+      "internal_entries": 9,
+      "metric": "MAE",
+      "n_bootstrap": 50000,
+      "nucleus": "15N",
+      "observed_delta_ppm": -0.12212332577830454,
+      "probability_external_better": 0.57738,
+      "probability_external_worse": 0.42262,
+      "resampling_design": "independent_BMRB_entry_resampling",
+      "scope": "entry_macro"
+    },
+    {
+      "bootstrap_ci_2p5_ppm": -1.1150709223156512,
+      "bootstrap_ci_97p5_ppm": 0.5813442040148924,
+      "bootstrap_mean_delta_ppm": -0.12884547980234126,
+      "bootstrap_seed": 20250838,
+      "delta_definition": "external_blind_minus_internal_test",
+      "evidence_class": "inconclusive",
+      "external_entries": 40,
+      "internal_entries": 9,
+      "metric": "RMSE",
+      "n_bootstrap": 50000,
+      "nucleus": "15N",
+      "observed_delta_ppm": -0.12968959172269345,
+      "probability_external_better": 0.579,
+      "probability_external_worse": 0.421,
+      "resampling_design": "independent_BMRB_entry_resampling",
+      "scope": "entry_macro"
+    }
+  ],
+  "step": "STEP 49-3B",
+  "targets_modified": false
+}

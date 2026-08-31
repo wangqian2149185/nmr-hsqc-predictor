@@ -1,0 +1,5 @@
+nucleus,metric,scope,internal_test_value_ppm,external_blind_value_ppm,delta_external_minus_internal_ppm,negative_delta_means,internal_entries,external_entries
+1H,MAE,entry_macro,0.44155776386240847,0.46980606006761894,0.028248296205210466,external_blind_lower_error,9,40
+1H,RMSE,entry_macro,0.568069794521558,0.6197240009625198,0.05165420644096175,external_blind_lower_error,9,40
+15N,MAE,entry_macro,2.9642924480384107,2.842169122260106,-0.12212332577830454,external_blind_lower_error,9,40
+15N,RMSE,entry_macro,3.820642889570754,3.6909532978480604,-0.12968959172269345,external_blind_lower_error,9,40

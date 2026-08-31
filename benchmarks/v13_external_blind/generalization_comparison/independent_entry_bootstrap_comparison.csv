@@ -1,0 +1,5 @@
+nucleus,metric,scope,delta_definition,observed_delta_ppm,bootstrap_mean_delta_ppm,bootstrap_ci_2p5_ppm,bootstrap_ci_97p5_ppm,probability_external_better,probability_external_worse,internal_entries,external_entries,n_bootstrap,bootstrap_seed,resampling_design,evidence_class
+1H,MAE,entry_macro,external_blind_minus_internal_test,0.028248296205210466,0.028428175047852146,-0.01852166335181951,0.07508748943264187,0.11688,0.88312,9,40,50000,20250838,independent_BMRB_entry_resampling,inconclusive
+1H,RMSE,entry_macro,external_blind_minus_internal_test,0.05165420644096175,0.05178763682042222,0.0014382095259144363,0.09940994478086086,0.02218,0.97782,9,40,50000,20250838,independent_BMRB_entry_resampling,stable_external_worsening
+15N,MAE,entry_macro,external_blind_minus_internal_test,-0.12212332577830454,-0.12137579786392702,-1.0932808137937706,0.5468206323304009,0.57738,0.42262,9,40,50000,20250838,independent_BMRB_entry_resampling,inconclusive
+15N,RMSE,entry_macro,external_blind_minus_internal_test,-0.12968959172269345,-0.12884547980234126,-1.1150709223156512,0.5813442040148924,0.579,0.421,9,40,50000,20250838,independent_BMRB_entry_resampling,inconclusive
