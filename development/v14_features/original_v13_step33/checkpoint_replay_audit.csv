@@ -1,0 +1,6 @@
+checkpoint,seed,best_epoch,prediction_shape,finite
+nucleus_specific_step33_seed_20250830.pt,20250830,13,"(5624, 2)",True
+nucleus_specific_step33_seed_20250831.pt,20250831,10,"(5624, 2)",True
+nucleus_specific_step33_seed_20250832.pt,20250832,14,"(5624, 2)",True
+nucleus_specific_step33_seed_20250833.pt,20250833,8,"(5624, 2)",True
+nucleus_specific_step33_seed_20250834.pt,20250834,16,"(5624, 2)",True

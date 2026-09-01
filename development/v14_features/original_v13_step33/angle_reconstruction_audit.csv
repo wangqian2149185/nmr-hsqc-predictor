@@ -1,0 +1,7 @@
+feature,replacement_column,change_flag_column,saved_changed_rows,expected_changed_rows,flag_count_matches,median_absolute_csv_delta,p95_absolute_csv_delta,max_absolute_delta
+sin_phi,sin_phi_full_replacement,sin_phi_would_change,385,385,True,1.6031368788027578e-08,0.7367239861618202,0.999998794585046
+cos_phi,cos_phi_full_replacement,cos_phi_would_change,396,396,True,8.429558967515405e-09,0.5833087869414809,1.9999094264585038
+phi_mask,phi_mask_full_replacement,phi_mask_would_change,385,385,True,0.0,1.0,1.0
+sin_psi,sin_psi_full_replacement,sin_psi_would_change,347,347,True,1.1952127287884196e-08,0.3841772412658934,0.9999992737222247
+cos_psi,cos_psi_full_replacement,cos_psi_would_change,395,395,True,1.4793733571494272e-08,0.9727427266867901,1.9999857131552683
+psi_mask,psi_mask_full_replacement,psi_mask_would_change,347,347,True,0.0,1.0,1.0

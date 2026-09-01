@@ -1,0 +1,81 @@
+{
+  "step": "STEP_54C",
+  "purpose": "Freeze the reconstructed original-v13 deployment-safe Step 33 raw feature table.",
+  "repository_parent_commit": "d1b0079bfdff8fe5ce988c6a5c855d9741ef5c2a",
+  "source_files": {
+    "step10_feature_table": {
+      "path": "/content/drive/MyDrive/nmr_hsqc_predictor_v13/data/processed/step10_structure_features/dataset_v13_structure_features.csv",
+      "sha256": "6be009bfca66c8e799607942401e3ad9695447ccbd42fb7df4a6dace48c558e7"
+    },
+    "step32_angle_audit": {
+      "path": "/content/drive/MyDrive/nmr_hsqc_predictor_v13/diagnostics/step32_angle_missingness_audit/row_level_angle_missingness_audit.csv",
+      "sha256": "3f13b6cf80051c46c731f4768fef224e4bf0e39e9cd6e57b11211cd566c708d1"
+    },
+    "released_predictions": {
+      "path": "releases/v13_deployable_step33/metrics/ensemble_predictions.csv",
+      "sha256": "91861c943b8169916ef5fa28175ad7d58e9d3fa965f84d014ecd30d7e60644df"
+    },
+    "released_preprocessing": {
+      "path": "releases/v13_deployable_step33/config/nucleus_specific_feature_preprocessing_v13.json",
+      "sha256": "38fc4104d3e53ec361df8df86e98a612006d4043c178789661c19eae32f202c3"
+    }
+  },
+  "reconstruction": {
+    "base_source": "Step 10 raw feature table",
+    "angle_source": "Step 32 full-chain replacement columns",
+    "angle_replacements": {
+      "sin_phi": "sin_phi_full_replacement",
+      "cos_phi": "cos_phi_full_replacement",
+      "phi_mask": "phi_mask_full_replacement",
+      "sin_psi": "sin_psi_full_replacement",
+      "cos_psi": "cos_psi_full_replacement",
+      "psi_mask": "psi_mask_full_replacement"
+    },
+    "prediction_replay": {
+      "n_rows": 5624,
+      "n_models": 5,
+      "device": "cpu",
+      "h_max_absolute_difference_ppm": 6.178510467691467e-07,
+      "h_mean_absolute_difference_ppm": 2.2582536813472693e-07,
+      "n_max_absolute_difference_ppm": 9.649788864862785e-06,
+      "n_mean_absolute_difference_ppm": 3.0002590196505594e-06,
+      "tolerance_ppm": 2e-05,
+      "prediction_parity_passed": true
+    }
+  },
+  "n_rows": 5624,
+  "n_entries": 56,
+  "split_row_counts": {
+    "train": 3916,
+    "val": 854,
+    "test": 854
+  },
+  "split_entry_counts": {
+    "test": 9,
+    "train": 39,
+    "val": 8
+  },
+  "v14_training_rows": 3916,
+  "v14_training_entries": 39,
+  "base_feature_count": 68,
+  "h_structure_feature_count": 6,
+  "n_structure_feature_count": 3,
+  "unique_raw_feature_count": 74,
+  "base_raw_nan_count": 0,
+  "structure_raw_nan_count": 0,
+  "infinite_value_count": 0,
+  "prediction_parity_passed": true,
+  "preprocessing_fitted": false,
+  "target_scaling_fitted": false,
+  "external_blind_entries_used": false,
+  "model_trained": false,
+  "targets_modified": false,
+  "splits_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "artifact_sha256": {
+    "development/v14_features/original_v13_step33/original_v13_step33_raw_features.csv": "ddffefaa56c4aaf3276f7bcd744b99572621ddb61e9d631903aa64968827506e",
+    "development/v14_features/original_v13_step33/angle_reconstruction_audit.csv": "fa9d1b00b55fc9730e56f543253dcabc7978fcbc61b6f84ac8db2f58c81d38e7",
+    "development/v14_features/original_v13_step33/checkpoint_replay_audit.csv": "24f2f921cfc9002f3557c8cb49896d5b1650033ae4873d2de53cbc2f29990fcd"
+  }
+}
