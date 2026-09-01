@@ -1,0 +1,8 @@
+criterion,true_count,false_count,total
+is_frozen_external_entry,40,50,90
+shares_component_with_frozen_external,40,50,90
+passes_mapping,90,0,90
+passes_minimum_targets,90,0,90
+passes_v13_homology,90,0,90
+not_selected_by_model_results,90,0,90
+eligible_for_v14_development,50,40,90

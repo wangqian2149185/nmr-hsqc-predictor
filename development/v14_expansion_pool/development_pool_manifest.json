@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "development_external_pairwise_identity.csv": {
+      "relative_path": "development/v14_expansion_pool/development_external_pairwise_identity.csv",
+      "sha256": "02025c4931857a0407cde1248c0fb5c6ec8cee2eb197a37b2dfb692075bf4624",
+      "size_bytes": 156905
+    },
+    "eligibility_criterion_counts.csv": {
+      "relative_path": "development/v14_expansion_pool/eligibility_criterion_counts.csv",
+      "sha256": "2b859841023516052154ffc0915128a7fe3f4086d6756e9748d3da881174a2a7",
+      "size_bytes": 278
+    },
+    "eligible_development_entries.csv": {
+      "relative_path": "development/v14_expansion_pool/eligible_development_entries.csv",
+      "sha256": "179bc893889c10c3f42f55ad05e4100ecf4fb2778ec1a2089fa5b9f86e38fb14",
+      "size_bytes": 18477
+    },
+    "mapped_development_targets.csv": {
+      "relative_path": "development/v14_expansion_pool/mapped_development_targets.csv",
+      "sha256": "ab231c3329ce276391aa68b780bbd43fa1d492f166c205a6f09610cb0a6ee55c",
+      "size_bytes": 289004
+    },
+    "representative_eligibility_audit.csv": {
+      "relative_path": "development/v14_expansion_pool/representative_eligibility_audit.csv",
+      "sha256": "398b06cf1c6180b14edf548d9d6a1bbc3c72f034d0c3c6720f33cdeb277e09ff",
+      "size_bytes": 38451
+    }
+  },
+  "branch": "codex_v14",
+  "chemical_shifts_modified": false,
+  "development_external_pair_count": 2000,
+  "development_external_pairs_at_or_above_0p40": 0,
+  "eligible_entry_count": 50,
+  "external_entries_in_pool": 0,
+  "external_predictions_used_for_selection": false,
+  "frozen_external_entry_count": 40,
+  "hierarchical_b_j_used": false,
+  "input_provenance": {
+    "sequence_metadata": {
+      "relative_path": "benchmarks/v13_external_blind/homology_screen/external_candidate_chain_sequences.csv",
+      "sha256": "7a9b901562e6b75ae2405a041efac3603ac2b754222ab87a41db3550a4610f80"
+    }
+  },
+  "mapped_target_count": 3498,
+  "maximum_development_external_global_identity": 0.3243243243243243,
+  "maximum_targets_per_entry": 97,
+  "minimum_targets_per_entry": 40,
+  "model_results_used_for_selection": false,
+  "model_run": false,
+  "model_trained": false,
+  "parent_policy_commit": "dd1213fb1cf689ef5536646a69ab35992079e51b",
+  "passes_original_v13_homology_screen": true,
+  "purpose": "freeze a development-only v14 expansion pool",
+  "reference_correction_applied": false,
+  "split_assigned": false,
+  "step": "STEP 51C",
+  "unique_homology_component_count": 50
+}
