@@ -1,0 +1,89 @@
+{
+  "artifacts": {
+    "expansion_entry_splits.csv": {
+      "relative_path": "development/v14_splits/expansion_entry_splits.csv",
+      "sha256": "23d71da76343b4c4742d47c053c2807c05dc6052d77d346b8d7202eb60163f21",
+      "size_bytes": 16634
+    },
+    "expansion_split_summary.csv": {
+      "relative_path": "development/v14_splits/expansion_split_summary.csv",
+      "sha256": "98b329f78437e774866493b6ccb6be97ee542f8448e631a42191a02ce91b8f2f",
+      "size_bytes": 312
+    },
+    "expansion_target_splits.csv": {
+      "relative_path": "development/v14_splits/expansion_target_splits.csv",
+      "sha256": "506f716d47d4e16aadd233b8810503fba3334bf0c013cf89dd39cce03a6b0433",
+      "size_bytes": 317624
+    },
+    "v14_dataset_roles.csv": {
+      "relative_path": "development/v14_splits/v14_dataset_roles.csv",
+      "sha256": "483d4c3dde99bcbe62cf441479f1ece1aaec1a8765642f962de81d6838e2bca4",
+      "size_bytes": 462
+    }
+  },
+  "branch": "codex_v14",
+  "expansion_pool": {
+    "balance_inputs": [
+      "target_count",
+      "sequence_length",
+      "residue_composition"
+    ],
+    "chemical_shift_values_used": false,
+    "entries": 50,
+    "external_results_used": false,
+    "model_results_used": false,
+    "objective": 0.001954713947961102,
+    "search_iterations": 50000,
+    "split_entry_counts": {
+      "test": 10,
+      "train": 30,
+      "val": 10
+    },
+    "split_seed": 20250840,
+    "split_target_counts": {
+      "test": 698,
+      "train": 2097,
+      "val": 703
+    },
+    "targets": 3498
+  },
+  "external_reporting": {
+    "eligible_for_model_selection": false,
+    "eligible_for_training": false,
+    "evaluate_only_after_v14_lock": true,
+    "frozen_external_entries": 40
+  },
+  "hierarchical_b_j_used": false,
+  "homology_policy": {
+    "development_external_violations": 0,
+    "expansion_component_count": 50,
+    "identity_threshold": 0.4,
+    "one_entry_per_component": true
+  },
+  "legacy_reporting": {
+    "eligible_for_model_selection": false,
+    "original_v13_test_entries": 9,
+    "original_v13_validation_entries": 8
+  },
+  "model_run": false,
+  "model_trained": false,
+  "parent_pool_commit": "a54352a5f487b3c135096b9b4bc995cd901c5a44",
+  "purpose": "freeze v14 development splits before feature generation or model training",
+  "reference_correction_applied": false,
+  "step": "STEP 52B",
+  "targets_modified": false,
+  "v14_internal_test": {
+    "dataset": "expansion_test",
+    "eligible_for_model_selection": false,
+    "entries": 10
+  },
+  "v14_model_selection": {
+    "dataset": "expansion_validation",
+    "entries": 10
+  },
+  "v14_training": {
+    "combined_training_entries": 69,
+    "expansion_train_entries": 30,
+    "original_v13_train_entries": 39
+  }
+}

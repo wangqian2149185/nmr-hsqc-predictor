@@ -1,0 +1,4 @@
+split,n_entries,n_targets,target_fraction,mean_sequence_length,minimum_sequence_length,maximum_sequence_length,minimum_targets_per_entry,maximum_targets_per_entry
+train,30,2097,0.5994854202401372,76.2,45,106,40,90
+val,10,703,0.20097198399085192,76.9,55,96,50,89
+test,10,698,0.19954259576901087,76.7,45,119,40,97

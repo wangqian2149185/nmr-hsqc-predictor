@@ -1,0 +1,8 @@
+dataset,source_split,v14_role,n_entries,eligible_for_model_selection,eligible_for_training
+original_v13,train,train,39,False,True
+original_v13,val,legacy_validation_reporting,8,False,False
+original_v13,test,legacy_test_reporting,9,False,False
+v14_expansion,train,train,30,False,True
+v14_expansion,val,model_selection_validation,10,True,False
+v14_expansion,test,internal_test,10,False,False
+frozen_external_blind,external,final_external_evaluation,40,False,False
