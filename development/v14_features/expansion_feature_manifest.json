@@ -1,0 +1,50 @@
+{
+  "step": "STEP_53B_1R",
+  "repository_parent_commit": "590acf77a4981e01769f5a37266ae3d49f2e354b",
+  "n_entries": 50,
+  "n_targets": 3498,
+  "split_target_counts": {
+    "test": 698,
+    "train": 2097,
+    "val": 703
+  },
+  "split_entry_counts": {
+    "test": 10,
+    "train": 30,
+    "val": 10
+  },
+  "base_feature_count": 68,
+  "h_structure_feature_count": 6,
+  "n_structure_feature_count": 3,
+  "unique_raw_feature_count": 74,
+  "total_raw_nan_value_count": 3,
+  "base_raw_nan_value_count": 0,
+  "structure_raw_nan_value_count": 3,
+  "infinite_feature_value_count": 0,
+  "entries_with_structure_missingness": [
+    {
+      "bmrb_id": "4619",
+      "pdb_id": "1E0E",
+      "chain_id": "A",
+      "v14_expansion_split": "test",
+      "structure_nan_value_count": 3
+    }
+  ],
+  "angle_feature_source": "full_chain_pdb",
+  "raw_structure_nan_preserved": true,
+  "preprocessing_fitted": false,
+  "imputation_fitted": false,
+  "target_scaling_fitted": false,
+  "external_blind_entries_used": false,
+  "model_run": false,
+  "targets_modified": false,
+  "splits_modified": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "artifact_sha256": {
+    "development/v14_features/expansion_raw_deployment_features.csv": "0185403cac26730a981f0243d1a55354be47d5ab11fda2782584273c9ff0d011",
+    "development/v14_features/expansion_feature_generation_audit.csv": "09e59db5423a17ffb797fcdd6a0ab1c5f3ab33779ab2c20fd231a2796c13e5bf",
+    "development/v14_features/expansion_raw_feature_missingness.csv": "4ff909e5ef7ad6e6081edd8b93dec5d301b8fcdcaf4ae6911e94b36bdbbe0356",
+    "development/v14_features/expansion_feature_columns.json": "425fb69d3d89cc5bee74f98bcb6451b03de575546915f7c621394eac5587c6fc"
+  }
+}
