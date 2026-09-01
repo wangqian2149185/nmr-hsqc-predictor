@@ -1,0 +1,12 @@
+{
+  "analysis": "candidate_validation_only",
+  "n_rows": 703,
+  "n_entries": 10,
+  "h_mae_ppm": 0.4246720263069233,
+  "h_rmse_ppm": 0.5680700494492757,
+  "n_mae_ppm": 2.9562666266705735,
+  "n_rmse_ppm": 4.153819450702996,
+  "h_entry_macro_mae_ppm": 0.42418059823612736,
+  "n_entry_macro_mae_ppm": 2.9817900324003195,
+  "equal_nucleus_standardized_entry_macro_mae": 0.5985415726630048
+}
