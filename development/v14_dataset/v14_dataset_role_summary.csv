@@ -1,0 +1,6 @@
+v14_role,n_rows,n_entries,n_pdb_ids,eligible_for_training,eligible_for_model_selection,eligible_for_internal_test
+internal_test,698,10,10,False,False,True
+legacy_test_reporting,854,9,9,False,False,False
+legacy_validation_reporting,854,8,8,False,False,False
+model_selection_validation,703,10,10,False,True,False
+train,6013,69,69,True,False,False

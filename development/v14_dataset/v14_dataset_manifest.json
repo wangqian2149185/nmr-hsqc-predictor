@@ -1,0 +1,36 @@
+{
+  "step": "STEP_55",
+  "repository_parent_commit": "72c63fab6dcb18848a1dc4a10983ac10abddcac4",
+  "source_artifacts": {
+    "development/v14_features/original_v13_step33/original_v13_step33_raw_features.csv": "ddffefaa56c4aaf3276f7bcd744b99572621ddb61e9d631903aa64968827506e",
+    "development/v14_features/expansion_raw_deployment_features.csv": "0185403cac26730a981f0243d1a55354be47d5ab11fda2782584273c9ff0d011",
+    "benchmarks/v13_external_blind/final_selection/final_blind_benchmark_targets.csv": "1bf18c619c702bb6acebb59b8409fb4c35d325579f90cefa62d18b2f8a5bd67b"
+  },
+  "total_development_rows": 9122,
+  "total_development_entries": 106,
+  "training_rows": 6013,
+  "training_entries": 69,
+  "model_selection_validation_rows": 703,
+  "model_selection_validation_entries": 10,
+  "internal_test_rows": 698,
+  "internal_test_entries": 10,
+  "legacy_reporting_rows": 1708,
+  "legacy_reporting_entries": 17,
+  "base_feature_count": 68,
+  "h_structure_feature_count": 6,
+  "n_structure_feature_count": 3,
+  "unique_raw_feature_count": 74,
+  "external_bmrb_overlap_count": 0,
+  "external_pdb_overlap_count": 0,
+  "preprocessing_fit_scope": "training_only",
+  "model_trained": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false,
+  "targets_modified": false,
+  "artifact_sha256": {
+    "development/v14_dataset/v14_development_raw_features.csv": "8fcab623c85d2d861f2db8bb3f2a0c66843915a2c3cacf7aff7592a43e80d409",
+    "development/v14_dataset/v14_train_only_preprocessing.json": "b97b6b0299a96bb1e4c3839de5595477fdd380a669aaf3109eadfd69c512a14e",
+    "development/v14_dataset/v14_dataset_role_summary.csv": "2edd38909c80a5d9a632a8479046ba9efdb92e252b5afe593b2e8e35212bf742",
+    "development/v14_dataset/v14_raw_feature_missingness.csv": "f1631eec8e8c86dcc74f893a848702ea6cba4b007dd35cdfde51f1f56c77841c"
+  }
+}
