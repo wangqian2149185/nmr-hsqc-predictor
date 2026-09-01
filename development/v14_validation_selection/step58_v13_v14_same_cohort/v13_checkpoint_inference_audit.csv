@@ -1,0 +1,6 @@
+checkpoint,seed,best_epoch,best_val_standardized_mse,checkpoint_sha256,prediction_shape,finite_predictions,missing_keys,unexpected_keys
+nucleus_specific_step33_seed_20250830.pt,20250830,13,0.8020953462051285,70f03e111b70aec50876a17b58e62b4712ed06dcf4460e07815d92f2b83088f6,"(703, 2)",True,0,0
+nucleus_specific_step33_seed_20250831.pt,20250831,10,0.8096686682600607,e82e1dd8aa8ecded307c61a3293e45bdb919ef17e66547d692b14c362b531466,"(703, 2)",True,0,0
+nucleus_specific_step33_seed_20250832.pt,20250832,14,0.8326054691430835,9d9942c8f0fa2de696cdbecfb79dfb18f1a257f3926f0ea2ea200158ce7e72a2,"(703, 2)",True,0,0
+nucleus_specific_step33_seed_20250833.pt,20250833,8,0.8050925681406776,08cb3198d02aba18a1b6a9f1fd887e981e262b04a031772f8e4f0cd76fdf4aff,"(703, 2)",True,0,0
+nucleus_specific_step33_seed_20250834.pt,20250834,16,0.7957488200703605,6ab4fecaebb3c1858f82fddc3579b8706af9312dc40087b66310956bf8846785,"(703, 2)",True,0,0

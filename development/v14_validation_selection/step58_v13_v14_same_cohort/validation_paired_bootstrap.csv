@@ -1,0 +1,4 @@
+metric,unit,delta_definition,negative_delta_means,observed_delta,bootstrap_mean,bootstrap_ci_2p5,bootstrap_ci_97p5,probability_v14_improves,probability_v14_worsens,n_entries_improved,n_entries_worsened,n_entries_tied,n_validation_entries,n_bootstrap,bootstrap_seed,evidence_class
+1H_entry_macro_MAE,standardized_target_units,v14_minus_v13,v14_improvement,-0.007509331256015339,-0.007511617979141684,-0.01786265345368369,0.004957192533472363,0.89476,0.10524,8,2,0,10,50000,20250838,inconclusive
+15N_entry_macro_MAE,standardized_target_units,v14_minus_v13,v14_improvement,-0.014932552003097043,-0.014938495843491635,-0.021716974084670472,-0.008602997242234161,1.0,0.0,9,1,0,10,50000,20250839,stable_improvement
+equal_nucleus_standardized_entry_macro_MAE,standardized_target_units,v14_minus_v13,v14_improvement,-0.011220941629556174,-0.011201895846005117,-0.0171116022375896,-0.004595009290001452,0.99932,0.00068,9,1,0,10,50000,20250837,stable_improvement
