@@ -1,0 +1,216 @@
+{
+  "protocol_name": "v14_expanded_data_fixed_architecture_baseline",
+  "protocol_version": 1,
+  "repository_parent_commit": "3a57dd8d9f22b13fc74b20403581f4f4ec0be1cf",
+  "experiment_purpose": "Measure the effect of expanding the training cohort while keeping the deployable v13 Step 33 architecture and optimization configuration fixed.",
+  "candidate_model": {
+    "name": "v14_expanded_training_step33_architecture",
+    "initialization": "from_scratch",
+    "architecture": {
+      "base_input_features": 68,
+      "base_trunk": [
+        {
+          "layer": "Linear",
+          "in_features": 68,
+          "out_features": 96
+        },
+        {
+          "layer": "ReLU"
+        },
+        {
+          "layer": "LayerNorm",
+          "normalized_shape": 96
+        },
+        {
+          "layer": "Dropout",
+          "p": 0.15
+        },
+        {
+          "layer": "Linear",
+          "in_features": 96,
+          "out_features": 64
+        },
+        {
+          "layer": "ReLU"
+        }
+      ],
+      "h_structure_branch": [
+        {
+          "layer": "Linear",
+          "in_features": 6,
+          "out_features": 16
+        },
+        {
+          "layer": "ReLU"
+        }
+      ],
+      "n_structure_branch": [
+        {
+          "layer": "Linear",
+          "in_features": 3,
+          "out_features": 8
+        },
+        {
+          "layer": "ReLU"
+        }
+      ],
+      "h_head": [
+        {
+          "layer": "Linear",
+          "in_features": 80,
+          "out_features": 32
+        },
+        {
+          "layer": "ReLU"
+        },
+        {
+          "layer": "Dropout",
+          "p": 0.1
+        },
+        {
+          "layer": "Linear",
+          "in_features": 32,
+          "out_features": 1
+        }
+      ],
+      "n_head": [
+        {
+          "layer": "Linear",
+          "in_features": 72,
+          "out_features": 32
+        },
+        {
+          "layer": "ReLU"
+        },
+        {
+          "layer": "Dropout",
+          "p": 0.1
+        },
+        {
+          "layer": "Linear",
+          "in_features": 32,
+          "out_features": 1
+        }
+      ]
+    }
+  },
+  "data_roles": {
+    "training": {
+      "v14_role": "train",
+      "rows": 6013,
+      "entries": 69,
+      "eligible_for_gradient_updates": true,
+      "eligible_for_early_stopping": false,
+      "eligible_for_model_selection": false
+    },
+    "model_selection_validation": {
+      "v14_role": "model_selection_validation",
+      "rows": 703,
+      "entries": 10,
+      "eligible_for_gradient_updates": false,
+      "eligible_for_early_stopping": true,
+      "eligible_for_model_selection": true
+    },
+    "internal_test": {
+      "v14_role": "internal_test",
+      "rows": 698,
+      "entries": 10,
+      "eligible_for_gradient_updates": false,
+      "eligible_for_early_stopping": false,
+      "eligible_for_model_selection": false,
+      "evaluation_time": "after final validation decision only"
+    },
+    "legacy_reporting": {
+      "rows": 1708,
+      "entries": 17,
+      "eligible_for_gradient_updates": false,
+      "eligible_for_early_stopping": false,
+      "eligible_for_model_selection": false
+    },
+    "external_blind": {
+      "entries": 40,
+      "eligible_for_gradient_updates": false,
+      "eligible_for_preprocessing_fit": false,
+      "eligible_for_early_stopping": false,
+      "eligible_for_model_selection": false,
+      "eligible_for_hyperparameter_selection": false,
+      "evaluation_time": "only after v14 development is frozen"
+    }
+  },
+  "preprocessing": {
+    "source": "development/v14_dataset/v14_train_only_preprocessing.json",
+    "fit_scope": "training_only",
+    "training_rows": 6013,
+    "training_entries": 69,
+    "base_features": "no additional standardization",
+    "structure_features": "training-median imputation followed by training-mean and training-population-standard-deviation scaling",
+    "targets": "training-mean and training-population-standard-deviation scaling separately for 1H and 15N"
+  },
+  "training": {
+    "loss": "mean of standardized 1H MSE and standardized 15N MSE",
+    "nucleus_weighting": {
+      "1H": 0.5,
+      "15N": 0.5
+    },
+    "sampling": "row-level shuffled mini-batches; no entry reweighting in this controlled baseline",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 256,
+    "maximum_epochs": 150,
+    "early_stopping_patience": 20,
+    "checkpoint_rule": "minimum validation standardized row-micro MSE",
+    "seeds": [
+      20250830,
+      20250831,
+      20250832,
+      20250833,
+      20250834
+    ],
+    "ensemble_rule": "arithmetic mean of the five seed predictions in ppm space"
+  },
+  "validation_selection": {
+    "comparator": "frozen v13 deployable Step 33 five-seed ensemble",
+    "selection_cohort": "10-entry expansion model-selection validation",
+    "primary_metric": "equal-nucleus standardized entry-macro MAE",
+    "primary_metric_formula": "0.5 * (H_entry_macro_MAE / H_train_target_std) + 0.5 * (N_entry_macro_MAE / N_train_target_std)",
+    "secondary_metrics": [
+      "1H residue-micro MAE ppm",
+      "1H entry-macro MAE ppm",
+      "15N residue-micro MAE ppm",
+      "15N entry-macro MAE ppm",
+      "1H RMSE ppm",
+      "15N RMSE ppm"
+    ],
+    "uncertainty_method": "paired bootstrap over validation entries",
+    "bootstrap_replicates": 50000,
+    "bootstrap_seed": 20250837,
+    "negative_delta_means": "v14 candidate improves over frozen v13",
+    "decision_rule": {
+      "required": "candidate primary metric point estimate must be lower than frozen v13",
+      "stable_improvement": "95% paired-bootstrap CI entirely below zero",
+      "suggestive_improvement": "probability of improvement >= 0.95 but 95% CI overlaps zero",
+      "inconclusive": "neither stable nor suggestive",
+      "promotion_policy": "promotion requires at least suggestive primary improvement and no severe nucleus-specific regression",
+      "severe_nucleus_specific_regression": "validation entry-macro MAE worsening greater than 0.02 standardized target units"
+    }
+  },
+  "test_and_external_policy": {
+    "internal_test_used_for_selection": false,
+    "legacy_validation_used_for_selection": false,
+    "legacy_test_used_for_selection": false,
+    "external_blind_used_for_selection": false,
+    "external_blind_used_for_development": false
+  },
+  "reference_policy": {
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false,
+    "targets_modified": false
+  },
+  "status": {
+    "protocol_frozen_before_training": true,
+    "model_training_started": false,
+    "test_evaluation_started": false,
+    "external_evaluation_started": false
+  }
+}

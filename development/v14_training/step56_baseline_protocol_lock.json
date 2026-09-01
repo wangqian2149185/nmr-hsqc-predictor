@@ -1,0 +1,12 @@
+{
+  "protocol_file": "development/v14_training/step56_baseline_protocol.json",
+  "protocol_sha256": "23fc566126e6e33f60f926ab6082f2ef6bf6fc7fc38f32a91eb32831d99c8633",
+  "dataset_file": "development/v14_dataset/v14_development_raw_features.csv",
+  "dataset_sha256": "8fcab623c85d2d861f2db8bb3f2a0c66843915a2c3cacf7aff7592a43e80d409",
+  "preprocessing_file": "development/v14_dataset/v14_train_only_preprocessing.json",
+  "preprocessing_sha256": "b97b6b0299a96bb1e4c3839de5595477fdd380a669aaf3109eadfd69c512a14e",
+  "repository_parent_commit": "3a57dd8d9f22b13fc74b20403581f4f4ec0be1cf",
+  "training_started": false,
+  "test_evaluation_started": false,
+  "external_evaluation_started": false
+}
