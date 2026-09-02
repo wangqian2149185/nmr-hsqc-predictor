@@ -1,0 +1,126 @@
+{
+  "base_trunk": [
+    {
+      "in_features": 68,
+      "out_features": 96,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "normalized_shape": 96,
+      "type": "LayerNorm"
+    },
+    {
+      "p": 0.15,
+      "type": "Dropout"
+    },
+    {
+      "in_features": 96,
+      "out_features": 64,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "ensemble": {
+    "method": "arithmetic mean of five independently seeded models",
+    "seeds": [
+      20250830,
+      20250831,
+      20250832,
+      20250833,
+      20250834
+    ]
+  },
+  "framework": "PyTorch",
+  "h_head": [
+    {
+      "in_features": 80,
+      "out_features": 32,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "p": 0.1,
+      "type": "Dropout"
+    },
+    {
+      "in_features": 32,
+      "out_features": 1,
+      "type": "Linear"
+    }
+  ],
+  "h_structure_branch": [
+    {
+      "in_features": 6,
+      "out_features": 16,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "hierarchical_b_j_used": false,
+  "inputs": {
+    "base_features": 68,
+    "h_structure_features": 6,
+    "n_structure_features": 3
+  },
+  "model_name": "V14NucleusSpecificHNModel",
+  "n_head": [
+    {
+      "in_features": 72,
+      "out_features": 32,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    },
+    {
+      "p": 0.1,
+      "type": "Dropout"
+    },
+    {
+      "in_features": 32,
+      "out_features": 1,
+      "type": "Linear"
+    }
+  ],
+  "n_structure_branch": [
+    {
+      "in_features": 3,
+      "out_features": 8,
+      "type": "Linear"
+    },
+    {
+      "type": "ReLU"
+    }
+  ],
+  "output": {
+    "order": [
+      "1H",
+      "15N"
+    ],
+    "reported_unit": "ppm",
+    "shape": 2,
+    "training_scale": "train-only standardized targets"
+  },
+  "reference_correction_applied": false,
+  "release_model": "v14_expanded_data_fixed_architecture_ensemble",
+  "selection": {
+    "cohort": "10-entry expansion validation",
+    "evidence": "stable_improvement",
+    "promotion_supported": true
+  },
+  "training_dataset": {
+    "entries": 69,
+    "original_v13_training_entries": 39,
+    "rows": 6013,
+    "v14_expansion_training_entries": 30
+  }
+}
