@@ -1,0 +1,23 @@
+{
+  "analysis": "one_time_internal_test_reporting_after_model_lock",
+  "eligible_for_hyperparameter_selection": false,
+  "eligible_for_model_selection": false,
+  "equal_nucleus_standardized_entry_macro_mae": 0.6113278222020293,
+  "external_blind_metrics_calculated": false,
+  "h_entry_macro_mae_ppm": 0.4693302605312245,
+  "h_entry_macro_rmse_ppm": 0.6013095432727809,
+  "h_mae_ppm": 0.4627310790033821,
+  "h_rmse_ppm": 0.5984903104048653,
+  "hierarchical_b_j_used": false,
+  "legacy_metrics_calculated": false,
+  "metric_use": "reporting_only",
+  "n_entries": 10,
+  "n_entry_macro_mae_ppm": 2.7573901181110054,
+  "n_entry_macro_rmse_ppm": 3.6068463298278592,
+  "n_mae_ppm": 2.7829771501065723,
+  "n_rmse_ppm": 3.70150264607114,
+  "n_rows": 698,
+  "reference_correction_applied": false,
+  "selected_model": "v14_expanded_data_fixed_architecture_ensemble",
+  "v13_comparator_calculated": false
+}

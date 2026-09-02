@@ -1,0 +1,163 @@
+{
+  "version": "v14",
+  "fit_on": "combined_v14_training_rows_only",
+  "training_rows": 6013,
+  "training_entries": 69,
+  "training_composition": {
+    "original_v13": {
+      "rows": 3916,
+      "entries": 39
+    },
+    "v14_expansion": {
+      "rows": 2097,
+      "entries": 30
+    }
+  },
+  "base_columns": [
+    "aa_A",
+    "aa_C",
+    "aa_D",
+    "aa_E",
+    "aa_F",
+    "aa_G",
+    "aa_H",
+    "aa_I",
+    "aa_K",
+    "aa_L",
+    "aa_M",
+    "aa_N",
+    "aa_P",
+    "aa_Q",
+    "aa_R",
+    "aa_S",
+    "aa_T",
+    "aa_V",
+    "aa_W",
+    "aa_Y",
+    "prev_A",
+    "prev_C",
+    "prev_D",
+    "prev_E",
+    "prev_F",
+    "prev_G",
+    "prev_H",
+    "prev_I",
+    "prev_K",
+    "prev_L",
+    "prev_M",
+    "prev_N",
+    "prev_P",
+    "prev_Q",
+    "prev_R",
+    "prev_S",
+    "prev_T",
+    "prev_V",
+    "prev_W",
+    "prev_Y",
+    "next_A",
+    "next_C",
+    "next_D",
+    "next_E",
+    "next_F",
+    "next_G",
+    "next_H",
+    "next_I",
+    "next_K",
+    "next_L",
+    "next_M",
+    "next_N",
+    "next_P",
+    "next_Q",
+    "next_R",
+    "next_S",
+    "next_T",
+    "next_V",
+    "next_W",
+    "next_Y",
+    "position_fraction",
+    "log_chain_length",
+    "sin_phi",
+    "cos_phi",
+    "phi_mask",
+    "sin_psi",
+    "cos_psi",
+    "psi_mask"
+  ],
+  "base_preprocessing": "none; retain deployment representation",
+  "h_structure": {
+    "columns": [
+      "ca_contacts_6a",
+      "ca_contacts_8a",
+      "ca_contacts_10a",
+      "nearest_backbone_o_distance",
+      "backbone_o_within_3p5a",
+      "hbond_proxy_mask"
+    ],
+    "medians": {
+      "ca_contacts_6a": 5.0,
+      "ca_contacts_8a": 9.0,
+      "ca_contacts_10a": 16.0,
+      "nearest_backbone_o_distance": 3.1578328095892108,
+      "backbone_o_within_3p5a": 1.0,
+      "hbond_proxy_mask": 1.0
+    },
+    "means": {
+      "ca_contacts_6a": 5.334442042241809,
+      "ca_contacts_8a": 9.322135373357725,
+      "ca_contacts_10a": 15.895393314485283,
+      "nearest_backbone_o_distance": 3.3845256604134644,
+      "backbone_o_within_3p5a": 1.0400798270414102,
+      "hbond_proxy_mask": 1.0
+    },
+    "stds": {
+      "ca_contacts_6a": 1.7466528324925328,
+      "ca_contacts_8a": 2.883139531989207,
+      "ca_contacts_10a": 5.399324298116967,
+      "nearest_backbone_o_distance": 0.7312412279695432,
+      "backbone_o_within_3p5a": 0.9216198403708087,
+      "hbond_proxy_mask": 1.0
+    },
+    "std_definition": "population standard deviation; ddof=0"
+  },
+  "n_structure": {
+    "columns": [
+      "ca_contacts_6a",
+      "ca_contacts_8a",
+      "ca_contacts_10a"
+    ],
+    "medians": {
+      "ca_contacts_6a": 5.0,
+      "ca_contacts_8a": 9.0,
+      "ca_contacts_10a": 16.0
+    },
+    "means": {
+      "ca_contacts_6a": 5.334442042241809,
+      "ca_contacts_8a": 9.322135373357725,
+      "ca_contacts_10a": 15.895393314485283
+    },
+    "stds": {
+      "ca_contacts_6a": 1.7466528324925328,
+      "ca_contacts_8a": 2.883139531989207,
+      "ca_contacts_10a": 5.399324298116967
+    },
+    "std_definition": "population standard deviation; ddof=0"
+  },
+  "target_scaling": {
+    "shift_h_raw": {
+      "mean": 8.278146515882254,
+      "std": 0.6663615846545498
+    },
+    "shift_n_raw": {
+      "mean": 119.71360186263097,
+      "std": 5.319676405557659
+    }
+  },
+  "validation_rows_used_for_fit": 0,
+  "test_rows_used_for_fit": 0,
+  "legacy_rows_used_for_fit": 0,
+  "external_rows_used_for_fit": 0,
+  "missing_value_policy": "raw structure NaN values are imputed with combined-training medians",
+  "angle_feature_source": "full_chain_pdb",
+  "reference_correction": "none",
+  "model_contains_b_j": false
+}
