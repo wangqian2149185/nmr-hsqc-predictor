@@ -1,0 +1,88 @@
+{
+  "analysis": "one_time_locked_v14_internal_test_evaluation",
+  "artifacts": [
+    {
+      "relative_path": "development/v14_internal_test/step58b2_locked_model_evaluation/checkpoint_inference_audit.csv",
+      "sha256": "2dc50af3450e55f8fd06cffb0707cf3c6b3435249a9e53f0baaba82983c8b9dc",
+      "size_bytes": 867
+    },
+    {
+      "relative_path": "development/v14_internal_test/step58b2_locked_model_evaluation/internal_test_entry_metrics.csv",
+      "sha256": "cae1e558f88f9058f9b67b214f512335a86139fcc1c35608c7f9b8dca6be3b7d",
+      "size_bytes": 1378
+    },
+    {
+      "relative_path": "development/v14_internal_test/step58b2_locked_model_evaluation/internal_test_metrics.json",
+      "sha256": "eaa78f503b4a6643cb05c91c9b99788790d27b498bb0b9942821092bfecb34e7",
+      "size_bytes": 895
+    },
+    {
+      "relative_path": "development/v14_internal_test/step58b2_locked_model_evaluation/internal_test_predictions.csv",
+      "sha256": "f1645967f7715b4b00bb82476d2f374ed32bc3f0ecf6b77412e9ac7b369fff0c",
+      "size_bytes": 153603
+    }
+  ],
+  "checkpoint_count": 5,
+  "checkpoint_sha256": {
+    "20250830": "e02122f02d4a855f6225f8469613e89b5684ca7fdb143ab7149637601f3996b6",
+    "20250831": "76fe5e4cfaed5375280d1b086a1d1cb689950d1726c9093f660bd32d809f6570",
+    "20250832": "23bceb18a0a6bb859b189507352549bb27dce01a032871d83d1c2ae947c1ee8b",
+    "20250833": "419229d0ffadd3ed885d5a9ce2612ad765f902a31df5c027e313c6f19bb448fa",
+    "20250834": "bc17d5b42d20e3a788d3a3c9a26af60aa3a20e3c60097dd48c15dc3011808968"
+  },
+  "dataset": {
+    "entries": 10,
+    "relative_path": "development/v14_dataset/v14_development_raw_features.csv",
+    "rows": 698,
+    "selected_role": "internal_test",
+    "sha256": "8fcab623c85d2d861f2db8bb3f2a0c66843915a2c3cacf7aff7592a43e80d409"
+  },
+  "external_blind_metrics_calculated": false,
+  "external_blind_opened": false,
+  "hierarchical_b_j_used": false,
+  "internal_test_metrics_calculated": true,
+  "internal_test_opened": true,
+  "internal_test_used_for_selection": false,
+  "legacy_metrics_calculated": false,
+  "metrics": {
+    "analysis": "one_time_internal_test_reporting_after_model_lock",
+    "eligible_for_hyperparameter_selection": false,
+    "eligible_for_model_selection": false,
+    "equal_nucleus_standardized_entry_macro_mae": 0.6113278222020293,
+    "external_blind_metrics_calculated": false,
+    "h_entry_macro_mae_ppm": 0.4693302605312245,
+    "h_entry_macro_rmse_ppm": 0.6013095432727809,
+    "h_mae_ppm": 0.4627310790033821,
+    "h_rmse_ppm": 0.5984903104048653,
+    "hierarchical_b_j_used": false,
+    "legacy_metrics_calculated": false,
+    "metric_use": "reporting_only",
+    "n_entries": 10,
+    "n_entry_macro_mae_ppm": 2.7573901181110054,
+    "n_entry_macro_rmse_ppm": 3.6068463298278592,
+    "n_mae_ppm": 2.7829771501065723,
+    "n_rmse_ppm": 3.70150264607114,
+    "n_rows": 698,
+    "reference_correction_applied": false,
+    "selected_model": "v14_expanded_data_fixed_architecture_ensemble",
+    "v13_comparator_calculated": false
+  },
+  "model_retrained": false,
+  "model_selection_decision_changed": false,
+  "preprocessing": {
+    "fit_scope": "training_only",
+    "relative_path": "development/v14_dataset/v14_train_only_preprocessing.json",
+    "sha256": "b97b6b0299a96bb1e4c3839de5595477fdd380a669aaf3109eadfd69c512a14e"
+  },
+  "reference_correction_applied": false,
+  "repository_parent_commit": "3c30691f096964ff9f94604e0002558ac05eb79c",
+  "selected_model": "v14_expanded_data_fixed_architecture_ensemble",
+  "selected_model_lock": {
+    "committed_before_internal_test": true,
+    "relative_path": "development/v14_selected_model/selected_model_lock.json",
+    "sha256": "6229605f484938113f6aeaeae07e00cd7c8abe3e2cef3b7c6bbfb72144ebf7de"
+  },
+  "step": "STEP_58B_2",
+  "targets_modified": false,
+  "v13_comparator_calculated": false
+}
