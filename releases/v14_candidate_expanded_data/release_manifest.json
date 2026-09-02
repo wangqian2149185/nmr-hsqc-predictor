@@ -42,16 +42,39 @@
     }
   ],
   "checkpoint_count": 5,
-  "clean_reload_test_passed": false,
+  "checksum_record_count": 26,
+  "clean_reload_test_passed": true,
+  "clean_reload_test_step": "STEP_59B",
   "deployable": false,
+  "deployment_status": "verified_candidate_pending_final_freeze",
   "external_blind_metrics_calculated": false,
   "external_blind_opened": false,
   "file_count_excluding_manifest": 22,
   "files": [
     {
       "relative_path": "MODEL_CARD.md",
-      "sha256": "2073a6ab48b9d3f096b2e8a0196c1c3779f1b79a270d1901912c001bf5cb889b",
-      "size_bytes": 1366
+      "sha256": "44a2613a1bbbd3051f12babff1098c9fa33f4b06fd318cfaa3adddcd5be722d0",
+      "size_bytes": 2112
+    },
+    {
+      "relative_path": "clean_reload_test/1fho_clean_predictions.csv",
+      "sha256": "8272350739c77a60edcad2aba223ac589f6e60a422e73712cbe77893beac4942",
+      "size_bytes": 7730
+    },
+    {
+      "relative_path": "clean_reload_test/1fho_prediction_comparison.csv",
+      "sha256": "a04679020442767877fb91bfc35a0692403d483bb8dd405be3a172a826a6a78d",
+      "size_bytes": 29449
+    },
+    {
+      "relative_path": "clean_reload_test/clean_reload_summary.json",
+      "sha256": "43a87f0b1d99fd5d7375c16d9cbda4964b85e925572804aaf02c61547a4cdf7f",
+      "size_bytes": 2582
+    },
+    {
+      "relative_path": "clean_reload_test/pretest_release_checksum_audit.csv",
+      "sha256": "76ff1bb42e21de23d0613376a9a000d1eea3fe79fc6282f540cf9090afbc4d6c",
+      "size_bytes": 3887
     },
     {
       "relative_path": "config/architecture.json",
@@ -135,8 +158,8 @@
     },
     {
       "relative_path": "release_decision.json",
-      "sha256": "adf52918edf4edffe0523a62d7cdc5591567fe5122e47c0e4469ff895e6ea80c",
-      "size_bytes": 1969
+      "sha256": "89d1e9110be8f1ae6009a2149f0e312b9c2bbc7e068b5fb9c9970ef1f9121d0a",
+      "size_bytes": 2617
     },
     {
       "relative_path": "requirements.txt",
@@ -160,9 +183,12 @@
     }
   ],
   "hierarchical_b_j_used": false,
+  "manifest_self_checksum_included": false,
+  "recommended_next_action": "STEP_59C_freeze_deployable_release_before_external_blind_evaluation",
   "reference_correction_applied": false,
+  "release_file_count_including_manifest": 27,
   "release_name": "v14_candidate_expanded_data",
   "repository_parent_commit": "4194fdfc642b0a4e17a6ee83f3507e48b811552a",
   "selected_model_lock_sha256": "6229605f484938113f6aeaeae07e00cd7c8abe3e2cef3b7c6bbfb72144ebf7de",
-  "status": "candidate_pending_clean_reload"
+  "status": "clean_reload_verified_candidate"
 }

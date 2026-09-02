@@ -51,3 +51,20 @@ Internal-test results are reporting-only.
 The frozen external-blind cohort remains unopened. It is reserved
 for final reporting after clean-reload verification and release
 freezing.
+
+## Independent clean-reload verification
+
+STEP 59B independently loaded the packaged five-seed ensemble in a fresh isolated CPU Python subprocess.
+
+- Structure: PDB 1FHO, chain A
+- Clean structure prediction rows: 111
+- Frozen internal-test rows matched: 97 of 97
+- Maximum 1H prediction difference: 9.85829096578e-07 ppm
+- Maximum 15N prediction difference: 8.71355427989e-06 ppm
+- Numerical acceptance tolerance: 2e-05 ppm
+- Clean-reload verification: passed
+- External-blind data opened: no
+- Reference correction applied: no
+- Hierarchical b_j used: no
+
+This verifies standalone packaging and inference reproducibility. It is not additional model-selection evidence. The candidate remains non-deployable until the final release-freeze step.
