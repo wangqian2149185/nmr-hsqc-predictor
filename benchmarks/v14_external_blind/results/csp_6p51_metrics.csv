@@ -1,0 +1,5 @@
+model,analysis,scope,metric,value_ppm,n_rows,n_entries
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,mean_CSP_6p51,0.6967530181634051,5389,40
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,median_CSP_6p51,0.5930315717094625,5389,40
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,RMSE_CSP_6p51,0.8438798736329766,5389,40
+v14_deployable_expanded_data,external_all_40_entries,entry_macro,mean_CSP_6p51,0.6938430845943467,5389,40

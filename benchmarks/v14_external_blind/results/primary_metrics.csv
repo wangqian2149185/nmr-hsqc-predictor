@@ -1,0 +1,9 @@
+model,analysis,scope,nucleus,metric,value_ppm,n_rows,n_entries
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,1H,MAE,0.4650251626073285,5389,40
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,1H,RMSE,0.6226584560313134,5389,40
+v14_deployable_expanded_data,external_all_40_entries,entry_macro,1H,MAE,0.46291091224133735,5389,40
+v14_deployable_expanded_data,external_all_40_entries,entry_macro,1H,RMSE,0.6121734282985427,5389,40
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,15N,MAE,2.800197948335332,5389,40
+v14_deployable_expanded_data,external_all_40_entries,residue_micro,15N,RMSE,3.708013299765429,5389,40
+v14_deployable_expanded_data,external_all_40_entries,entry_macro,15N,MAE,2.792063972472195,5389,40
+v14_deployable_expanded_data,external_all_40_entries,entry_macro,15N,RMSE,3.6279178038042303,5389,40

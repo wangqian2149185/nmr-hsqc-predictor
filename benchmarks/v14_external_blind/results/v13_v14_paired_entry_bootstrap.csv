@@ -1,0 +1,6 @@
+nucleus,metric,delta_definition,negative_delta_means,observed_entry_macro_delta_ppm,bootstrap_ci_2p5_ppm,bootstrap_ci_97p5_ppm,probability_v14_improves,probability_v14_worsens,n_entries_improved,n_entries_worsened,n_entries_tied,n_external_entries,n_bootstrap,bootstrap_seed,evidence_class
+1H,entry_macro_MAE,v14_minus_v13,v14 lower error,-0.00689514782628155,-0.00960854979306089,-0.0041267116207089555,0.99998,2e-05,32,8,0,40,50000,20250901,stable_v14_improvement
+1H,entry_macro_RMSE,v14_minus_v13,v14 lower error,-0.0075505726639770385,-0.010434563745385473,-0.00452008197612171,1.0,0.0,30,10,0,40,50000,20250901,stable_v14_improvement
+15N,entry_macro_MAE,v14_minus_v13,v14 lower error,-0.05010514978791125,-0.06893048113510888,-0.03149012150586786,1.0,0.0,30,10,0,40,50000,20250901,stable_v14_improvement
+15N,entry_macro_RMSE,v14_minus_v13,v14 lower error,-0.06303549404382987,-0.07972172943610087,-0.046425673630547254,1.0,0.0,33,7,0,40,50000,20250901,stable_v14_improvement
+CSP_6p51,entry_macro_mean,v14_minus_v13,v14 lower error,-0.01081463450221347,-0.013906937316348568,-0.007825662367477114,1.0,0.0,35,5,0,40,50000,20250901,stable_v14_improvement
