@@ -1,0 +1,127 @@
+{
+  "additional_reporting_only_metrics": {
+    "csp_formula": "sqrt(error_H^2 + (error_N / 6.51)^2)",
+    "csp_nitrogen_divisor": 6.51,
+    "csp_statistics": [
+      "residue_micro_mean",
+      "residue_micro_median",
+      "residue_micro_rmse",
+      "entry_macro_mean"
+    ],
+    "ensemble_sd_absolute_error_diagnostics": true,
+    "entry_ranking": true,
+    "per_entry_metrics": true,
+    "same_cohort_v13_comparison": "reporting_only"
+  },
+  "comparison_policy": {
+    "bootstrap_entries": true,
+    "bootstrap_replicates": 50000,
+    "bootstrap_seed": 20250901,
+    "comparison_is_model_selection": false,
+    "negative_delta_definition": "v14_minus_v13; negative favors v14",
+    "paired_entry_bootstrap_allowed": true,
+    "same_rows_required": true,
+    "v13_comparator_source": "benchmarks/v13_external_blind/predictions/blind_target_predictions.csv"
+  },
+  "external_cohort": {
+    "cohort_modification_after_protocol_lock_allowed": false,
+    "entry_exclusion_after_results_allowed": false,
+    "n_entries": 40,
+    "n_pdb_ids": 40,
+    "n_structure_mappings": 40,
+    "n_targets": 5389,
+    "protocol_input_table": "benchmarks/v14_external_blind/protocol/frozen_external_cohort_inputs.csv",
+    "source_table": "benchmarks/v13_external_blind/predictions/blind_target_predictions.csv",
+    "source_table_sha256": "7f38cdf74195d52ca561b8c15a5f27bb70500edf9a52731e91ec5de9c620bcfe",
+    "target_exclusion_after_results_allowed": false
+  },
+  "external_state_at_protocol_lock": {
+    "v14_external_metrics_calculated": false,
+    "v14_external_predictions_generated": false,
+    "v14_external_residuals_calculated": false
+  },
+  "frozen_deployable_release": {
+    "clean_reload_test_passed": true,
+    "deployable": true,
+    "directory": "releases/v14_deployable_expanded_data",
+    "release_commit": "fdf0bf99301c92e8392ed986cada3a2735cd284c",
+    "release_decision_sha256": "71ccc8eb92a4da7622218e3cff70ae213e60c74dbd5cfd5bbdf02a17db113765",
+    "release_manifest_sha256": "5355ac5131ac294a83a43a8ac6c778cbcd673461b2b86d479f0aab04ecb013b8",
+    "release_status": "deployable_release_frozen"
+  },
+  "prediction_policy": {
+    "angle_feature_source": "full_chain_pdb",
+    "cross_device_tolerance_ppm": 2e-05,
+    "device": "cpu_or_cuda_with_documented_cross_device_tolerance",
+    "hierarchical_b_j_used": false,
+    "inference_source": "standalone frozen release",
+    "model": "v14_deployable_expanded_data_five_seed_ensemble",
+    "model_parameter_changes_allowed": false,
+    "preprocessing_changes_allowed": false,
+    "reference_correction_applied": false
+  },
+  "primary_metrics": [
+    {
+      "metric": "MAE",
+      "nucleus": "1H",
+      "scope": "residue_micro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "RMSE",
+      "nucleus": "1H",
+      "scope": "residue_micro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "MAE",
+      "nucleus": "1H",
+      "scope": "entry_macro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "RMSE",
+      "nucleus": "1H",
+      "scope": "entry_macro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "MAE",
+      "nucleus": "15N",
+      "scope": "residue_micro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "RMSE",
+      "nucleus": "15N",
+      "scope": "residue_micro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "MAE",
+      "nucleus": "15N",
+      "scope": "entry_macro",
+      "unit": "ppm"
+    },
+    {
+      "metric": "RMSE",
+      "nucleus": "15N",
+      "scope": "entry_macro",
+      "unit": "ppm"
+    }
+  ],
+  "protocol_name": "v14_final_external_blind_evaluation",
+  "protocol_parent_commit": "fdf0bf99301c92e8392ed986cada3a2735cd284c",
+  "protocol_status": "locked_before_v14_external_inference",
+  "protocol_step": "STEP_60A",
+  "reporting_policy": {
+    "all_40_entries_primary": true,
+    "all_5389_targets_primary": true,
+    "external_results_are_final_reporting_only": true,
+    "external_results_can_modify_v14": false,
+    "external_results_can_select_v14": false,
+    "post_result_entry_removal_allowed": false,
+    "post_result_target_removal_allowed": false
+  },
+  "repository_branch": "codex_v14"
+}

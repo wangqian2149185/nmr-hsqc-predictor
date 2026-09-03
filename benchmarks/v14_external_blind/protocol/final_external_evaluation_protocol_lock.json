@@ -1,0 +1,16 @@
+{
+  "cohort_input_path": "benchmarks/v14_external_blind/protocol/frozen_external_cohort_inputs.csv",
+  "cohort_input_sha256": "ba056868eb7fb630ce1ef21f8b8f8bb7c3e5ab932edc53fdb0c1f17340189674",
+  "deployable_release_commit": "fdf0bf99301c92e8392ed986cada3a2735cd284c",
+  "deployable_release_manifest_sha256": "5355ac5131ac294a83a43a8ac6c778cbcd673461b2b86d479f0aab04ecb013b8",
+  "hierarchical_b_j_used": false,
+  "n_entries": 40,
+  "n_targets": 5389,
+  "protocol_path": "benchmarks/v14_external_blind/protocol/final_external_evaluation_protocol.json",
+  "protocol_sha256": "13e145b04ed46c31a9cf4e9d930524235408a57128e24e2bd2b46499f757c07e",
+  "reference_correction_applied": false,
+  "structure_input_path": "benchmarks/v14_external_blind/protocol/frozen_external_structure_inputs.csv",
+  "structure_input_sha256": "8f17a4eb3c39624554dc6f185f2d7c7f5bfd9f80036da764f6ead1139c691a9b",
+  "v14_external_metrics_calculated": false,
+  "v14_external_predictions_generated": false
+}
