@@ -1,5 +1,31 @@
 # NMR HSQC Chemical-Shift Predictor
 
+
+<!-- V14_RELEASE_SUMMARY_START -->
+## Current verified release: v14
+
+The current frozen deployment release is the [v14 expanded-data five-seed ensemble](releases/v14_deployable_expanded_data/).
+
+- Training: 69 independent entries, 6,013 residues
+- Model selection: 10-entry validation cohort
+- Internal test: 10 entries, opened once after selection
+- Final external blind test: 40 entries and 5,389 paired targets
+- External coverage: 100%
+- Reference correction: none
+- Hierarchical `b_j`: not used
+
+Final external entry-macro MAE:
+
+| Model | 1H MAE | 15N MAE | CSP 6.51 mean |
+|---|---:|---:|---:|
+| v13 | 0.469806 ppm | 2.842169 ppm | 0.704658 ppm |
+| v14 | 0.462911 ppm | 2.792064 ppm | 0.693843 ppm |
+
+The frozen external comparison supports a stable but modest v14 improvement. Ensemble SD remains an uncalibrated model-disagreement indicator.
+
+See the [v14 release summary](docs/V14_RELEASE_SUMMARY.md) and [final external report](benchmarks/v14_external_blind/results/FINAL_EXTERNAL_REPORT.md).
+<!-- V14_RELEASE_SUMMARY_END -->
+
 Prediction of protein backbone-amide ¹H and ¹⁵N chemical shifts from protein
 structure.
 
