@@ -1,0 +1,62 @@
+{
+  "step": "64A",
+  "description": "Identifier-only filtering of the complete frozen official BMRB-PDB mapping snapshot",
+  "created_at_utc": "2026-09-03T03:55:47.031151+00:00",
+  "branch": "codex_v15",
+  "parent_commit": "47c89d8836ebd72b1c44185a0d2d0110504ec4d7",
+  "step63_protocol_sha256": "7abd0664292d7e175a03f14c40082b2d5eac19245be2f0f7482ae3b11a4fd6ef",
+  "source_files": {
+    "benchmarks/v13_external_blind/discovery/official_bmrb_pdb_mapping_pairs.csv": {
+      "sha256": "e9d95a15fdcc34aad3d01b65ca44d28c48e228bc99a56f1fe0cd7917a8b90e45",
+      "size_bytes": 738016
+    },
+    "development/v15_protocol/step63_known_cohort_exclusions.csv": {
+      "sha256": "0ebc56bca626390f35f51b421f6551ee32f626d902ec01d99daddc0a8508ba91",
+      "size_bytes": 12026
+    }
+  },
+  "summary": {
+    "official_mapping_rows": 9152,
+    "valid_unique_mapping_pairs": 9152,
+    "known_bmrb_id_count": 146,
+    "known_pdb_id_count": 146,
+    "identifier_excluded_mapping_rows": 166,
+    "candidate_mapping_pairs": 8986,
+    "candidate_bmrb_entries": 8620,
+    "candidate_pdb_ids": 8842,
+    "entries_with_multiple_candidate_pdb_ids": 276
+  },
+  "reason_counts": {
+    "eligible_for_shift_screen": 8986,
+    "known_bmrb_id;known_pdb_id": 146,
+    "known_bmrb_id": 15,
+    "known_pdb_id": 5
+  },
+  "output_files": {
+    "development/v15_candidate_pool/step64a_identifier_screen/complete_mapping_pair_identifier_audit.csv": {
+      "sha256": "cb88875ca6dc02d850c380094a59948a12508ce1695c4bf2d38dc6008979b601",
+      "size_bytes": 737877
+    },
+    "development/v15_candidate_pool/step64a_identifier_screen/unseen_identifier_candidate_pairs.csv": {
+      "sha256": "ed5afa3a96032b06f43f71b3e957b790551b0e781aea84210efa4906152a6cc1",
+      "size_bytes": 140942
+    },
+    "development/v15_candidate_pool/step64a_identifier_screen/bmrb_shift_screen_request_queue.csv": {
+      "sha256": "1eaa6b87f0f6ac89ac82aa557b902967d5ab63089625026577d15c2d89e30ece",
+      "size_bytes": 249324
+    }
+  },
+  "state": {
+    "identifier_screen_completed": true,
+    "chemical_shift_api_requested": false,
+    "chemical_shift_values_read": false,
+    "structure_download_started": false,
+    "feature_generation_started": false,
+    "cohort_assignment_started": false,
+    "model_training_started": false,
+    "new_internal_test_opened": false,
+    "new_external_blind_opened": false,
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false
+  }
+}
