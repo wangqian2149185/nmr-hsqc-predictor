@@ -1,0 +1,31 @@
+{
+  "architecture_search_started": false,
+  "branch": "codex_v15",
+  "complete_mapping_pool_screen_required": true,
+  "data_discovery_started": false,
+  "entry_level_role_isolation_required": true,
+  "fixed_v14_architecture_is_first_baseline": true,
+  "frozen_v14_release_modified": false,
+  "hierarchical_b_j_used": false,
+  "homology_aware_role_isolation_required": true,
+  "loss_scaling_experiments_started": false,
+  "minimum_training_entry_milestone": 300,
+  "model_development_version": "v15",
+  "model_training_started": false,
+  "new_external_cohort_required": true,
+  "predeclared_loss_scaling_candidates": [
+    "train_only_target_standard_deviation",
+    "csp_nitrogen_divisor_6p51",
+    "uncertainty_weighted_multitask_loss",
+    "separate_h_and_n_models"
+  ],
+  "preferred_training_entry_target": 500,
+  "primary_objective": "expand_effective_independent_training_entry_count",
+  "reference_correction_applied": false,
+  "report_csp_6p51": true,
+  "report_h_and_n_separately": true,
+  "residue_level_random_split_allowed": false,
+  "source_branch": "codex_v14",
+  "source_v14_commit": "8d43a1598f46c0d5e2be7edba14aaddb2266b25f",
+  "v14_external_allowed_for_v15_selection": false
+}
