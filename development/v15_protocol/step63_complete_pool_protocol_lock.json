@@ -1,0 +1,18 @@
+{
+  "protocol_file": "development/v15_protocol/step63_complete_pool_protocol.json",
+  "protocol_sha256": "7abd0664292d7e175a03f14c40082b2d5eac19245be2f0f7482ae3b11a4fd6ef",
+  "known_cohort_exclusion_file": "development/v15_protocol/step63_known_cohort_exclusions.csv",
+  "known_cohort_exclusion_sha256": "0ebc56bca626390f35f51b421f6551ee32f626d902ec01d99daddc0a8508ba91",
+  "mapping_pair_count": 9152,
+  "known_development_entries": 106,
+  "opened_external_entries_excluded": 40,
+  "minimum_training_entry_milestone": 300,
+  "preferred_training_entry_target": 500,
+  "homology_identity_threshold": 0.4,
+  "allocation_seed": 20260902,
+  "candidate_discovery_started": false,
+  "model_training_started": false,
+  "new_external_blind_opened": false,
+  "reference_correction_applied": false,
+  "hierarchical_b_j_used": false
+}

@@ -1,0 +1,164 @@
+{
+  "protocol_name": "v15_complete_bmrb_pdb_pool_screening_and_cohort_allocation",
+  "protocol_version": 1,
+  "created_at_utc": "2026-09-03T03:48:53.962659+00:00",
+  "branch": "codex_v15",
+  "parent_commit": "9250aca5d67f55ea5d98b2724b8a73bc18eab4cd",
+  "candidate_universe": {
+    "source": "frozen official BMRB-PDB mapping snapshot",
+    "use_complete_mapping_snapshot": true,
+    "mapping_pair_count": 9152,
+    "unique_bmrb_id_count": 8770,
+    "unique_pdb_id_count": 9003,
+    "candidate_discovery_started": false
+  },
+  "known_cohort_policy": {
+    "v14_development_entries": 106,
+    "v14_external_opened_entries": 40,
+    "total_known_bmrb_ids": 146,
+    "total_known_pdb_ids": 146,
+    "cross_cohort_bmrb_overlap_count": 0,
+    "v14_development": "may be inherited as training data only; it is never eligible for v15 validation, internal test, or new external blind evaluation",
+    "v14_external_opened": "historical reporting only; excluded from v15 training, selection, internal test, and new external blind evaluation",
+    "exclude_exact_bmrb_overlap": true,
+    "exclude_exact_pdb_overlap": true,
+    "exclude_sequence_homology_across_roles": true
+  },
+  "chemical_shift_eligibility": {
+    "required_targets": [
+      "backbone amide 1H",
+      "backbone amide 15N"
+    ],
+    "paired_hn_required": true,
+    "exclude_proline_targets": true,
+    "minimum_mapped_paired_targets_per_entry": 40,
+    "retain_raw_reported_shifts": true,
+    "target_correction": "none",
+    "reference_correction": "none",
+    "hierarchical_b_j": false,
+    "shift_list_policy": "select one exact complete HN-containing shift list; ambiguous or conflicting provenance must be flagged before eligibility",
+    "reference_metadata_policy": "record direct/indirect reference method and reagent metadata when available; do not correct targets in v15 baseline screening"
+  },
+  "entity_structure_mapping": {
+    "protein_polymer_required": true,
+    "minimum_sequence_identity": 0.9,
+    "minimum_sequence_coverage": 0.7,
+    "chain_mapping_required": true,
+    "residue_identity_match_required": true,
+    "structure_feature_reconstructability_required": true,
+    "nonstandard_residue_policy": "record and ignore non-polymer ligands or unsupported residue codes; do not abort an otherwise valid protein entry solely because a ligand such as GNP is present",
+    "alternate_location_policy": "use deterministic highest-occupancy conformer with stable tie handling",
+    "multi_model_policy": "use the first structural model for baseline compatibility and record model count"
+  },
+  "leakage_control": {
+    "unit_of_assignment": "sequence-identity connected component",
+    "sequence_identity_threshold": 0.4,
+    "connected_components_required": true,
+    "no_component_split_across_roles": true,
+    "no_residue_level_random_split": true,
+    "no_entry_level_split_before_homology_clustering": true,
+    "duplicate_sequence_policy": "all identical and homologous chains remain in the same connected component"
+  },
+  "deterministic_allocation": {
+    "allocation_seed": 20260902,
+    "allocation_occurs_after": [
+      "chemical-shift eligibility",
+      "shift-list provenance audit",
+      "entity-chain mapping",
+      "structure feature reconstruction",
+      "40-percent identity connected-component construction"
+    ],
+    "allocation_unit": "homology connected component",
+    "allocation_priority": [
+      "new_external_blind",
+      "internal_test",
+      "model_selection_validation",
+      "training"
+    ],
+    "new_external_blind": {
+      "target_fraction": 0.1,
+      "minimum_entries": 50,
+      "model_results_visible_during_selection": false,
+      "sealed_before_model_training": true,
+      "single_final_opening": true
+    },
+    "internal_test": {
+      "target_fraction": 0.1,
+      "minimum_entries": 30,
+      "eligible_for_model_selection": false,
+      "single_opening_after_model_selection": true
+    },
+    "model_selection_validation": {
+      "target_fraction": 0.1,
+      "minimum_entries": 30,
+      "eligible_for_model_selection": true
+    },
+    "training": {
+      "receives_remaining_components": true,
+      "minimum_entry_milestone": 300,
+      "preferred_entry_target": 500
+    },
+    "balancing_variables": [
+      "number of entries",
+      "number of paired HN targets",
+      "sequence length"
+    ],
+    "insufficient_pool_policy": "do not weaken homology isolation or reuse the opened v14 external cohort; report the attainable training size and stop before training if fewer than 300 training entries remain"
+  },
+  "baseline_model_policy": {
+    "first_model": "v14 fixed Step33 nucleus-specific architecture",
+    "architecture_change_before_baseline": false,
+    "loss_first_baseline": "equal MSE after train-only target standardization",
+    "future_predeclared_loss_comparisons": [
+      "train-standard-deviation scaling",
+      "CSP 6.51 nitrogen scaling",
+      "uncertainty-weighted multitask loss",
+      "separate H and N models"
+    ],
+    "report_metrics": [
+      "1H MAE and RMSE",
+      "15N MAE and RMSE",
+      "entry-macro 1H and 15N metrics",
+      "CSP_6.51"
+    ]
+  },
+  "prohibited_actions_before_protocol_lock": [
+    "new-candidate model inference",
+    "new-candidate residual calculation",
+    "new-candidate metric calculation",
+    "post-result entry exclusion",
+    "post-result target exclusion",
+    "reference correction",
+    "hierarchical b_j fitting"
+  ],
+  "frozen_input_checksums": {
+    "benchmarks/v13_external_blind/discovery/official_bmrb_pdb_mapping_pairs.csv": {
+      "sha256": "e9d95a15fdcc34aad3d01b65ca44d28c48e228bc99a56f1fe0cd7917a8b90e45",
+      "size_bytes": 738016
+    },
+    "benchmarks/v13_external_blind/discovery/official_bmrb_pdb_mapping_response.json": {
+      "sha256": "956e526560d99097943e636d5725639996b9495c337969541770fa46cf07c6fc",
+      "size_bytes": 608821
+    },
+    "development/v14_dataset/v14_development_raw_features.csv": {
+      "sha256": "8fcab623c85d2d861f2db8bb3f2a0c66843915a2c3cacf7aff7592a43e80d409",
+      "size_bytes": 4673110
+    },
+    "benchmarks/v14_external_blind/results/external_target_predictions.csv": {
+      "sha256": "6608ff5d134787fa800d78a5ba7f69b5467383ad258929e15ebf7998c62a12bd",
+      "size_bytes": 1213411
+    }
+  },
+  "state_at_lock": {
+    "new_candidate_download_started": false,
+    "new_shift_screen_started": false,
+    "new_structure_screen_started": false,
+    "new_feature_generation_started": false,
+    "cohort_assignment_started": false,
+    "model_training_started": false,
+    "new_internal_test_opened": false,
+    "new_external_blind_opened": false,
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false
+  }
+}
