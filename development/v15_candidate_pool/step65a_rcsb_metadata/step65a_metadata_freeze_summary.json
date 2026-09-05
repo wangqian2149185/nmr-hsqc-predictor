@@ -1,0 +1,43 @@
+{
+  "candidate_pdb_id_count": 5419,
+  "cohort_assignment_started": false,
+  "coordinate_files_downloaded": false,
+  "entity_chain_selected": false,
+  "entries_with_auth_chain_ids": 5396,
+  "entries_with_protein_entity": 5396,
+  "entries_with_protein_sequence": 5396,
+  "feature_generation_started": false,
+  "files": {
+    "missing_pdb_ids.csv": {
+      "sha256": "ff41b57717046da10fb6c07f3eb68ce17a4ee76f4610e338c94be029122dd099",
+      "size_bytes": 762
+    },
+    "rcsb_entry_metadata.csv.gz": {
+      "sha256": "ef49e65af505fef07a23289cd64764d91b617f1873f9df1ba4dff11d1f012913",
+      "size_bytes": 31319
+    },
+    "rcsb_polymer_entity_metadata.csv.gz": {
+      "sha256": "dcab6314c45843accdcc79c0d42a54ac5068b3c6bf4e296d1aa7a44ff4108f49",
+      "size_bytes": 383562
+    },
+    "step65a_metadata_manifest.json": {
+      "sha256": "223659d735102a4663e170816e61533cf94f81567080c49ce160bfeb0747e5d9",
+      "size_bytes": 2142
+    }
+  },
+  "hierarchical_b_j_used": false,
+  "homology_clustering_started": false,
+  "missing_entry_count": 22,
+  "model_training_started": false,
+  "parent_commit": "83585bad08cdb7f6456633731f4e6ce4694bea8f",
+  "protein_polymer_entity_count": 5950,
+  "raw_graphql_batch_count": 55,
+  "raw_graphql_batches_committed": false,
+  "reference_correction_applied": false,
+  "returned_entry_count": 5397,
+  "returned_polymer_entity_count": 6105,
+  "shift_list_selected": false,
+  "source_drive_directory": "/content/drive/MyDrive/nmr_hsqc_predictor_v15/candidate_pool/step65a_rcsb_metadata",
+  "status": "frozen",
+  "step": "STEP 65A-1F"
+}
