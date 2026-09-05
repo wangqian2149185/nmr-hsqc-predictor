@@ -1,0 +1,8 @@
+{
+  "coordinate_download_started": false,
+  "final_selection_started": false,
+  "model_training_started": false,
+  "parent_commit": "463ba54c02281a84bc03ffce9de615850daf1329",
+  "policy_sha256": "b5a04f0804a5d444ef77ccca33f2405a3d158fdfd60e4f4f04c0c8e9990a7745",
+  "step": "STEP 65B-2B4"
+}

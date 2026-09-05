@@ -1,0 +1,62 @@
+{
+  "coordinate_validation_order": [
+    "preserve_all_scientific_contenders",
+    "verify_declared_author_chain_exists",
+    "align_actual_coordinate_residues_to_bmrb_entity",
+    "require_coordinate_alignment_identity_at_least_0.90",
+    "require_mapped_target_coverage_at_least_0.70",
+    "maximize_unambiguously_mapped_paired_hn_targets",
+    "maximize_usable_coordinate_residue_coverage",
+    "minimize_missing_required_backbone_atoms",
+    "retain_exact_ties_as_unresolved"
+  ],
+  "data_state": {
+    "cohort_assignment_started": false,
+    "coordinate_download_started": false,
+    "feature_generation_started": false,
+    "final_bmrb_entity_selected": false,
+    "final_chain_selected": false,
+    "final_pdb_selected": false,
+    "final_polymer_entity_selected": false,
+    "final_shift_list_selected": false,
+    "hierarchical_b_j_used": false,
+    "homology_clustering_started": false,
+    "model_training_started": false,
+    "reference_correction_applied": false
+  },
+  "input_state": {
+    "entries_tied_after_scientific_hierarchy": 173,
+    "entries_with_multiple_author_chains": 449,
+    "entries_with_one_scientific_contender": 5005,
+    "entries_without_passing_alignment": 81,
+    "passing_alignment_entries": 5178,
+    "passing_group_rows": 5646,
+    "shift_eligible_entries": 5259,
+    "unique_sequence_comparisons": 6341
+  },
+  "parent_commit": "463ba54c02281a84bc03ffce9de615850daf1329",
+  "policy_name": "v15_predeclared_entity_chain_coordinate_selection",
+  "selection_rules": {
+    "chain_identifier_may_not_break_ties": true,
+    "coordinate_validation_required_for_every_entry": true,
+    "exact_remaining_ties_retained_for_audit": true,
+    "experimental_method_alone_may_not_break_ties": true,
+    "failed_coordinate_candidate_falls_back_to_next_contender": true,
+    "pdb_identifier_may_not_break_ties": true,
+    "resolution_used_only_when_structurally_comparable": true,
+    "row_order_may_not_break_ties": true,
+    "unique_sequence_contender_is_provisional": true
+  },
+  "sequence_requirements": {
+    "minimum_bmrb_sequence_coverage": 0.7,
+    "minimum_identity": 0.9,
+    "x_positions_excluded_from_identity": true
+  },
+  "source_checksums": {
+    "alignment_output_sha256": "20e29bd685ef5d85b058227f5486d3efc2c6cb506002789646eba976c705b0a2",
+    "alignment_policy_sha256": "88058704d5f5f4d62d0e9ed83f4355be0fe96645d16e38024f1f5516ca15511e",
+    "entity_sequence_output_sha256": "f0344e0fdc4477ac94cfb5a8a20b348a3308bc780c487485efce57d3f41bba88",
+    "group_alignment_output_sha256": "3cc6abecfe33a837baa8ccf01da44a5c6f77634afad202ddfd1e240b4b3f1058"
+  },
+  "step": "STEP 65B-2B4"
+}
