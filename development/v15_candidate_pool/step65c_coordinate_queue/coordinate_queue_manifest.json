@@ -1,0 +1,45 @@
+{
+  "coordinate_download_started": false,
+  "coordinate_format": "RCSB mmCIF gzip",
+  "coordinate_validation_started": false,
+  "deferred_fallback_rows": 242,
+  "download_url_template": "https://files.rcsb.org/download/{PDB_ID}.cif.gz",
+  "entries_with_one_scientific_contender": 5005,
+  "entries_with_tied_scientific_contenders": 173,
+  "entries_without_passing_alignment": 81,
+  "fallback_policy": "open only for entries whose first-pass contenders fail frozen coordinate validation",
+  "files": {
+    "development/v15_candidate_pool/step65c_coordinate_queue/deferred_fallback_alignments.csv.gz": {
+      "sha256": "002f2b1785f850df1e09721f75d4a33ff76f29b472c394773da72f7f1d5b974d",
+      "size_bytes": 4210
+    },
+    "development/v15_candidate_pool/step65c_coordinate_queue/first_pass_chain_candidates.csv.gz": {
+      "sha256": "6ee165c9db198db198be452a65020ea4e1b9e60cde9cfcbde1b1c46ffe2d2de2",
+      "size_bytes": 38245
+    },
+    "development/v15_candidate_pool/step65c_coordinate_queue/first_pass_pdb_download_queue.csv": {
+      "sha256": "10a3a70d7b35e1ebbeeb57440a4266ddc35375520b214328a15fd9944ab1e06e",
+      "size_bytes": 445525
+    },
+    "development/v15_candidate_pool/step65c_coordinate_queue/first_pass_scientific_contenders.csv.gz": {
+      "sha256": "89b42febc689ae883569d376edaa3f22ad89646797a08cd83387dbfcf8bb0c42",
+      "size_bytes": 86241
+    }
+  },
+  "final_chain_selected": false,
+  "final_entity_selected": false,
+  "final_pdb_selected": false,
+  "final_shift_list_selected": false,
+  "first_pass_chain_candidate_rows": 5957,
+  "first_pass_contender_rows": 5404,
+  "hierarchical_b_j_used": false,
+  "model_run": false,
+  "parent_commit": "c023ef3872ac403bc3799a8843df64d4c967c823",
+  "passing_entries": 5178,
+  "reference_correction_applied": false,
+  "status": "frozen_before_coordinate_download",
+  "step": "STEP 65C-1",
+  "unique_first_pass_pdb_chain_pairs": 5808,
+  "unique_first_pass_pdb_files": 5283,
+  "unique_first_pass_pdb_polymer_entities": 5289
+}
