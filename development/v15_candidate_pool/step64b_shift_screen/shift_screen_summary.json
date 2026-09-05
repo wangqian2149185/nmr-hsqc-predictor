@@ -1,0 +1,64 @@
+{
+  "step": "64B-2B",
+  "created_at_utc": "2026-09-05T19:43:58.680741+00:00",
+  "branch": "codex_v15",
+  "parent_commit": "9add8b7bb3096d7c085da7a433b19861c82b2667",
+  "source_extract_sha256": "e762ffb7de18be061631880297b0bf682671b55a783b53a5a59af726efda43b9",
+  "minimum_strict_hn_pairs": 40,
+  "candidate_queue_entries": 8620,
+  "entries_with_any_h_or_n": 7744,
+  "shift_screen_eligible_entries": 5259,
+  "entries_with_multiple_eligible_groups": 181,
+  "entries_tied_for_best_group": 160,
+  "entries_with_conflicting_residues": 44,
+  "entity_shift_list_groups": 8509,
+  "eligible_entity_shift_list_groups": 5490,
+  "structure_screen_candidate_pairs": 5505,
+  "structure_screen_candidate_pdb_ids": 5419,
+  "shift_screen_status_counts": {
+    "eligible_for_structure_screen": 5259,
+    "fewer_than_40_strict_hn_pairs": 2485,
+    "no_retained_h_or_n": 876
+  },
+  "selection_policy": {
+    "entry_shift_eligible_if": "at least one entity/shift-list group has at least 40 strict unambiguous H-N pairs",
+    "identical_duplicate_values": "collapsed for pair counting and retained in residue-level audit",
+    "conflicting_values": "not averaged; conflicting residue key is not counted as a strict pair",
+    "final_entity_selection": "deferred until BMRB entity to PDB chain alignment",
+    "final_shift_list_selection": "deferred until entity-chain alignment"
+  },
+  "drive_residue_audit": {
+    "path": "/content/drive/MyDrive/nmr_hsqc_predictor_v15/candidate_pool/step64b_shift_screen/residue_level_pairing_audit.csv.gz",
+    "metadata_path": "/content/drive/MyDrive/nmr_hsqc_predictor_v15/candidate_pool/step64b_shift_screen/residue_level_pairing_audit.metadata.json",
+    "sha256": "1f7166d31928581089ee3b5f6552c6d0691da00b7d110c54ce962d314ed9d1a8",
+    "rows": 625575
+  },
+  "git_output_files": {
+    "development/v15_candidate_pool/step64b_shift_screen/entry_shift_screen.csv": {
+      "sha256": "46434bf80dc55fd4c0ef4031a243eb132ddd610f45e04ea470d40adb2b0d166f",
+      "size_bytes": 1106948
+    },
+    "development/v15_candidate_pool/step64b_shift_screen/entity_shift_list_pairing_audit.csv": {
+      "sha256": "333d0daa7588ea9eabf281014acf0546167f7031b408d5b7bc9456bf8ef2b225",
+      "size_bytes": 631530
+    },
+    "development/v15_candidate_pool/step64b_shift_screen/structure_screen_candidate_pairs.csv": {
+      "sha256": "244fb5d3c329a39a6b1ba32aa62976ab085b88ee0cfdffa6a885806ada3fb660",
+      "size_bytes": 206652
+    }
+  },
+  "state": {
+    "chemical_shift_screen_completed": true,
+    "final_entity_selected": false,
+    "final_shift_list_selected": false,
+    "structure_download_started": false,
+    "feature_generation_started": false,
+    "homology_clustering_started": false,
+    "cohort_assignment_started": false,
+    "model_training_started": false,
+    "new_internal_test_opened": false,
+    "new_external_blind_opened": false,
+    "reference_correction_applied": false,
+    "hierarchical_b_j_used": false
+  }
+}
