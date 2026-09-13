@@ -1,0 +1,5 @@
+tie_category,n_entries,n_candidate_rows
+different_bmrb_entities,6,12
+different_chains_same_polymer_entity,289,670
+different_pdb_structures,111,274
+different_shift_lists,38,152

@@ -1,0 +1,15 @@
+{
+  "alignment_limit": 100,
+  "atom_availability_policy": "For each required atom name, at least one record must have occupancy > 0 and finite xyz. Altloc records are not used to construct geometry.",
+  "candidate_rows": 1192,
+  "commit": "a4ddf83929e297bbd588adbe104c3507427e79df",
+  "entries": 450,
+  "final_selection_performed": false,
+  "input_checksums": {
+    "candidate_pool/step65b2_bmrb_entity_sequences/candidate_bmrb_entity_sequences.csv.gz": "f0344e0fdc4477ac94cfb5a8a20b348a3308bc780c487485efce57d3f41bba88",
+    "candidate_pool/step65d9_first_stage_shortlist/stage1_scientific_shortlist.csv": "4dc909fac928c04cae7579b4ded7ccd6c57f5aac5caf852d85721dea69f8ae4b",
+    "development/v15_candidate_pool/step65c_coordinate_cache_audit/coordinate_cache_inventory.csv": "3ef3b25f18c26fd855c4dadd70d48429c3a98a1a483d1cea0a15d0e54f3a9985",
+    "development/v15_candidate_pool/step65d_secondary_metric_definition/secondary_metric_definition.json": "c02a9bb37a86313bf54b519dab9a1d0bf5f594cf9c2684791d9ee692d449c4af"
+  },
+  "step": "STEP 65D-10C-1"
+}

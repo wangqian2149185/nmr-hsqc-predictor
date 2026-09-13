@@ -1,0 +1,41 @@
+{
+  "artifacts": [
+    {
+      "file": "unique_selected_candidates.csv",
+      "rows": 4681,
+      "sha256": "a0f20247f57c0c440678abcb258155b7cdbd441e6294e5c485c9f76c558c3456"
+    },
+    {
+      "file": "unresolved_exact_tie_candidates.csv",
+      "rows": 1108,
+      "sha256": "22699b1e6b350b2737bb1a798abe67340407aa137441b146ab7782e3dc17189e"
+    },
+    {
+      "file": "all_retained_candidates.csv",
+      "rows": 5789,
+      "sha256": "f85fa54fd6a0c9b3e0e59dd223da4257a568cb5f1ae02f86ab97e74531d4b0f6"
+    },
+    {
+      "file": "secondary_selection_entry_audit.csv",
+      "rows": 450,
+      "sha256": "4fa0c045a1cc67dcb0ce2716f712781af22935268d15508cc507c8a724527f58"
+    }
+  ],
+  "cohort_assignment_started": false,
+  "commit": "a4ddf83929e297bbd588adbe104c3507427e79df",
+  "completed_at_utc": "2026-09-13T17:47:10.264680+00:00",
+  "coordinates_reparsed": false,
+  "coverage_comparison": "exact_integer_fraction",
+  "entries_requiring_secondary_metrics": 450,
+  "identifier_or_row_order_tiebreak_applied": false,
+  "model_run": false,
+  "passing_entries_considered": 5125,
+  "repository_files_modified": false,
+  "step": "STEP 65D-11",
+  "total_unique_selected_entries": 4681,
+  "unique_after_primary_metric": 4675,
+  "unique_after_secondary_metrics": 6,
+  "unresolved_candidate_rows": 1108,
+  "unresolved_entries": 444,
+  "unresolved_entries_automatically_excluded": false
+}

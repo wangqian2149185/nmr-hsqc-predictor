@@ -1,0 +1,47 @@
+{
+  "step": "STEP 65D-12",
+  "commit": "a4ddf83929e297bbd588adbe104c3507427e79df",
+  "unresolved_entries": 444,
+  "unresolved_candidate_rows": 1108,
+  "category_counts": [
+    {
+      "tie_category": "different_bmrb_entities",
+      "n_entries": 6,
+      "n_candidate_rows": 12
+    },
+    {
+      "tie_category": "different_chains_same_polymer_entity",
+      "n_entries": 289,
+      "n_candidate_rows": 670
+    },
+    {
+      "tie_category": "different_pdb_structures",
+      "n_entries": 111,
+      "n_candidate_rows": 274
+    },
+    {
+      "tie_category": "different_shift_lists",
+      "n_entries": 38,
+      "n_candidate_rows": 152
+    }
+  ],
+  "classification_note": "Categories use a hierarchy; separate flags retain overlapping entity, shift-list and PDB differences.",
+  "same_polymer_chain_equivalence_assumed": false,
+  "new_tiebreak_applied": false,
+  "candidates_removed": false,
+  "cohort_assignment_started": false,
+  "model_run": false,
+  "artifacts": [
+    {
+      "file": "unresolved_entry_type_audit.csv",
+      "rows": 444,
+      "sha256": "56f855fdf1bdf85dc8dd2b78063d373d49f7e866f6376a97ec574af105f052e3"
+    },
+    {
+      "file": "unresolved_tie_category_counts.csv",
+      "rows": 4,
+      "sha256": "ac8077cad1d7e3f544ead52e560d18d99638d63db4ee667dc8d566dbc65354d7"
+    }
+  ],
+  "completed_at_utc": "2026-09-13T17:48:20.258950+00:00"
+}

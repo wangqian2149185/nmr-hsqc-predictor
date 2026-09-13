@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "file": "secondary_metric_results.csv",
+      "sha256": "57a14cc7d700835b20f9a304b2070b4c325a848fcf49f4ce8d1179dc2f3033aa",
+      "size_bytes": 272054,
+      "source_drive_relative_path": "candidate_pool/step65d10c_secondary_metrics/secondary_metric_results.csv"
+    },
+    {
+      "file": "secondary_metric_input_lock.json",
+      "sha256": "7f33b7d196ae82aee2824855d6ea73b37fc18297b9c30671f7187dc6805ef0a2",
+      "size_bytes": 1051,
+      "source_drive_relative_path": "candidate_pool/step65d10c_secondary_metrics/secondary_metric_input_lock.json"
+    },
+    {
+      "file": "unique_selected_candidates.csv",
+      "sha256": "a0f20247f57c0c440678abcb258155b7cdbd441e6294e5c485c9f76c558c3456",
+      "size_bytes": 966636,
+      "source_drive_relative_path": "candidate_pool/step65d11_selection_audit/unique_selected_candidates.csv"
+    },
+    {
+      "file": "unresolved_exact_tie_candidates.csv",
+      "sha256": "22699b1e6b350b2737bb1a798abe67340407aa137441b146ab7782e3dc17189e",
+      "size_bytes": 239154,
+      "source_drive_relative_path": "candidate_pool/step65d11_selection_audit/unresolved_exact_tie_candidates.csv"
+    },
+    {
+      "file": "all_retained_candidates.csv",
+      "sha256": "f85fa54fd6a0c9b3e0e59dd223da4257a568cb5f1ae02f86ab97e74531d4b0f6",
+      "size_bytes": 1205186,
+      "source_drive_relative_path": "candidate_pool/step65d11_selection_audit/all_retained_candidates.csv"
+    },
+    {
+      "file": "secondary_selection_entry_audit.csv",
+      "sha256": "4fa0c045a1cc67dcb0ce2716f712781af22935268d15508cc507c8a724527f58",
+      "size_bytes": 17981,
+      "source_drive_relative_path": "candidate_pool/step65d11_selection_audit/secondary_selection_entry_audit.csv"
+    },
+    {
+      "file": "unresolved_entry_type_audit.csv",
+      "sha256": "56f855fdf1bdf85dc8dd2b78063d373d49f7e866f6376a97ec574af105f052e3",
+      "size_bytes": 42400,
+      "source_drive_relative_path": "candidate_pool/step65d12_unresolved_tie_audit/unresolved_entry_type_audit.csv"
+    },
+    {
+      "file": "unresolved_tie_category_counts.csv",
+      "sha256": "ac8077cad1d7e3f544ead52e560d18d99638d63db4ee667dc8d566dbc65354d7",
+      "size_bytes": 176,
+      "source_drive_relative_path": "candidate_pool/step65d12_unresolved_tie_audit/unresolved_tie_category_counts.csv"
+    },
+    {
+      "file": "secondary_metric_summary.json",
+      "sha256": "a60e08582544c35bef71095146d885d3651dd15ea17aa367837fbf6ad0946f8d",
+      "size_bytes": 464,
+      "source_drive_relative_path": "candidate_pool/step65d10c_secondary_metrics/secondary_metric_summary.json"
+    },
+    {
+      "file": "selection_audit_summary.json",
+      "sha256": "8663cdc601f172fa01406f74cc639c7486af8fca98919265ffc25d2e6109fa69",
+      "size_bytes": 1383,
+      "source_drive_relative_path": "candidate_pool/step65d11_selection_audit/selection_audit_summary.json"
+    },
+    {
+      "file": "unresolved_tie_audit_summary.json",
+      "sha256": "df3d1864014883ac5cab9f42f9d8fb334360b2b846b97f1f34fd3111eb155fd8",
+      "size_bytes": 1362,
+      "source_drive_relative_path": "candidate_pool/step65d12_unresolved_tie_audit/unresolved_tie_audit_summary.json"
+    }
+  ],
+  "candidate_json_drive_relative_path": "candidate_pool/step65d10c_secondary_metrics/candidate_results",
+  "cohort_assignment_started": false,
+  "coordinate_cache_drive_relative_path": "coordinate_cache/step65c2b_first_pass",
+  "created_at_utc": "2026-09-13T17:49:25.552707+00:00",
+  "model_run": false,
+  "new_tiebreak_applied": false,
+  "parent_commit": "a4ddf83929e297bbd588adbe104c3507427e79df",
+  "step": "STEP 65D-13A",
+  "unique_candidate_entries": 4681,
+  "unresolved_candidate_rows": 1108,
+  "unresolved_disposition": "preserved_pending_dataset_inclusion_policy",
+  "unresolved_entries": 444,
+  "unresolved_entries_deleted": false
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_results": 1192,
+  "commit": "a4ddf83929e297bbd588adbe104c3507427e79df",
+  "final_selection_performed": false,
+  "input_lock_sha256": "7f33b7d196ae82aee2824855d6ea73b37fc18297b9c30671f7187dc6805ef0a2",
+  "model_run": false,
+  "repository_files_modified": false,
+  "results_sha256": "57a14cc7d700835b20f9a304b2070b4c325a848fcf49f4ce8d1179dc2f3033aa",
+  "reused_results": 0,
+  "status_counts": {
+    "evaluated": 1192
+  },
+  "step": "STEP 65D-10C-1"
+}
