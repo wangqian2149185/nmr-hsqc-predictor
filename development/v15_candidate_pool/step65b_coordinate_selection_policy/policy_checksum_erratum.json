@@ -1,0 +1,18 @@
+{
+  "type": "frozen_policy_checksum_erratum",
+  "policy_file": "development/v15_candidate_pool/step65b_coordinate_selection_policy/coordinate_selection_policy.json",
+  "original_lock_file": "development/v15_candidate_pool/step65b_coordinate_selection_policy/coordinate_selection_policy_lock.json",
+  "original_policy_commit": "c023ef3872ac403bc3799a8843df64d4c967c823",
+  "verified_at_commit": "20a100471f8857a6ba83784260b2c17749f5eac8",
+  "original_lock_policy_sha256": "b5a04f0804a5d444ef77ccca33f2405a3d158fdfd60e4f4f04c0c8e9990a7745",
+  "actual_committed_policy_sha256": "8addc8113e8dc8d1133bf1c916e81e302cd50febb25a12548c6305c3702ebfbb",
+  "policy_size_bytes": 2620,
+  "original_lock_file_sha256": "954d47b4289492063312d5877e6cba694d5bf0bc869e3701f2e4040267543dd9",
+  "working_current_original_policy_bytes_identical": true,
+  "original_lock_preserved": true,
+  "scientific_policy_modified": false,
+  "cause": "Original lock digest does not match original committed policy bytes; digest-generation cause is undetermined.",
+  "validation_rule": "Require policy bytes to match original policy commit, actual checksum, and preserved original lock checksum.",
+  "coordinate_validation_started": false,
+  "created_at_utc": "2026-09-13T02:51:31.691413+00:00"
+}
