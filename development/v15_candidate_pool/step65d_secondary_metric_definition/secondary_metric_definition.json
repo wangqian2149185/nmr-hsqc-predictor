@@ -1,0 +1,75 @@
+{
+  "alignment_handling": {
+    "enumeration_truncated": "Do not use an incomplete alignment enumeration to establish uniqueness or resolve selection.",
+    "maximum_optimal_alignments_inspected": 100,
+    "model": "Lowest numeric coordinate model, as previously used.",
+    "reuse_frozen_alignment_scoring": true,
+    "x_positions_may_not_establish_identity": true
+  },
+  "approval_scope": "Define the previously unspecified secondary metrics without changing the original selection hierarchy.",
+  "expected_workload": {
+    "entries_requiring_secondary_metrics": 450,
+    "evaluation_rows_requiring_secondary_metrics": 1192,
+    "unique_pdb_files": 582
+  },
+  "frozen_stage1_input_checksums": {
+    "all_evaluated_chain_candidates.csv": "b6eb3538e32bfdeac5065e5d73103b144d2aa656f46704e5773aaf02288441ce",
+    "stage1_entry_audit.csv": "645a8a675065a6e6427fa00ee27cab75c9de14f41f30c5f08832a1113d9312af",
+    "stage1_scientific_shortlist.csv": "4dc909fac928c04cae7579b4ded7ccd6c57f5aac5caf852d85721dea69f8ae4b"
+  },
+  "missing_required_backbone_atom_count": {
+    "calculation": "Sum missing or invalid N, CA, C and O atoms over that population.",
+    "population": "All standard BMRB entity residues uniquely and identity-consistently mapped across every optimal alignment, including mapped residues with incomplete backbone atoms.",
+    "required_atoms": [
+      "N",
+      "CA",
+      "C",
+      "O"
+    ],
+    "unknown_or_nonstandard_residues_in_population": false,
+    "unmapped_residues_counted_as_missing_atoms": false
+  },
+  "original_lock_preserved": true,
+  "original_lock_sha256": "954d47b4289492063312d5877e6cba694d5bf0bc869e3701f2e4040267543dd9",
+  "original_policy_preserved": true,
+  "original_policy_sha256": "8addc8113e8dc8d1133bf1c916e81e302cd50febb25a12548c6305c3702ebfbb",
+  "parent_commit": "122c42146c41753dc2f078b3766c8e1ebdbec297",
+  "policy_checksum_erratum_sha256": "6ae61c32a2691f08df25e74f9fa3e7ce1d62e8686ec0f3cba13f50baf4e81289",
+  "ranking_order": [
+    "maximize_unambiguously_mapped_paired_hn_target_count",
+    "maximize_usable_coordinate_residue_coverage",
+    "minimize_missing_required_backbone_atom_count",
+    "retain_exact_remaining_ties_as_unresolved"
+  ],
+  "state_at_definition_freeze": {
+    "final_selection_completed": false,
+    "hierarchical_b_j_used": false,
+    "model_run": false,
+    "reference_correction_applied": false,
+    "secondary_metrics_calculated": false
+  },
+  "step": "STEP 65D-10B",
+  "tie_handling": {
+    "chain_identifier_tiebreak_allowed": false,
+    "exact_remaining_ties": "unresolved",
+    "pdb_identifier_tiebreak_allowed": false,
+    "row_order_tiebreak_allowed": false
+  },
+  "type": "supplemental_scientific_implementation_definition",
+  "usable_coordinate_residue_coverage": {
+    "comparison": "Compare integer numerator/denominator ratios exactly; do not resolve ties using rounded floating-point values.",
+    "denominator": "Full frozen BMRB entity sequence length, including unknown and nonstandard positions.",
+    "numerator": "Count standard BMRB entity residues whose coordinate mapping is identical across every optimal alignment, whose residue identity matches, and whose coordinate residue has valid N, CA, C and O atoms.",
+    "paired_target_coverage_substitution_allowed": false,
+    "required_atoms": [
+      "N",
+      "CA",
+      "C",
+      "O"
+    ],
+    "unknown_or_nonstandard_in_numerator": false,
+    "unknown_or_nonstandard_retained_in_denominator": true,
+    "valid_atom": "Atom exists, occupancy is greater than zero, and all Cartesian coordinates are finite."
+  },
+  "user_approved": true
+}
