@@ -1,0 +1,10 @@
+{
+  "created_at_utc": "2026-09-14T02:18:45.336740+00:00",
+  "feature_generation_started": false,
+  "historical_v13_inference_sha256": "05c8c44c401493adde79704d327af7e7b78dd4ff4eeb163783804b6c4b429675",
+  "parent_commit": "8aca5f76b11de90673a1b481dc8436ba54a6ed20",
+  "policy_file": "v15_coordinate_feature_policy.json",
+  "policy_sha256": "650ab9d150f2d893816a8a53a44b0490b81a622f9811aa3a438cf5a4b61bb28e",
+  "policy_size_bytes": 5521,
+  "step": "STEP 66B-4B"
+}

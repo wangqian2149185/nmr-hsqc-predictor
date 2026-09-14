@@ -1,0 +1,120 @@
+{
+  "altloc_policy": {
+    "atom_resolution": "Use a valid record with the selected label; if none, use a valid shared record. Never borrow an atom from another nonshared altloc label.",
+    "different_residues_may_select_different_labels": true,
+    "duplicate_same_label_atom_records": "Flag for inspection; do not resolve by file row order.",
+    "equal_score_tiebreak": "Ascending case-sensitive altloc label order.",
+    "highest_score_selected": true,
+    "if_no_valid_nonshared_backbone_records": "Choose the first nonshared label in ascending case-sensitive order, if any; otherwise shared atoms only.",
+    "note": "Altloc labels are local identifiers. Selecting the same label across residues does not establish correlated states.",
+    "record_selected_label_scores_and_ties": true,
+    "selection_score": "Mean occupancy of valid nonshared N, CA, C and O records for each candidate altloc label.",
+    "selection_unit": "residue",
+    "shared_atom_labels": [
+      "",
+      ".",
+      "?"
+    ]
+  },
+  "angle_policy": {
+    "degenerate_or_invalid_dihedral": "missing",
+    "missing_angle_encoding": {
+      "cos": 0.0,
+      "mask": 0.0,
+      "sin": 0.0
+    },
+    "phi": "Compute only with valid previous C, current N, CA, C and a valid previous-to-current polymer connection.",
+    "psi": "Compute only with valid current N, CA, C, next N and a valid current-to-next polymer connection.",
+    "units_before_trigonometric_transform": "radians",
+    "valid_angle_mask": 1.0
+  },
+  "compatibility": {
+    "base_feature_count": 68,
+    "feature_column_order": "retain frozen Step33 feature manifest order",
+    "h_structure_feature_count": 6,
+    "inherited_historical_features_must_be_rebuilt": true,
+    "mixing_old_and_new_feature_semantics_allowed": false,
+    "n_structure_feature_count": 3,
+    "sequence_context_and_position_features": "Retain historical standard-residue-list conventions for prev/next one-hot, position fraction and chain length; use separate label-sequence keys for geometry and mapping.",
+    "training_and_deployment_share_same_implementation": true,
+    "v13_v14_release_files_modified": false
+  },
+  "coordinate_identity": {
+    "conflicting_residue_identity": "Flag for inspection; do not silently choose one identity.",
+    "filtered_pdb_seq_position_is_not_label_seq_id": true,
+    "primary_keys": [
+      "pdb_id",
+      "model_number",
+      "label_asym_id",
+      "label_seq_id"
+    ],
+    "retain_provenance": [
+      "auth_asym_id",
+      "auth_seq_id",
+      "insertion_code",
+      "comp_id"
+    ]
+  },
+  "evidence_checksums": {
+    "backbone_audit_input_lock_sha256": "5597f8768d636e52ab1242d6a840b05d55838a80a7ef48d1a1857960f1e27eb7",
+    "complete_pool_protocol_sha256": "7abd0664292d7e175a03f14c40082b2d5eac19245be2f0f7482ae3b11a4fd6ef",
+    "localized_backbone_issues_sha256": "fc2cb8ab0838d59bf9a8159553a8d8e8b06f1f17abaaabe77bcd54c3821b7d91"
+  },
+  "model_policy": {
+    "conflict_with_saved_validation_model": "Stop that candidate for inspection; do not silently reconcile.",
+    "record_model_count_and_selected_model_number": true,
+    "use_first_structural_model": true
+  },
+  "parent_commit": "8aca5f76b11de90673a1b481dc8436ba54a6ed20",
+  "policy_name": "v15_coordinate_feature_implementation",
+  "policy_version": 1,
+  "polymer_continuity": {
+    "author_number_contiguity_not_used": true,
+    "consecutive_label_seq_ids_required": true,
+    "distance_comparison": "less than or equal to",
+    "do_not_bridge_filtered_unsupported_residues": true,
+    "maximum_C_N_distance_angstrom": 2.0,
+    "same_label_chain_required": true,
+    "threshold_purpose": "Angle validity only; not an entry exclusion threshold.",
+    "valid_previous_C_and_current_N_required": true
+  },
+  "prohibited_changes": [
+    "chemical-shift target correction",
+    "reference correction",
+    "hierarchical b_j",
+    "silent candidate exclusion",
+    "historical release overwrite"
+  ],
+  "scope": "Supplement previously unspecified coordinate-feature implementation details. Do not revise candidate selection or historical release artifacts.",
+  "selection_boundary": {
+    "historical_selection_audit_preserved": true,
+    "reconstruction_failures": "Record as feature-stage failures pending explicit eligibility review; do not silently change the winner.",
+    "rerank_candidates_using_new_atom_policy": false,
+    "unresolved_candidates_automatically_excluded": false
+  },
+  "state_at_freeze": {
+    "cohort_assignment_started": false,
+    "model_training_started": false,
+    "v15_formal_features_generated": false
+  },
+  "step": "STEP 66B-4B",
+  "structure_features": {
+    "environment": "All standard protein residues in all chains of the selected structural model, using the same atom policy.",
+    "imputation_fit_scope": "training data only",
+    "infinite_feature_values_allowed": false,
+    "invalid_environment_atoms": "omit from geometric calculations",
+    "missing_target_CA": "contact counts are NaN",
+    "missing_target_N_or_no_usable_oxygen_environment": "oxygen-distance/count features are NaN; hbond proxy mask is 0",
+    "retain_raw_structure_NaN": true,
+    "same_chain_local_oxygen_exclusion": "Exclude target residue and polymer label_seq_id offsets -1 and +1; do not use filtered residue-list offsets."
+  },
+  "user_approved": true,
+  "valid_atom": {
+    "invalid_atom_handling": "treat as unavailable",
+    "requirements": [
+      "atom exists",
+      "occupancy is finite and greater than zero",
+      "all Cartesian coordinates are finite"
+    ]
+  }
+}
