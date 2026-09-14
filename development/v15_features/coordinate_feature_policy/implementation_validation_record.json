@@ -1,0 +1,97 @@
+{
+  "automated_tests": {
+    "command": "python -m pytest -q",
+    "rerun_in_this_cell": true,
+    "return_code": 0,
+    "stdout": "...........................                                              [100%]\n27 passed in 6.47s\n"
+  },
+  "candidate_selection_revised": false,
+  "cohort_assignment_started": false,
+  "formal_dataset_features_generated": false,
+  "full_pool_feature_reconstruction_tested": false,
+  "implementation_artifacts": [
+    {
+      "file": "development/v15_features/coordinate_feature_policy/coordinate_precision_supplement.json",
+      "sha256": "9fe2ca7d05ebeb5a73a376c51bf7dcb3a64b64d82156af1a9ffe6c45bd5a8a8f",
+      "size_bytes": 989
+    },
+    {
+      "file": "src/nmr_hsqc_v15/__init__.py",
+      "sha256": "eba6949021873fe90bd454bf91749023e416946bf4a0d7a8d4eb9d4353f31215",
+      "size_bytes": 45
+    },
+    {
+      "file": "src/nmr_hsqc_v15/coordinate_primitives.py",
+      "sha256": "0c067dd75a0292d9cb13be539efe4bc1cc28e2b673693ed00039aa2ab1b069de",
+      "size_bytes": 3498
+    },
+    {
+      "file": "src/nmr_hsqc_v15/features.py",
+      "sha256": "bd4f1f0812e90285b0c8547ace53be566e4836d1fc4c6776a1fb2150453244d5",
+      "size_bytes": 5862
+    },
+    {
+      "file": "src/nmr_hsqc_v15/structure_geometry.py",
+      "sha256": "341aa37f68ba98e694683aa98065789558674d5e3403ddc73ce2b0a94653c65e",
+      "size_bytes": 5385
+    },
+    {
+      "file": "tests/test_v15_coordinate_precision.py",
+      "sha256": "7a6fdfe2df7f75d416a11c843780973b9e017def8c14ef2d3562c8a56e8ea10e",
+      "size_bytes": 923
+    },
+    {
+      "file": "tests/test_v15_coordinate_primitives.py",
+      "sha256": "f396eaf868f0323de208e639f7aa8d3ea0bb920ae313ddb62d00d8441793d39c",
+      "size_bytes": 2968
+    },
+    {
+      "file": "tests/test_v15_features.py",
+      "sha256": "f45e08a4e9067abae08152ffa410fa79299be2c597c2dd7d48bcc72c2754e54d",
+      "size_bytes": 3090
+    },
+    {
+      "file": "tests/test_v15_structure_geometry.py",
+      "sha256": "055336b1facfcbc5ff6f1f5f3076c6f150698a596bf5981000dce43b631cb5a5",
+      "size_bytes": 2703
+    }
+  ],
+  "model_training_started": false,
+  "parent_commit": "fed8713a0bcd2fab118f9ab36acad17ca6ac0ed3",
+  "policy_sha256": "650ab9d150f2d893816a8a53a44b0490b81a622f9811aa3a438cf5a4b61bb28e",
+  "precision_supplement_sha256": "9fe2ca7d05ebeb5a73a376c51bf7dcb3a64b64d82156af1a9ffe6c45bd5a8a8f",
+  "previous_real_coordinate_diagnostics": {
+    "1BLQ": {
+      "matched_rows": 89,
+      "maximum_feature_difference": 0.0,
+      "passed_atol_1e_6_rtol_0": true,
+      "raw_features": 74,
+      "step": "STEP 66C-4A-R"
+    },
+    "1HH8": {
+      "selected_altloc": "A",
+      "step": "STEP 66C-4C",
+      "tied_backbone_residues_tested": 5
+    },
+    "1K5O": {
+      "bmrb_id": "5175",
+      "label_chain": "A",
+      "label_seq_id": 1,
+      "missing_CA_contact_counts_retained_as_NaN": true,
+      "phi_mask": 0.0,
+      "psi_mask": 0.0,
+      "step": "STEP 66C-4C"
+    },
+    "2JTZ": {
+      "actual_sequence": "MET103-FTR104-ASP105",
+      "confirmed_physical_chain_break": false,
+      "new_ASP105_phi_mask": 0.0,
+      "new_MET103_psi_mask": 0.0,
+      "old_ASP105_phi_mask": 1.0,
+      "old_MET103_psi_mask": 1.0,
+      "step": "STEP 66C-4B-R"
+    },
+    "evidence_source": "Previously executed diagnostic cells and user-provided outputs; these diagnostics were not rerun in STEP 66C-5."
+  },
+  "step": "STEP 66C-5"
+}

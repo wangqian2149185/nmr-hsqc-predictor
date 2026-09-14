@@ -1,0 +1,23 @@
+{
+  "coordinate_storage_rule": "Parse xyz, round each coordinate to numpy.float32, then represent selected coordinates as numpy.float64.",
+  "diagnostic_evidence": {
+    "all_74_feature_differences_after_rounding": 0.0,
+    "compared_backbone_atoms": 360,
+    "pdb_id": "1BLQ",
+    "rounded_coordinates_equal_historical": true
+  },
+  "geometric_calculation_dtype": "float64",
+  "occupancy_rounding_changed": false,
+  "original_failed_parity_test_retained_as_evidence": true,
+  "original_policy_preserved": true,
+  "original_policy_sha256": "650ab9d150f2d893816a8a53a44b0490b81a622f9811aa3a438cf5a4b61bb28e",
+  "parent_commit": "fed8713a0bcd2fab118f9ab36acad17ca6ac0ed3",
+  "parity_atol": 1e-06,
+  "parity_rtol": 0,
+  "previous_full_pool_audits_rerun": false,
+  "prior_selection_results_revised": false,
+  "rationale": "Compatibility with historical Bio.PDB coordinate precision.",
+  "step": "STEP 66C-4A-R",
+  "training_deployment_same_precision_required": true,
+  "user_approved": true
+}
