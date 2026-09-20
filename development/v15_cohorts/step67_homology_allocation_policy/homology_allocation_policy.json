@@ -1,0 +1,234 @@
+{
+  "branch": "codex_v15",
+  "combined_sequence_universe": {
+    "exact_identifier_checks": {
+      "cross_role_overlap_must_be_zero": true,
+      "exclude_exact_bmrb_overlap": true,
+      "exclude_exact_pdb_overlap": true
+    },
+    "historical_sequence_reconstruction": {
+      "ambiguity_policy": "stop before clustering if a historical entry cannot be assigned one unambiguous sequence",
+      "entity_selection_rule": "match the historical saved residue order to all candidate BMRB entities and require one unique best identity-consistent entity",
+      "fallback_source": "saved historical target/feature residue order",
+      "preferred_source": "full BMRB entity sequence from the frozen Entity_comp_index snapshot"
+    },
+    "new_feature_eligible_entries": 4677,
+    "node_unit": "one selected BMRB entity sequence per entry; historical anchors remain separate provenance nodes even when their sequence is identical",
+    "v14_development_anchor_entries": 106,
+    "v14_opened_external_anchor_entries": 40
+  },
+  "connected_components": {
+    "algorithm": "undirected connected components over all exact verified homology edges",
+    "component_identifier": "SHA256 of the lexicographically sorted member node identifiers, prefixed with v15hc_",
+    "duplicate_sequence_policy": "identical sequences remain in the same component",
+    "no_component_split_across_roles": true,
+    "no_entry_level_split_before_clustering": true,
+    "no_residue_level_random_split": true,
+    "singleton_policy": "a sequence with no passing edge forms one singleton component"
+  },
+  "deterministic_allocation": {
+    "allocation_priority": [
+      "new_external_blind",
+      "internal_test",
+      "model_selection_validation",
+      "training"
+    ],
+    "allocation_seed": 20260902,
+    "allocation_unit": "complete homology connected component",
+    "balancing_variables": [
+      {
+        "name": "number_of_entries",
+        "normalization": "reserved-cohort target",
+        "weight": 1.0
+      },
+      {
+        "name": "number_of_paired_hn_targets",
+        "normalization": "0.10 times eligible unanchored target total",
+        "weight": 1.0
+      },
+      {
+        "name": "total_sequence_length",
+        "normalization": "0.10 times eligible unanchored sequence length total",
+        "weight": 1.0
+      }
+    ],
+    "cohort_targets": {
+      "internal_test": {
+        "eligible_for_model_selection": false,
+        "minimum_entries": 30,
+        "single_opening_after_model_selection": true,
+        "target_fraction": 0.1
+      },
+      "model_selection_validation": {
+        "eligible_for_model_selection": true,
+        "minimum_entries": 30,
+        "target_fraction": 0.1
+      },
+      "new_external_blind": {
+        "minimum_entries": 50,
+        "model_results_visible_during_selection": false,
+        "sealed_before_model_training": true,
+        "single_final_opening": true,
+        "target_fraction": 0.1
+      },
+      "training": {
+        "minimum_entry_milestone": 300,
+        "preferred_entry_target": 500,
+        "receives_remaining_components": true
+      }
+    },
+    "component_order": "ascending SHA256 of allocation_seed, component_id, and sorted member candidate_ids",
+    "sequential_assignment": {
+      "candidate_choice": "choose the component minimizing the sum of squared normalized deviations from that role's entry, paired-target, and sequence-length targets",
+      "exact_objective_tie": "break by frozen seeded component order",
+      "overshoot": "allowed only at complete-component boundaries",
+      "procedure": "allocate complete unassigned components to each reserved role in frozen priority order",
+      "stop_for_role": "stop when the role entry target is reached or exceeded"
+    },
+    "target_basis": "unanchored feature-eligible new entries remaining after historical-external quarantine",
+    "target_calculation": "for each reserved cohort, target entries equal the larger of its frozen minimum and round-half-up of 0.10 times the eligible unanchored entry count",
+    "training_assignment": "all remaining eligible components plus v14-development-anchored components"
+  },
+  "edge_discovery": {
+    "audit_outputs_required": [
+      "combined_sequence_universe.csv",
+      "mmseqs_candidate_edges.csv.gz",
+      "exact_verified_homology_edges.csv.gz",
+      "x_sequence_exhaustive_audit.csv.gz",
+      "homology_component_members.csv",
+      "homology_component_summary.csv",
+      "homology_clustering_manifest.json"
+    ],
+    "candidate_generator": "MMseqs2 all-versus-all search",
+    "database": "combined frozen sequence universe",
+    "discovery_parameters": {
+      "coverage_mode": "query coverage; both query directions retained",
+      "include_self_matches": true,
+      "maximum_hits_per_query": "at least the complete database size",
+      "minimum_candidate_identity": 0.3,
+      "minimum_candidate_query_coverage": 0.6,
+      "sensitivity": 7.5
+    },
+    "exact_verification": {
+      "candidate_edges_recomputed": true,
+      "exact_duplicate_supplement": "exact normalized sequence groups are connected independently of MMseqs2 output",
+      "final_thresholds": "identity >= 0.40 and shorter-sequence coverage >= 0.70",
+      "required": true,
+      "x_containing_sequence_supplement": "every sequence containing X is compared against the full combined universe using the exact verification definition"
+    }
+  },
+  "frozen_inputs": {
+    "candidate_bmrb_entity_sequences": {
+      "drive_relative_path": "nmr_hsqc_predictor_v15/candidate_pool/step65b2_bmrb_entity_sequences/candidate_bmrb_entity_sequences.csv.gz",
+      "feature_eligible_entries_missing_sequence": 0,
+      "feature_eligible_entries_with_sequence": 4677,
+      "sequences_containing_x": 75,
+      "sha256": "f0344e0fdc4477ac94cfb5a8a20b348a3308bc780c487485efce57d3f41bba88",
+      "unique_sequences": 4232
+    },
+    "feature_reconstruction_queue": {
+      "drive_relative_path": "nmr_hsqc_predictor_v15/candidate_pool/step66d3_feature_reconstruction_queue/feature_reconstruction_queue.csv",
+      "sha256": "584e3a915b98e54621e8c6df549c5b66e89232db1279778f006a99c11afbeaf5"
+    },
+    "known_cohort_exclusions": {
+      "file": "development/v15_protocol/step63_known_cohort_exclusions.csv",
+      "known_v14_development_entries": 106,
+      "opened_v14_external_entries": 40,
+      "sha256": "0ebc56bca626390f35f51b421f6551ee32f626d902ec01d99daddc0a8508ba91"
+    },
+    "target_feature_shard_inventory": {
+      "file": "development/v15_features/step66d_validated_target_features/target_feature_shard_inventory.csv",
+      "sha256": "9a1d4d3b30d0026e478f059bebaa18c64850451f1455bf880060edb38ae1e999"
+    },
+    "validated_entry_feature_audit": {
+      "file": "development/v15_features/step66d_validated_target_features/validated_entry_feature_audit.csv",
+      "sha256": "589fc7d87f645cba41f49f1fc285427a607386a01ac1d93a24dbfc32510dad32"
+    },
+    "validated_feature_manifest": {
+      "entries": 4677,
+      "file": "development/v15_features/step66d_validated_target_features/validated_target_feature_manifest.json",
+      "mapped_target_rows": 463183,
+      "retained_unmapped_target_rows": 3259,
+      "sha256": "4402d136ff81258e47395e40cc3e6c336e960466d253922bd3c957d97ac44211",
+      "target_rows": 466442
+    }
+  },
+  "historical_anchor_precedence": {
+    "component_with_both_anchor_types": "historical_external_quarantine takes precedence; record the conflict and stop for audit if any previously inherited training row would otherwise enter training",
+    "highest_priority": {
+      "anchor": "v14_opened_external",
+      "component_role": "historical_external_quarantine",
+      "effect": "all new entries in the component are excluded from v15 training, validation, internal test, and new external blind evaluation"
+    },
+    "second_priority": {
+      "anchor": "v14_development",
+      "component_role": "training",
+      "effect": "new entries in the component are training-only"
+    },
+    "unanchored_components": "eligible for deterministic new-cohort allocation"
+  },
+  "homology_edge_definition": {
+    "coverage_definition": "aligned standard-amino-acid positions divided by the number of standard-amino-acid positions in the shorter sequence",
+    "edge_symmetry": "undirected; an edge is retained once the exact symmetric definition passes",
+    "identical_sequences": "always connected when at least one scorable standard residue is present",
+    "identity_definition": "identical aligned standard-amino-acid positions divided by aligned positions where both residues are standard amino acids",
+    "minimum_shorter_sequence_coverage": 0.7,
+    "sequence_identity_threshold": 0.4,
+    "unknown_residue_policy": {
+      "all_x_or_unscorable_pair": "no edge",
+      "coverage_numerator": "excluded",
+      "identity_denominator": "excluded",
+      "identity_numerator": "excluded",
+      "sequence_length_denominator": "standard amino-acid positions only",
+      "symbol": "X"
+    }
+  },
+  "parent_commit": "59fb86c4e35e9e9a4d6c7172bcad9e4b7497dd68",
+  "policy_name": "v15_operational_homology_connected_component_and_cohort_allocation",
+  "policy_version": 1,
+  "post_allocation_validation": {
+    "insufficient_training_policy": "do not weaken homology isolation, move opened external entries, split components, or train a model; report attainable training size and stop",
+    "required_checks": [
+      "every eligible new entry has exactly one role",
+      "no connected component spans multiple roles",
+      "no exact BMRB identifier spans multiple roles",
+      "no exact PDB identifier spans multiple roles",
+      "no training or evaluation role contains a component anchored to opened v14 external data",
+      "new external blind meets its minimum entry count",
+      "internal test meets its minimum entry count",
+      "model-selection validation meets its minimum entry count",
+      "training contains at least 300 entries"
+    ]
+  },
+  "prohibited_actions": [
+    "using row order, BMRB ID, PDB ID, or chain ID as a scientific allocation variable",
+    "splitting a homology connected component",
+    "using target values, residuals, predictions, or model metrics during allocation",
+    "post-result candidate exclusion",
+    "reference correction",
+    "hierarchical b_j fitting",
+    "opening the new external blind cohort before final evaluation",
+    "opening the internal test before model selection is complete"
+  ],
+  "scientific_source_protocol": {
+    "file": "development/v15_protocol/step63_complete_pool_protocol.json",
+    "sha256": "7abd0664292d7e175a03f14c40082b2d5eac19245be2f0f7482ae3b11a4fd6ef"
+  },
+  "sealed_state": {
+    "internal_test": "not opened until model selection is complete",
+    "model_selection_validation": "only cohort eligible for model selection",
+    "new_external_blind": "entry identifiers, targets, and feature shards are copied to a sealed manifest before model training; no metrics, residuals, or predictions are calculated"
+  },
+  "state_at_policy_lock": {
+    "cohort_assignment_started": false,
+    "hierarchical_b_j_used": false,
+    "homology_clustering_started": false,
+    "homology_edge_calculation_started": false,
+    "model_training_started": false,
+    "new_external_blind_opened": false,
+    "new_internal_test_opened": false,
+    "preprocessing_fitted": false,
+    "reference_correction_applied": false
+  },
+  "step": "STEP 67B"
+}
