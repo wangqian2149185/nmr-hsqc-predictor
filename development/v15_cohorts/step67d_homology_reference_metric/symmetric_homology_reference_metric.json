@@ -1,0 +1,153 @@
+{
+  "candidate_generation_contract": {
+    "candidate_generation_is_scientific_metric": false,
+    "candidate_generation_must_be_validated_for_recall": true,
+    "candidate_generation_validation_required_before_full_run": true,
+    "candidate_generator_may_create_formal_edges": false,
+    "candidate_generator_scores_may_replace_reference_metrics": false,
+    "every_formal_edge_requires_exact_reference_recalculation": true,
+    "exact_duplicate_pairs_must_always_be_candidates": true,
+    "false_negative_reference_edges_allowed": false,
+    "false_positive_candidates_allowed": true,
+    "x_containing_sequences_must_not_be_silently_discarded": true
+  },
+  "coverage_definition": {
+    "coverage_formula": "aligned_shorter_non_x_residues / shorter_non_x_sequence_length",
+    "denominator": "all non-X residues in the shorter sequence",
+    "equal_non_x_length_policy": "use the smaller of the two aligned non-X residue counts",
+    "numerator": "aligned non-X residues from the shorter sequence",
+    "sequence_length_basis": "number of non-X residues",
+    "shorter_sequence_definition": "sequence with fewer non-X residues"
+  },
+  "created_at_utc": "2026-09-20T18:11:58.323735+00:00",
+  "definition_name": "v15_symmetric_pairwise_homology_reference_metric",
+  "definition_version": 1,
+  "directional_alignment": {
+    "alignment_selected_per_direction": "first_alignment_returned_among_maximum_score_alignments",
+    "extend_internal_deletion_score": -0.1,
+    "extend_internal_insertion_score": -0.1,
+    "extend_left_deletion_score": 0.0,
+    "extend_left_insertion_score": 0.0,
+    "extend_right_deletion_score": 0.0,
+    "extend_right_insertion_score": 0.0,
+    "implementation": "Bio.Align.PairwiseAligner",
+    "interpretation": "semi_global",
+    "match_score": 1.0,
+    "mismatch_score": 0.0,
+    "mode": "global_with_free_terminal_gaps",
+    "open_internal_deletion_score": -1.0,
+    "open_internal_insertion_score": -1.0,
+    "open_left_deletion_score": 0.0,
+    "open_left_insertion_score": 0.0,
+    "open_right_deletion_score": 0.0,
+    "open_right_insertion_score": 0.0
+  },
+  "frozen_thresholds": {
+    "comparison_operators": {
+      "identity": "greater_than_or_equal",
+      "shorter_sequence_coverage": "greater_than_or_equal"
+    },
+    "minimum_sequence_identity": 0.4,
+    "minimum_shorter_sequence_coverage": 0.7,
+    "threshold_boundary_is_inclusive": true
+  },
+  "identity_definition": {
+    "denominator": "aligned residue-residue columns in which both residues are standard amino acids",
+    "gap_columns_in_denominator": false,
+    "identity_formula": "exact_standard_matches / aligned_standard_standard_columns",
+    "numerator": "exact standard-amino-acid matches in aligned residue-residue columns",
+    "x_columns_in_denominator": false,
+    "zero_denominator_identity": 0.0
+  },
+  "parent_commit": "d3812d83e611117aad0a40c913585de599296255",
+  "prohibited_shortcuts": [
+    "use only one alignment orientation",
+    "use candidate-generator identity as final identity",
+    "use candidate-generator coverage as final coverage",
+    "discard X-containing sequences",
+    "convert X to a standard amino acid",
+    "use BMRB ID, PDB ID, node ID, row order, or input direction as a scientific tiebreak",
+    "split a homology connected component across cohorts"
+  ],
+  "purpose": "Define the exact homology edge metric used to construct leakage-safe connected components.",
+  "scalable_execution_strategy": {
+    "candidate_generation_started": false,
+    "candidate_generator_parameters_frozen": false,
+    "candidate_generator_selected": false,
+    "formal_edge_calculation_started": false,
+    "selected_strategy": "validated_high_recall_candidate_generation_followed_by_exact_symmetric_reference_recheck"
+  },
+  "source_state": {
+    "combined_sequence_nodes": 4823,
+    "original_homology_allocation_policy_sha256": "d56eafcf73e8b2c248924c23312febdc405a94e621d48b60fa8afb2fc3563540",
+    "sequence_inventory_sha256": "f3a0c572cbcd384b1976abdfb42ceaafa46986c2474b9b3e8cd8bd5120e371cc",
+    "sequence_universe_sha256": "d6a3cef1bff598e76dbd5e0d3f03fd355bc14341cbc072a8cbcc301443ba1cee",
+    "unique_sequence_strings": 4366,
+    "unordered_node_pairs": 11628253
+  },
+  "state_at_freeze": {
+    "cohort_assignment_started": false,
+    "formal_homology_edges_written": false,
+    "hierarchical_b_j_used": false,
+    "homology_clustering_started": false,
+    "model_run": false,
+    "new_external_blind_opened": false,
+    "new_internal_test_opened": false,
+    "preprocessing_fitted": false,
+    "reference_correction_applied": false,
+    "target_scaling_fitted": false
+  },
+  "step": "STEP 67D-1",
+  "step67d0_diagnostic": {
+    "bounded_random_pairs": 500,
+    "failure_type": "direction_dependent_first_optimal_alignment",
+    "files_modified": false,
+    "formal_edges_written": false,
+    "observed_directional_edge_disagreements": 1,
+    "observed_directional_metric_disagreements": 14,
+    "status": "failed_as_expected_during_preflight"
+  },
+  "step67d0r_validation": {
+    "benchmark_elapsed_seconds": 3.7340813070004515,
+    "bounded_random_pairs_tested": 500,
+    "deterministic_replay_failures": 0,
+    "directional_edge_disagreements": 1,
+    "directional_metric_disagreements": 14,
+    "estimated_exact_symmetric_all_pairs_hours": 8.040896696365172,
+    "input_symmetry_failures": 0,
+    "previously_asymmetric_pairs_replayed": 6,
+    "real_exact_duplicate_groups_tested": 25,
+    "real_x_containing_sequences_tested": 20,
+    "seconds_per_directional_alignment": 0.0012446937690001505,
+    "status": "passed",
+    "synthetic_tests_passed": true
+  },
+  "symmetric_pair_rule": {
+    "identifier_tiebreak_permitted": false,
+    "input_direction_tiebreak_permitted": false,
+    "logical_combination": "direction_A_OR_direction_B",
+    "pair_edge_rule": "retain the unordered pair when either directional alignment simultaneously reaches both the identity and shorter-sequence-coverage thresholds",
+    "reported_directional_metric_hierarchy": [
+      "passing alignment before non-passing alignment",
+      "higher identity",
+      "higher shorter-sequence coverage",
+      "more exact matches",
+      "more aligned standard-residue columns",
+      "more aligned residue-residue columns"
+    ],
+    "required_directional_alignments": [
+      "sequence_A_to_sequence_B",
+      "sequence_B_to_sequence_A"
+    ],
+    "row_order_tiebreak_permitted": false,
+    "scientific_rationale": "Conservative leakage control: retain a plausible homology edge rather than miss it because multiple equal-score optimal alignments are returned in a direction-dependent order."
+  },
+  "unknown_residue_policy": {
+    "original_sequences_preserved": true,
+    "unknown_symbol": "X",
+    "x_counted_as_identity_match": false,
+    "x_in_coverage_denominator": false,
+    "x_in_identity_denominator": false,
+    "x_to_parent_amino_acid_substitution": false
+  }
+}

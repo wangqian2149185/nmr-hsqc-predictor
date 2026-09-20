@@ -1,0 +1,15 @@
+{
+  "cohort_assignment_started": false,
+  "created_at_utc": "2026-09-20T18:11:58.323735+00:00",
+  "definition_file": "development/v15_cohorts/step67d_homology_reference_metric/symmetric_homology_reference_metric.json",
+  "definition_sha256": "e3f1e55b934733c169a98788e700117d77ec94ccef29a3af274e51d2f82976f3",
+  "definition_size_bytes": 6886,
+  "formal_homology_edges_written": false,
+  "homology_clustering_started": false,
+  "model_run": false,
+  "original_homology_policy_file": "development/v15_cohorts/step67_homology_allocation_policy/homology_allocation_policy.json",
+  "original_homology_policy_sha256": "d56eafcf73e8b2c248924c23312febdc405a94e621d48b60fa8afb2fc3563540",
+  "parent_commit": "d3812d83e611117aad0a40c913585de599296255",
+  "sequence_inventory_sha256": "f3a0c572cbcd384b1976abdfb42ceaafa46986c2474b9b3e8cd8bd5120e371cc",
+  "step": "STEP 67D-1"
+}
