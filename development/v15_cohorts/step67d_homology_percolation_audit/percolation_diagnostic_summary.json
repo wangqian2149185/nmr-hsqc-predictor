@@ -1,0 +1,65 @@
+{
+  "artifacts": [
+    {
+      "file": "unique_sequence_degree_audit.csv.gz",
+      "rows": 4366,
+      "sha256": "025d2960f1cf306d86da705677bb546cb219e1591296dd26d57930f5f41b7110",
+      "size_bytes": 190302
+    },
+    {
+      "file": "direct_role_edge_counts.csv",
+      "rows": 6,
+      "sha256": "5ab71808b73610e778b06329f8df7335e4776baf8149f5b7e6fad2d5ff6bdb3e",
+      "size_bytes": 206
+    },
+    {
+      "file": "counterfactual_threshold_components.csv",
+      "rows": 12,
+      "sha256": "3eff11e27d12ae0e46e742b0dec083a2bb910472e72b96090f4f6e3856ddfe35",
+      "size_bytes": 999
+    }
+  ],
+  "branch": "codex_v15",
+  "cohort_assignment_started": false,
+  "commit": "030eb6c317d30ce550554b6251095ff03a574e5c",
+  "completed_at_utc": "2026-09-20T23:42:53.109372+00:00",
+  "counterfactual_thresholds_are_diagnostic_only": true,
+  "degree_quantiles": {
+    "0.0": 7.0,
+    "0.25": 82.0,
+    "0.5": 124.0,
+    "0.75": 198.0,
+    "0.9": 294.5,
+    "0.95": 359.0,
+    "0.99": 513.0,
+    "1.0": 768.0
+  },
+  "direct_development_opened_external_edges": 152,
+  "direct_new_opened_external_edges": 4385,
+  "edge_count": 335423,
+  "elapsed_seconds": 21.45771749200003,
+  "frozen_component_count": 1,
+  "frozen_coverage_threshold": 0.7,
+  "frozen_freely_allocatable_new_nodes": 0,
+  "frozen_identity_threshold": 0.4,
+  "frozen_largest_component_nodes": 4823,
+  "frozen_policy_modified": false,
+  "hierarchical_b_j_used": false,
+  "model_run": false,
+  "new_external_blind_opened": false,
+  "new_internal_test_opened": false,
+  "new_only_induced_graph": {
+    "components": 1,
+    "edges": 318433,
+    "largest_component_nodes": 4662,
+    "largest_component_unique_sequences": 4223,
+    "unique_sequences": 4223
+  },
+  "node_count": 4823,
+  "preprocessing_fitted": false,
+  "reference_correction_applied": false,
+  "repository_files_modified": false,
+  "step": "STEP 67D-2B3",
+  "unique_sequence_count": 4366,
+  "zero_degree_unique_sequences": 0
+}

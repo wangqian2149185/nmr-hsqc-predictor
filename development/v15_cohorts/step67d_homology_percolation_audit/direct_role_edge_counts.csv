@@ -1,0 +1,7 @@
+endpoint_role_a,endpoint_role_b,direct_edge_count
+development,development,156
+development,new,12290
+development,opened_external,152
+new,new,318433
+new,opened_external,4385
+opened_external,opened_external,7

@@ -1,0 +1,96 @@
+{
+  "audit_type": "frozen_homology_allocation_infeasibility_audit",
+  "branch": "codex_v15",
+  "counterfactual_diagnostics": {
+    "counterfactual_results_may_not_be_used_as_assignments": true,
+    "replacement_threshold_selected": false,
+    "scientific_policy_modified": false
+  },
+  "created_at_utc": "2026-09-20T23:46:25.573344+00:00",
+  "data_state": {
+    "cohort_assignment_started": false,
+    "hierarchical_b_j_used": false,
+    "model_run": false,
+    "new_external_blind_opened": false,
+    "new_internal_test_opened": false,
+    "preprocessing_fitted": false,
+    "reference_correction_applied": false
+  },
+  "degree_state": {
+    "maximum_degree": 768,
+    "median_degree": 124,
+    "minimum_degree": 7,
+    "zero_degree_unique_sequences": 0
+  },
+  "direct_cross_role_edges": {
+    "development_to_opened_external": 152,
+    "new_to_opened_external": 4385
+  },
+  "exact_calculation": {
+    "connected_components": 1,
+    "evaluated_unique_sequence_pairs": 9528795,
+    "formal_edges": 335423,
+    "largest_component_nodes": 4823,
+    "nodes": 4823,
+    "unique_sequences": 4366
+  },
+  "frozen_policy": {
+    "allocation_unit": "sequence_identity_connected_component",
+    "edge_rule": "either_direction_simultaneously_passes_identity_and_coverage",
+    "identity_threshold": 0.4,
+    "minimum_shorter_sequence_coverage": 0.7
+  },
+  "frozen_protocol_disposition": {
+    "allocation_feasible": false,
+    "attainable_training_entries_under_frozen_anchor_constraints": 0,
+    "cohort_assignment_permitted": false,
+    "insufficient_pool_policy_triggered": true,
+    "minimum_training_entries": 300,
+    "model_training_permitted": false,
+    "reason": "The single connected component contains all new candidates and opened-external anchors; the new-only induced graph also forms one connected component."
+  },
+  "historical_anchor_state": {
+    "components_containing_both_historical_roles": 1,
+    "freely_allocatable_new_nodes": 0,
+    "new_nodes_in_opened_external_component": 4677,
+    "new_v15_candidate_nodes": 4677,
+    "v14_development_nodes": 106,
+    "v14_external_opened_nodes": 40
+  },
+  "new_only_graph_state": {
+    "connected_components": 1,
+    "edges": 318433,
+    "largest_component_nodes": 4662,
+    "largest_component_unique_sequences": 4223,
+    "nodes": 4662,
+    "unique_sequences": 4223
+  },
+  "parent_commit": "030eb6c317d30ce550554b6251095ff03a574e5c",
+  "source_evidence": {
+    "counterfactual_threshold_components.csv": {
+      "sha256": "3eff11e27d12ae0e46e742b0dec083a2bb910472e72b96090f4f6e3856ddfe35",
+      "size_bytes": 999
+    },
+    "direct_role_edge_counts.csv": {
+      "sha256": "5ab71808b73610e778b06329f8df7335e4776baf8149f5b7e6fad2d5ff6bdb3e",
+      "size_bytes": 206
+    },
+    "homology_component_manifest.json": {
+      "sha256": "c3d4471747eb794816b89efba00cb9f0856bed5b3aa6d7ece266b0233beec75e",
+      "size_bytes": 2604
+    },
+    "homology_component_summary.csv": {
+      "sha256": "6652c8cc2906b23547241961918b2bc564403c564eae8ac7728554d7e2a610e1",
+      "size_bytes": 554
+    },
+    "percolation_diagnostic_summary.json": {
+      "sha256": "c510b0332c8d3d270d4bdc953d620dedcd22b44f077f8a8714f3efed96f322af",
+      "size_bytes": 1942
+    },
+    "unique_sequence_degree_audit.csv.gz": {
+      "sha256": "025d2960f1cf306d86da705677bb546cb219e1591296dd26d57930f5f41b7110",
+      "size_bytes": 190302
+    }
+  },
+  "step": "STEP 67D-2B4"
+}
