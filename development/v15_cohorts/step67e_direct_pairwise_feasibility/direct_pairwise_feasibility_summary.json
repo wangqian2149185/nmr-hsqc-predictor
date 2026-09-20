@@ -1,0 +1,62 @@
+{
+  "artifacts": [
+    {
+      "file": "new_unique_sequence_historical_neighborhood.csv.gz",
+      "rows": 4232,
+      "sha256": "94ccad46561b518a7461e2fae1ce690254e0134ba10f25e142ffb5424df6b590",
+      "size_bytes": 26993
+    },
+    {
+      "file": "new_node_historical_neighborhood.csv.gz",
+      "rows": 4677,
+      "sha256": "3047797ec5f53b448a798fe63fb2a7233e0c6cf44bd5ae379757256c63c6e1a4",
+      "size_bytes": 268044
+    }
+  ],
+  "branch": "codex_v15",
+  "cohort_assignment_started": false,
+  "commit": "15387e6a65983a9d70a811ae92db921ed323df44",
+  "completed_at_utc": "2026-09-20T23:54:11.703482+00:00",
+  "diagnostic_name": "corrected_direct_pairwise_and_exact_sequence_historical_anchor_feasibility",
+  "elapsed_seconds": 22.488128495000183,
+  "evaluation_minima_potentially_attainable": true,
+  "frozen_pairwise_definition": {
+    "definition_modified": false,
+    "identity_threshold": 0.4,
+    "minimum_shorter_sequence_coverage": 0.7
+  },
+  "hierarchical_b_j_used": false,
+  "important_limitation": "These are upper bounds before enforcing zero direct homology edges between all newly assigned training, validation, internal-test and external roles.",
+  "minimum_training_milestone": 300,
+  "mixed_role_unique_sequences_with_new_nodes": 9,
+  "model_run": false,
+  "new_external_blind_opened": false,
+  "new_internal_test_opened": false,
+  "new_nodes": 4677,
+  "new_nodes_exactly_identical_to_development_sequence": 8,
+  "new_nodes_exactly_identical_to_opened_external_sequence": 7,
+  "new_nodes_quarantined_by_opened_external_exact_or_direct_evidence": 2449,
+  "new_nodes_restricted_to_training_by_development_exact_or_direct_evidence": 1944,
+  "new_nodes_without_exact_or_direct_historical_anchor_evidence": 284,
+  "new_only_unique_sequences": 4223,
+  "new_unique_sequences_including_mixed_roles": 4232,
+  "node_disposition_counts": {
+    "no_exact_or_direct_historical_anchor": 284,
+    "quarantine_opened_external_exact_or_direct": 2449,
+    "training_only_development_exact_or_direct": 1944
+  },
+  "preferred_training_target": 500,
+  "preprocessing_fitted": false,
+  "provisional_new_evaluation_eligible_nodes": 284,
+  "provisional_training_eligible_nodes": 2228,
+  "reference_correction_applied": false,
+  "repository_files_modified": false,
+  "revised_policy_adopted": false,
+  "step": "STEP 67E-0R",
+  "training_milestone_potentially_attainable": true,
+  "unique_sequence_disposition_counts": {
+    "no_exact_or_direct_historical_anchor": 264,
+    "quarantine_opened_external_exact_or_direct": 2217,
+    "training_only_development_exact_or_direct": 1751
+  }
+}
