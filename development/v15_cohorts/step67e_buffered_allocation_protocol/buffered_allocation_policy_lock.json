@@ -1,0 +1,12 @@
+{
+  "cohort_assignment_started": false,
+  "entry_level_assignment_saved": false,
+  "model_run": false,
+  "parent_commit": "428da08084aa96c5250ece467e7d37d2be47c9cd",
+  "policy_file": "buffered_allocation_policy.json",
+  "policy_sha256": "c8a55ef5ed6dde354bfef67c6e5ce0c1be7211eccada4e25f9ad55c71a85e656",
+  "policy_size_bytes": 3854,
+  "simulation_summary_sha256": "2cb420acf77426ef67af8248a8a119df8d2ae349b5a124188f56706a9c0f015f",
+  "simulation_trials_sha256": "acc2aac037f15a19a7a1c353cd6cb7ee71f0c93781ceaa434a77c5c3aeec5106",
+  "step": "STEP 67E-1B"
+}

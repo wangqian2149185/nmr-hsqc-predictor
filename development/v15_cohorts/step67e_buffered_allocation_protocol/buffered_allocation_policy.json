@@ -1,0 +1,101 @@
+{
+  "allocation_unit": "exact-sequence group; all nodes sharing one unique sequence are indivisible",
+  "created_at_utc": "2026-09-21T02:07:54.715405+00:00",
+  "cross_role_constraints": {
+    "direct_homology_edges_between_distinct_evaluation_roles": 0,
+    "direct_homology_edges_between_evaluation_and_training": 0,
+    "identifier_tiebreak_allowed": false,
+    "row_order_tiebreak_allowed": false
+  },
+  "data_state": {
+    "cohort_assignment_started": false,
+    "entry_level_assignment_saved": false,
+    "hierarchical_b_j_used": false,
+    "model_run": false,
+    "new_external_blind_opened": false,
+    "new_internal_test_opened": false,
+    "preprocessing_fitted": false,
+    "reference_correction_applied": false
+  },
+  "deterministic_search": {
+    "all_role_orders": true,
+    "base_seed": 20260902,
+    "candidate_selection_order": [
+      "minimum incremental training-buffer node loss",
+      "minimum role-target overshoot",
+      "minimum full-graph degree",
+      "seeded pseudorandom tie value",
+      "unique_sequence_id"
+    ],
+    "role_order_count": 6,
+    "seed_formula": "base_seed + role_order_index * 100000 + repeat_index",
+    "total_trials": 600,
+    "trials_per_role_order": 100,
+    "winner_selection_order": [
+      "feasible trials only",
+      "maximize total retained training entries",
+      "minimize buffered training-eligible entries",
+      "minimize selected evaluation-entry count",
+      "minimize trial_index"
+    ]
+  },
+  "evaluation_roles": {
+    "internal_test": {
+      "minimum_entries": 30,
+      "opened_once_after_model_selection": true
+    },
+    "model_selection_validation": {
+      "eligible_for_model_selection": true,
+      "minimum_entries": 30
+    },
+    "new_external_blind": {
+      "minimum_entries": 50,
+      "sealed_before_training": true
+    }
+  },
+  "frozen_feasibility_evidence": {
+    "expected_aggregate_counts_if_replayed": {
+      "buffered_new_entries": 913,
+      "historical_development_training": 106,
+      "internal_test": 30,
+      "model_selection_validation": 30,
+      "new_external_blind": 50,
+      "new_training": 1205,
+      "total_training": 1311
+    },
+    "feasible_trials": 600,
+    "selected_role_order_if_replayed": "internal_test|model_selection_validation|new_external_blind",
+    "selected_seed_if_replayed": 20560902,
+    "selected_trial_if_replayed": 300,
+    "trials": 600
+  },
+  "historical_anchor_rules": {
+    "development_exact_or_direct_neighbor_without_opened_external_evidence": "training-only",
+    "no_exact_or_direct_historical_anchor": "eligible for buffered evaluation selection or training",
+    "opened_external_exact_or_direct_neighbor": "quarantine; ineligible for every v15 role",
+    "opened_external_precedence": true
+  },
+  "pairwise_homology_definition": {
+    "definition_modified": false,
+    "identity_threshold": 0.4,
+    "inclusive_thresholds": true,
+    "minimum_shorter_sequence_coverage": 0.7,
+    "symmetric_either_direction_rule": true
+  },
+  "parent_commit": "428da08084aa96c5250ece467e7d37d2be47c9cd",
+  "policy_name": "v15_buffered_direct_homology_allocation",
+  "preserved_original_result": "The original connected-component protocol remains frozen and documented as infeasible.",
+  "source_checksums": {
+    "buffer_packing_summary.json": "2cb420acf77426ef67af8248a8a119df8d2ae349b5a124188f56706a9c0f015f",
+    "buffer_packing_trials.csv": "acc2aac037f15a19a7a1c353cd6cb7ee71f0c93781ceaa434a77c5c3aeec5106"
+  },
+  "step": "STEP 67E-1B",
+  "supersedes_for_allocation_only": "connected-component assignment portion of the frozen STEP 67B policy",
+  "training_rules": {
+    "all_direct_neighbors_of_any_evaluation_unit_excluded_from_training": true,
+    "historical_v14_development_entries": 106,
+    "minimum_total_entries": 300,
+    "opened_v14_external_entries_excluded": true,
+    "preferred_total_entries": 500
+  }
+}
