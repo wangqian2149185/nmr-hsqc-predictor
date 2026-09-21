@@ -1,0 +1,7 @@
+v15_role,n_entries,n_unique_sequences,n_bmrb_ids,n_pdb_ids,targets_opened,metrics_calculated,eligible_for_training,eligible_for_model_selection
+excluded_buffer,913,841,913,910,False,False,False,False
+historical_anchor_quarantine,2449,2217,2449,2432,False,False,False,False
+internal_test,30,27,30,30,False,False,False,False
+model_selection_validation,30,29,30,30,False,False,False,True
+new_external_blind,50,44,50,49,False,False,False,False
+training,1205,1074,1205,1191,False,False,True,False

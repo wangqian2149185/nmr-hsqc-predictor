@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "file": "buffered_unique_sequence_assignments.csv",
+      "rows": 4232,
+      "sha256": "8cbfbb92013805277f0692828beb7f1b6a00a11b2f6af0410cbbfe586b24c11d",
+      "size_bytes": 594278
+    },
+    {
+      "file": "buffered_new_node_assignments.csv.gz",
+      "rows": 4677,
+      "sha256": "ffdc072f850041f34a8f390cba8947354fd6a6f7b8a16445a59a2bebb8daa1c6",
+      "size_bytes": 271626
+    }
+  ],
+  "branch": "codex_v15",
+  "commit": "05cdf3fc41aa5bd7e2a1052797e5a3e111c73d5b",
+  "completed_at_utc": "2026-09-21T02:09:47.447436+00:00",
+  "cross_evaluation_role_edges": 0,
+  "elapsed_seconds": 1.7962566509995668,
+  "evaluation_to_training_edges": 0,
+  "exact_sequence_groups_indivisible": true,
+  "external_cohort_assigned": true,
+  "external_cohort_opened": false,
+  "hierarchical_b_j_used": false,
+  "historical_v14_development_training_entries": 106,
+  "internal_test_assigned": true,
+  "internal_test_opened": false,
+  "model_run": false,
+  "new_node_role_counts": {
+    "excluded_buffer": 913,
+    "historical_anchor_quarantine": 2449,
+    "internal_test": 30,
+    "model_selection_validation": 30,
+    "new_external_blind": 50,
+    "training": 1205
+  },
+  "policy_commit": "05cdf3fc41aa5bd7e2a1052797e5a3e111c73d5b",
+  "preprocessing_fitted": false,
+  "reference_correction_applied": false,
+  "repository_files_modified": false,
+  "step": "STEP 67E-2A",
+  "targets_accessed_for_assignment": false,
+  "total_training_entries": 1311,
+  "winner_role_order": [
+    "internal_test",
+    "model_selection_validation",
+    "new_external_blind"
+  ],
+  "winner_seed": 20560902,
+  "winner_trial_index": 300
+}
