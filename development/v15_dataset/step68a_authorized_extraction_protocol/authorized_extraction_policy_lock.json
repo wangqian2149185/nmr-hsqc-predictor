@@ -1,0 +1,15 @@
+{
+  "authorized_new_entries": 1235,
+  "bridge_joined_rows": 4677,
+  "bridge_pdb_mismatches": 0,
+  "feature_shard_rows_read": 0,
+  "internal_test_opened": false,
+  "model_run": false,
+  "new_external_blind_opened": false,
+  "parent_commit": "80ac42e976671c6e799ac8e0b7b1316314592ad6",
+  "policy_file": "authorized_extraction_policy.json",
+  "policy_sha256": "8a5003bf26b557bf7fdd7e85a4a2f3850e1bd28b1c6f4cdf44b75a91fcaa658a",
+  "policy_size_bytes": 4331,
+  "step": "STEP 68A-1R",
+  "target_rows_read": 0
+}

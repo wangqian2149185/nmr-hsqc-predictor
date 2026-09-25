@@ -1,0 +1,113 @@
+{
+  "authorized_new_roles": {
+    "model_selection_validation": {
+      "eligible_for_model_selection": true,
+      "eligible_for_training": false,
+      "entries": 30
+    },
+    "training": {
+      "eligible_for_model_selection": false,
+      "eligible_for_training": true,
+      "entries": 1205
+    }
+  },
+  "branch": "codex_v15",
+  "created_at_utc": "2026-09-25T02:17:00.140707+00:00",
+  "extraction_rules": {
+    "authorization_key_after_bridge": "candidate_id",
+    "authorized_candidate_id_count": 1235,
+    "forbidden_candidate_id_count": 3442,
+    "full_mixed_role_dataframe_prohibited": true,
+    "mixed_shard_transport_note": "Compressed bytes must be decompressed to locate record boundaries. Forbidden target fields must not be converted, materialized, printed, aggregated, persisted, or used for metrics.",
+    "required_order": [
+      "verify frozen shard size and SHA256",
+      "construct the validated candidate_id role map",
+      "stream compressed records",
+      "identify candidate_id before field conversion",
+      "materialize only authorized rows",
+      "discard forbidden rows without target conversion",
+      "assert every persisted row has an authorized role"
+    ]
+  },
+  "forbidden_new_roles": {
+    "excluded_buffer": {
+      "entries": 913,
+      "excluded": true
+    },
+    "historical_anchor_quarantine": {
+      "entries": 2449,
+      "excluded": true
+    },
+    "internal_test": {
+      "entries": 30,
+      "sealed": true
+    },
+    "new_external_blind": {
+      "entries": 50,
+      "sealed": true
+    }
+  },
+  "historical_v14_development": {
+    "eligible_for_training_only": true,
+    "entries": 106,
+    "extracted_from_new_v15_shards": false,
+    "source": "development/v14_dataset/v14_development_raw_features.csv"
+  },
+  "identifier_bridge": {
+    "assignment_bmrb_id_unique": true,
+    "assignment_identifier": "node_id",
+    "direct_identifier_overlap_count": 0,
+    "feature_bmrb_id_unique": true,
+    "feature_identifier": "candidate_id",
+    "identifier_or_row_order_tiebreak_applied": false,
+    "join_cardinality": "one_to_one",
+    "join_key": "bmrb_id",
+    "joined_rows": 4677,
+    "pdb_id_mismatch_count": 0,
+    "required_confirmation": "normalized assignment and feature pdb_id equality"
+  },
+  "parent_commit": "80ac42e976671c6e799ac8e0b7b1316314592ad6",
+  "policy_name": "v15_role_authorized_target_feature_extraction",
+  "preprocessing": {
+    "external_blind_statistics_used_for_fit": false,
+    "fit_scope": "training_rows_only",
+    "imputation_fitted": false,
+    "internal_test_statistics_used_for_fit": false,
+    "target_scaling_fitted": false,
+    "validation_statistics_used_for_fit": false
+  },
+  "role_counts": {
+    "excluded_buffer": 913,
+    "historical_anchor_quarantine": 2449,
+    "internal_test": 30,
+    "model_selection_validation": 30,
+    "new_external_blind": 50,
+    "training": 1205
+  },
+  "scientific_integrity": {
+    "duplicate_values_averaged": false,
+    "hierarchical_b_j_used": false,
+    "reference_correction_applied": false,
+    "strict_target_denominators_retained": true,
+    "targets_modified": false,
+    "unmapped_targets_retained": true,
+    "unsupported_targets_retained": true
+  },
+  "source_checksums": {
+    "development/v15_cohorts/step67e_buffered_assignment/buffered_assignment_manifest.json": "990df65b3400cff7a886d308e41f7f0618531f273a39e32e7b32ef50356a76b4",
+    "development/v15_cohorts/step67e_buffered_assignment/buffered_new_node_assignments.csv.gz": "ffdc072f850041f34a8f390cba8947354fd6a6f7b8a16445a59a2bebb8daa1c6",
+    "development/v15_features/step66d_validated_target_features/target_feature_shard_inventory.csv": "9a1d4d3b30d0026e478f059bebaa18c64850451f1455bf880060edb38ae1e999",
+    "development/v15_features/step66d_validated_target_features/validated_entry_feature_audit.csv": "589fc7d87f645cba41f49f1fc285427a607386a01ac1d93a24dbfc32510dad32",
+    "development/v15_features/step66d_validated_target_features/validated_target_feature_manifest.json": "4402d136ff81258e47395e40cc3e6c336e960466d253922bd3c957d97ac44211"
+  },
+  "state_after_freeze": {
+    "authorized_dataset_written": false,
+    "feature_shard_rows_read": 0,
+    "internal_test_opened": false,
+    "model_run": false,
+    "new_external_blind_opened": false,
+    "target_rows_read": 0
+  },
+  "status": "frozen",
+  "step": "STEP 68A-1R"
+}
